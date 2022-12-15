@@ -1,2 +1,2 @@
 # DanKaufman.dev
-Source Code for Personal Websote.
+Source Code for Personal Website.
