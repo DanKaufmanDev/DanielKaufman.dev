@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono'); 
+body {  
+  background: linear-gradient(45deg, #4b2a5c 0%,#6b2626 75%); 
+  font-family: 'Ubuntu';
+} 
+#container {  
+  display: flex;  
+  justify-content: center;  
+  align-items: center;  
+  height: 100vh;
+} 
+#desktop{
+    display: flex;
+}
+#desktop__background{
+    height: fit-content;
+    width: fit-content;
+}
+#desktop__background--about a{
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    font-size: 60px;;
+    position: -ms-page;
+    margin-top: -650%;
+    margin-left: -300%;
+    padding: 0 0px;
+}
+#desktop__background--projects a{
+    text-decoration: none;
+    display: flex;
+    font-size: 60px;;
+    position: -ms-page;
+    margin-top: -650%;
+    margin-left: -300%;
+    padding: 0 0px;
+}
+#terminal {  
+  width: 70vw;  
+  height: 65vh;  
+  box-shadow: 2px 4px 10px rgba(0,0,0,0.5);
+} 
+#terminal__bar {  
+  display: flex;  
+  width: 100%;  
+  height: 30px;  
+  align-items: center;  
+  padding: 0 8px;  
+  box-sizing: border-box;  
+  border-top-left-radius: 5px;  
+  border-top-right-radius: 5px;  
+  background: linear-gradient(#504b45 0%,#3c3b37 100%);
+} 
+#bar__buttons {  
+  display: flex;  
+  align-items: center;
+} 
+.bar__button {  
+  display: flex;  
+  justify-content: center;  
+  align-items: center;  
+  padding: 0;  
+  margin-right: 5px;  
+  font-size: 8px;  
+  height: 12px;  
+  width: 12px;  
+  box-sizing: border-box;  
+  border: none;  
+  border-radius: 100%;  
+  background: linear-gradient(#7d7871 0%, #595953 100%);  
+  text-shadow: 0px 1px 0px rgba(255,255,255,0.2);  
+  box-shadow: 0px 0px 1px 0px #41403A, 0px 1px 1px 0px #474642;
+}
+.bar__button:hover {  
+  cursor: pointer;
+}
+.bar__button:focus {  
+  outline: none;
+}
+#bar__button--exit {  
+  background: linear-gradient(#f37458 0%, #de4c12 100%);    
+  background-clip: padding-box;
+} 
+#bar__user {   
+  color: #d5d0ce;  
+  margin-left: 6px;  
+  font-size: 14px;  
+  line-height: 15px;
+} 
+#bar__name{
+    color: #d5d0ce;  
+    margin-left: 27%;  
+    font-size: 14px;  
+    line-height: 15px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+#terminal__body {  
+  background: rgba(56, 4, 40, 0.9);  
+  font-family: 'Ubuntu Mono';  
+  height: calc(100% - 30px);  
+  padding-top: 2px;  
+  margin-top: -1px;
+} 
+#terminal__prompt {  
+  display: flex;
+}
+#terminal__prompt--user {  
+  color: #7eda28;
+  margin-top: 2px;
+  margin-left: 1%;
+}
+#terminal__prompt--location { 
+  color: #4878c0;
+  margin-top: 2px;
+}
+#terminal__prompt--bling {  
+  color: #dddddd;
+  margin-top: 2px;
+}
+#terminal__prompt--cursor {  
+  display: block;  
+  height: 17px;  
+  width: 8px;  
+  margin-top: 2px;
+  margin-left: 6px;  
+  animation: blink 1200ms linear infinite;
+} 
+#terminal__prompt--text input{
+    display: flex;
+    background: rgba(56, 4, 40, 0.0);
+    font-family: 'Ubuntu mono';
+    font-size: 14px;
+    color: #7eda28;
+    margin-top: 2px;
+    margin-left: -1px;
+    border-top-style: hidden;
+    border-left-style: hidden;
+    border-right-style: hidden;
+    border-bottom-style: hidden;
+    outline: none;
+    caret-color: transparent;
+}
+#terminal__prompt--text input::placeholder{
+    opacity: 70%;
+    color: #7eda28;
+}
+#terminal__textarea{
+    margin-top: 2%;
+    margin-left: 1px;
+}
+#terminal__prompt--t h1{
+    display: flex;
+    font-family: 'Ubuntu';
+    font-size: 32px;
+    color: #7eda28;
+    margin-top: -1%;
+    margin-left: 1.5%;
+    margin-bottom: 0%;    
+}
+#terminal__prompt--t p{
+    display: flex;
+    font-family: 'Ubuntu';
+    font-size: 16px;
+    color: #7eda28;
+    margin-left: 1.5%;
+    margin-top: 1px;   
+    margin-bottom: 0%; 
+}
+@keyframes blink {  
+  0% {    
+    background: #ffffff;  
+  }  
+  49% {    
+    background: #ffffff;  
+  }  
+  60% {    
+    background: transparent;  
+  }  
+  99% {    
+    background: transparent;  
+  }  100% {    
+    background: #ffffff;  
+  }
+} 
+@media (max-width: 600px) {  
+  #terminal {    
+    max-height: 90%;    
+    width: 90%;  
+  }
+
+}
