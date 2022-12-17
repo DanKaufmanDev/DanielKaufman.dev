@@ -5,26 +5,38 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Dan Kaufman</title>
+        <link rel="icon" href="sprites/mine.png">
         <link rel="stylesheet" type="text/css" href="./style.css">
-        <script src="./app.js"></script>
-        <script src="https://kit.fontawesome.com/efdd314cce.js" crossorigin="anonymous"></script>
+        <script defer src="./script.js"></script>
+        <script src="https://kit.fontawesome.com/6e529305db.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <main id="container">
             <div id="desktop">
-                <section id="desktop__background">
-                    <span id="desktop__background--about"></span>
-                    <span id="desktop__background--projects"></span>
-                    <span id="desktop__background--spotify"></span>
-                    <span id="desktop__background--contact"></span>
-                </section>
-            </div>
+                <div id="desktop__background">
+                    <div id="desktop__background--about"><a href="#"></a></div>
+                    <div id="desktop__background--calander"><a href="#"></a></div>
+                    <div id="desktop__background--contact"><a href="#"></a></div>
+                    <div id="desktop__background--minesweeper"><a href="#"></a></div>
+                    <div id="desktop__background--projects"><a href="#"></a></div>
+                    <div id="desktop__background--spotify"><a href="#"></a></div>
+                </div>
+              </div>
+              <div id="taskbar__container">
+                <div id="taskbar">
+                  <div id="taskbar--start"><i id="dragon" class="fa-solid fa-dragon"></i></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
             <div id="terminal">
               <section id="terminal__bar">          
                 <div id="bar__buttons">            
-                  <button class="bar__button" id="bar__button--exit">&#10005;</button>            
-                  <button class="bar__button">&#9472;</button>                
-                  <button class="bar__button">&#9723;</button>          
+                  <button type="button" class="bar__button" id="bar__button--exit" onclick="buttonClickExit()">&#10005;</button>            
+                  <button type="button" class="bar__button" id="bar__button--minimize" onclick="buttonClickMin()">&#9472;</button>                
+                  <button type="button" class="bar__button" id="bar__button--maximize" onclick="buttonClickMax()">&#9723;</button>          
                 </div>          
                 <p id="bar__user">DanKaufman.Dev: ~</p>     
                 <p id="bar__name">Terminal</p>   
@@ -35,7 +47,7 @@
                   <span id="terminal__prompt--location">~</span>            
                   <span id="terminal__prompt--bling">$</span>            
                   <span id="terminal__prompt--cursor"></span>
-                  <span id="terminal__prompt--text"><input id="txtInput" type="text" placeholder="-h for help" autofocus spellcheck="true"></span>       
+                  <span id="terminal__prompt--text"><input id="txtInput" type="text" placeholder="-h for help"></span>       
                 </div>  
                 <section id="terminal__textarea">
                     <div id="terminal__textarea--region">
