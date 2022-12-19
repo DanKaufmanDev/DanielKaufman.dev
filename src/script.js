@@ -22,7 +22,8 @@ function buttonClickMax(){
 
 function buttonClickAbout(){
     console.log('clicked terminal')
-    terminal.style.display = 'block'
+    terminal.style.display = 'block',
+    terminal.style.zindex = '-1'
 }
 
 function buttonClickCalender(){

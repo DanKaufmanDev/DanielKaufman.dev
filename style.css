@@ -51,6 +51,7 @@ body {
   transform: scale(130%, 125%);
   border-radius: 10px;
   margin-bottom: 1px;
+  margin-top: 10%;
   filter: opacity(90%);
 }
 #desktop__background--about > p {
@@ -61,7 +62,7 @@ body {
   font-weight: 400;
   color: #ffffffd3;
   position: relative;
-  bottom: 20%;
+  bottom: 25%;
 }
 #desktop__background--calender {
   display: grid;  
@@ -81,9 +82,10 @@ body {
   justify-items: center;
   width: 64px;
   height: 64px;
-  transform: scale(130%, 125%);
+  transform: scale(124%, 120%);
   border-radius: 10px;
   margin-bottom: 1px;
+  margin-top: 10%;
   filter: opacity(90%);
 }
 
@@ -95,7 +97,7 @@ body {
   font-weight: 400;
   color: #ffffffd3;
   position: relative;
-  bottom: 0%;
+  bottom: 15%;
 }
 #desktop__background--contact {
   display: grid;  
@@ -115,9 +117,10 @@ body {
   justify-items: center;
   width: 64px;
   height: 64px;
-  transform: scale(130%, 125%);
+  transform: scale(125%, 110%);
   border-radius: 10px;
   margin-bottom: 1px;
+  margin-top: 10%;
   filter: opacity(90%);
 }
 
@@ -129,7 +132,7 @@ body {
   font-weight: 400;
   color: #ffffffd3;
   position: relative;
-  bottom: 0%;
+  bottom: 20%;
 }
 
 #desktop__background--minesweeper {
@@ -167,6 +170,7 @@ body {
   transform: scale(130%, 125%);
   border-radius: 10px;
   margin-bottom: 1px;
+  margin-top: 15%;
   filter: opacity(90%);
 }
 
@@ -178,7 +182,7 @@ body {
   font-weight: 400;
   color: #ffffffd3;
   position: relative;
-  bottom: 0%;
+  bottom: 25%;
 }
 #desktop__background--spotify {
   display: grid;  
@@ -198,9 +202,10 @@ body {
   justify-items: center;
   width: 64px;
   height: 64px;
-  transform: scale(130%, 125%);
+  transform: scale(125%, 115%);
   border-radius: 10px;
   margin-bottom: 1px;
+  margin-top: 15%;
   filter: opacity(90%);
 }
 
@@ -212,7 +217,7 @@ body {
   font-weight: 400;
   color: #ffffffd3;
   position: relative;
-  bottom: 0%;
+  bottom: 12.5%;
 }
 #taskbar {
   display: flex;

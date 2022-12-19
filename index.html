@@ -7,47 +7,48 @@
         <title>Dan Kaufman</title>
         <link rel="icon" href="sprites/mine.png">
         <link rel="stylesheet" type="text/css" href="./style.css">
-        <script defer src="./script.js"></script>
+        <script defer src="./src/script.js"></script>
+        <script src="./src/minesweeper.js"></script>
         <!--<script src="https://kit.fontawesome.com/6e529305db.js" crossorigin="anonymous"></script>-->
     </head>
 
     <body>
-        <main id="container">
-          <!--Desktop Container that Contains the Background & Icons-->
-            <div id="desktop__container">
-                <div id="desktop__background">
-                    <button type="button" class="desktop__button" id="desktop__background--about" onclick="buttonClickAbout()"><img id="about--img" src="icons/terminal-svgrepo-com.svg"><p>Terminal</p></button>
-                    <button type="button" class="desktop__button" id="desktop__background--calender" onclick="buttonClickCalender()"><img id="calender--img" src="icons/monday-calendar-page-svgrepo-com.svg"><p>Calender</p></button>
-                    <button type="button" class="desktop__button" id="desktop__background--contact" onclick="buttonClickContacts()"><img id="contact--img" src="icons/email-svgrepo-com.svg"><p>Contact</p></button>
-                    <button type="button" class="desktop__button" id="desktop__background--minesweeper" onclick="buttonClickMinesweeper()"></button>
-                    <button type="button" class="desktop__button" id="desktop__background--projects" onclick="buttonClickProjects()"><img id="projects--img" src="icons/folder-svgrepo-com.svg"><p>Projects</p></button>
-                    <button type="button" class="desktop__button" id="desktop__background--spotify" onclick="buttonClickSpotify()"><img id="spotify--img" src="icons/spotify-svgrepo-com.svg"><p>Music</p></button>
-                </div>
-              </div>
-          <!--Taskbar Container with Taskbar & Active Window Icons-->
-              <div id="taskbar__container">
-                <div id="taskbar">
-                  <div id="taskbar--start"><i id="dragon" class="fa-solid fa-dragon"></i></div>
-                  <div id="taskbar--about"></div>
-                  <div id="taskbar--calander"></div>
-                  <div id="taskbar--contact"></div>
-                  <div id="taskbar--minesweeper"></div>
-                  <div id="taskbar--project"></div>
-                  <div id="taskbar--spotify"></div>
-                </div>
-              </div>
-          <!--Terminal Container for the Terminal Window-->
-          <div id="terminal__wrapper">
-            <div id="terminal">
-              <div id="terminal__bar">          
-                <div id="bar__buttons">            
-                  <button type="button" class="bar__button" id="bar__button--exit" onclick="buttonClickExit()">&#10005;</button>            
-                  <button type="button" class="bar__button" id="bar__button--minimize" onclick="buttonClickMin()">&#9472;</button>                
-                  <button type="button" class="bar__button" id="bar__button--maximize" onclick="buttonClickMax()">&#9723;</button>          
-                </div>          
-                <p id="bar__user">DanKaufman.Dev: ~</p>     
-                <p id="bar__name">Terminal</p>   
-              </div>        
+      <main id="container">
+      <!--Desktop Container that Contains the Background & Icons-->
+        <div id="desktop__container">
+          <div id="desktop__background">
+            <button type="button" class="desktop__button" id="desktop__background--about" onclick="buttonClickAbout()"><img id="about--img" src="icons/terminal-svgrepo-com.svg"><p>Terminal</p></button>
+            <button type="button" class="desktop__button" id="desktop__background--calender" onclick="buttonClickCalender()"><img id="calender--img" src="icons/monday-calendar-page-svgrepo-com.svg"><p>Calender</p></button>
+            <button type="button" class="desktop__button" id="desktop__background--contact" onclick="buttonClickContacts()"><img id="contact--img" src="icons/email-svgrepo-com.svg"><p>Contact</p></button>
+            <button type="button" class="desktop__button" id="desktop__background--minesweeper" onclick="buttonClickMinesweeper()"></button>
+            <button type="button" class="desktop__button" id="desktop__background--projects" onclick="buttonClickProjects()"><img id="projects--img" src="icons/folder-svgrepo-com.svg"><p>Projects</p></button>
+            <button type="button" class="desktop__button" id="desktop__background--spotify" onclick="buttonClickSpotify()"><img id="spotify--img" src="icons/spotify-svgrepo-com.svg"><p>Music</p></button>
+          </div>
+        </div>
+        <!--Taskbar Container with Taskbar & Active Window Icons-->
+        <div id="taskbar__container">
+          <div id="taskbar">
+            <div id="taskbar--start"><i id="dragon" class="fa-solid fa-dragon"></i></div>
+            <div id="taskbar--about"></div>
+            <div id="taskbar--calander"></div>
+            <div id="taskbar--contact"></div>
+            <div id="taskbar--minesweeper"></div>
+            <div id="taskbar--project"></div>
+            <div id="taskbar--spotify"></div>
+          </div>
+        </div>
+        <!--Terminal Container for the Terminal Window-->
+        <div id="terminal__wrapper">
+          <div id="terminal">
+            <div id="terminal__bar">          
+              <div id="bar__buttons">            
+                <button type="button" class="bar__button" id="bar__button--exit" onclick="buttonClickExit()">&#10005;</button>            
+                <button type="button" class="bar__button" id="bar__button--minimize" onclick="buttonClickMin()">&#9472;</button>                
+                <button type="button" class="bar__button" id="bar__button--maximize" onclick="buttonClickMax()">&#9723;</button>          
+              </div>          
+              <p id="bar__user">DanKaufman.Dev: ~</p>     
+              <p id="bar__name">Terminal</p>   
+            </div>        
               <div id="terminal__body">          
                 <div id="terminal__prompt">            
                   <span id="terminal__prompt--user">User:</span>            
@@ -57,24 +58,24 @@
                   <span id="terminal__prompt--text"><input id="txtInput" type="text" placeholder="-h for help"></span>       
                 </div>  
                 <div id="terminal__textarea">
-                    <div id="terminal__textarea--region">
-                        <span id="terminal__prompt--t">
-                            <h1>Hi There,</h1>
-                            <p>My name is Dan</p>
-                            <p>i'm a Software Engineer & Fullstack Developer.</p>
-                            <p></p>
-                        </span>
-                    </div>
-                  </div>         
+                  <div id="terminal__textarea--region">
+                    <span id="terminal__prompt--t">
+                      <h1>Hi There,</h1>
+                      <p>My name is Dan</p>
+                      <p>i'm a Software Engineer & Fullstack Developer.</p>
+                      <p></p>
+                    </span>
+                  </div>
+                </div>         
               </div>   
-            </div> 
-          </div>
+          </div> 
+        </div>
         <!--Project Container for the Project Window-->
         <!--About Container for the About Window-->
         <!--Calender Container for the Calender Window-->
         <!--Contact Container for the Contact Window-->
         <!--Minesweeper Container for the Minesweeper Window-->
         <!--Spotify Container for the Spotify Window-->
-        </main>
+      </main>
     </body>
 </html>
