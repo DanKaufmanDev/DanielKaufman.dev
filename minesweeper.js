@@ -1,3 +1,5 @@
+export function minesweeper();
+function minesweeper(){
 var width = 20;
 var height = 20;
 var maxMines = 50;
@@ -218,3 +220,4 @@ var renderBoard = () => {
 (function() {
 	renderBoard();
 })();
+}
