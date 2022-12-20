@@ -53,6 +53,7 @@ body {
   margin-bottom: 1px;
   margin-top: 10%;
   filter: opacity(90%);
+  user-select: none;
 }
 #desktop__background--about > p {
   display: grid;
@@ -63,6 +64,7 @@ body {
   color: #ffffffd3;
   position: relative;
   bottom: 25%;
+  user-select: none;
 }
 #desktop__background--calender {
   display: grid;  
@@ -75,6 +77,7 @@ body {
   border: none;
   border-radius: 10px;
   margin: 0.25%;
+  user-select: none;
 }
 
 #calender--img {
@@ -87,6 +90,7 @@ body {
   margin-bottom: 1px;
   margin-top: 10%;
   filter: opacity(90%);
+  user-select: none;
 }
 
 #desktop__background--calender > p{
@@ -98,6 +102,7 @@ body {
   color: #ffffffd3;
   position: relative;
   bottom: 15%;
+  user-select: none;
 }
 #desktop__background--contact {
   display: grid;  
@@ -122,6 +127,7 @@ body {
   margin-bottom: 1px;
   margin-top: 10%;
   filter: opacity(90%);
+  user-select: none;
 }
 
 #desktop__background--contact > p {
@@ -133,6 +139,7 @@ body {
   color: #ffffffd3;
   position: relative;
   bottom: 20%;
+  user-select: none;
 }
 
 #desktop__background--minesweeper {
@@ -172,6 +179,7 @@ body {
   margin-bottom: 1px;
   margin-top: 15%;
   filter: opacity(90%);
+  user-select: none;
 }
 
 #desktop__background--projects > p {
@@ -183,6 +191,7 @@ body {
   color: #ffffffd3;
   position: relative;
   bottom: 25%;
+  user-select: none;
 }
 #desktop__background--spotify {
   display: grid;  
@@ -207,6 +216,7 @@ body {
   margin-bottom: 1px;
   margin-top: 15%;
   filter: opacity(90%);
+  user-select: none;
 }
 
 #desktop__background--spotify > p {
@@ -218,7 +228,9 @@ body {
   color: #ffffffd3;
   position: relative;
   bottom: 12.5%;
+  user-select: none;
 }
+
 #taskbar {
   display: flex;
   position: fixed;
@@ -228,7 +240,7 @@ body {
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 2);
   bottom: 0;
   left: 0;
-  z-index: 100;
+  z-index: 1000;
 }
 
 #dragon {
@@ -258,11 +270,11 @@ body {
 }
 
 #terminal { 
+  position: relative;
   width: 70vw;  
   height: 65vh;  
   box-shadow: 2px 4px 10px rgba(0,0,0,0.5);
   transition: 10ms ease-in-out;
-  z-index: 2;
 }
 
 #terminal__bar {  
@@ -277,7 +289,7 @@ body {
   background: linear-gradient(#504b45 0%,#3c3b37 100%);
 }
 
-#terminal__bar:hover {
+.bar__hover:hover {
   cursor: grab;
 }
 
@@ -337,7 +349,7 @@ body {
 
 #bar__name {
     color: #d5d0ce;  
-    margin-left: 27%;  
+    margin-left: calc(100% + -76%);  
     font-size: 14px;  
     line-height: 15px;
     position: relative;
@@ -437,6 +449,45 @@ body {
     margin-left: 1.5%;
     margin-top: 1px;   
     margin-bottom: 0%; 
+}
+#project__wrapper {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#project {
+  display: none;
+  position: relative;
+  width: 60vw;
+  height: 85vh;
+  box-shadow: 2px 4px 10px rgb(0 0 0 / 50%);
+  transition: 10ms ease-in-out;
+}
+
+#project__bar {
+  display: flex;  
+  width: 100%;  
+  height: 30px;  
+  align-items: center;  
+  padding: 0 8px;  
+  box-sizing: border-box;  
+  border-top-left-radius: 5px;  
+  border-top-right-radius: 5px;  
+  background: linear-gradient(#504b45 0%,#3c3b37 100%);
+}
+
+#project__body {
+  background: rgba(30, 25, 30, 1);  
+  font-family: 'Ubuntu Mono';  
+  height: calc(100% - 30px);  
+}
+
+#bar__button--project {
+  display: flex;  
+  align-items: center;
 }
 
 @keyframes blink {  

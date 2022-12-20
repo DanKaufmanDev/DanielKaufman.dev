@@ -22,7 +22,7 @@
             <button type="button" class="desktop__button" id="desktop__background--contact" onclick="buttonClickContacts()"><img id="contact--img" src="icons/email-svgrepo-com.svg"><p>Contact</p></button>
             <button type="button" class="desktop__button" id="desktop__background--minesweeper" onclick="buttonClickMinesweeper()"></button>
             <button type="button" class="desktop__button" id="desktop__background--projects" onclick="buttonClickProjects()"><img id="projects--img" src="icons/folder-svgrepo-com.svg"><p>Projects</p></button>
-            <button type="button" class="desktop__button" id="desktop__background--spotify" onclick="buttonClickSpotify()"><img id="spotify--img" src="icons/spotify-svgrepo-com.svg"><p>Music</p></button>
+            <button type="button" class="desktop__button" id="desktop__background--spotify" onclick="buttonClickSpotify()"><img id="spotify--img" src="icons/spotify-svgrepo-com.svg"><p>Spotify</p></button>
           </div>
         </div>
         <!--Taskbar Container with Taskbar & Active Window Icons-->
@@ -40,11 +40,11 @@
         <!--Terminal Container for the Terminal Window-->
         <div id="terminal__wrapper">
           <div id="terminal">
-            <div id="terminal__bar">          
+            <div class="bar__hover" id="terminal__bar">          
               <div id="bar__buttons">            
-                <button type="button" class="bar__button" id="bar__button--exit" onclick="buttonClickExit()">&#10005;</button>            
-                <button type="button" class="bar__button" id="bar__button--minimize" onclick="buttonClickMin()">&#9472;</button>                
-                <button type="button" class="bar__button" id="bar__button--maximize" onclick="buttonClickMax()">&#9723;</button>          
+                <button type="button" class="bar__button" id="bar__button--exit" onclick="buttonClickExitTerminal()">&#10005;</button>            
+                <button type="button" class="bar__button" id="bar__button--minimize" onclick="buttonClickMinTerminal()">&#9472;</button>                
+                <button type="button" class="bar__button" id="bar__button--maximize" onclick="buttonClickMaxTerminal()">&#9723;</button>          
               </div>          
               <p id="bar__user">DanKaufman.Dev: ~</p>     
               <p id="bar__name">Terminal</p>   
@@ -71,6 +71,24 @@
           </div> 
         </div>
         <!--Project Container for the Project Window-->
+        <div id="project__wrapper">
+          <div id="project">
+            <div class="bar__hover" id="project__bar">
+              <div id="bar__button--project">
+                <button type="button" class="bar__button" id="bar__button--exit" onclick="buttonClickExitProject()">&#10005;</button>            
+                <button type="button" class="bar__button" id="bar__button--minimize" onclick="buttonClickMinProject()">&#9472;</button>                
+                <button type="button" class="bar__button" id="bar__button--maximize" onclick="buttonClickMaxProject()">&#9723;</button>  
+              </div>
+              <p id="bar__user">DanKaufman.Dev: ~</p>
+              <p id="bar__name">Projects</p>
+            </div>
+              <div id="project__body">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>       
+          </div>
+        </div>
         <!--About Container for the About Window-->
         <!--Calender Container for the Calender Window-->
         <!--Contact Container for the Contact Window-->
