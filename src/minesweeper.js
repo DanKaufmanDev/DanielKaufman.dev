@@ -156,7 +156,7 @@ var renderBoard = () => {
 
 	var tr;
 	var td;
-	var board = document.getElementById('board');
+	var board = document.querySelector('#board');
 	board.innerHTML = '';
 
 	for (var y = 0; y < height; y++) {

@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono'); 
 
 body {  
-  background: linear-gradient(45deg, #e5383b 0%,#660708 75%); 
+  background: linear-gradient(35deg,#9f3d3d 1%, #b51b1d 25%,#660708 50%, #490305 75%, #3d0101 100%); 
   font-family: 'Ubuntu';
 } 
 
@@ -349,7 +349,7 @@ body {
 
 #bar__name {
     color: #d5d0ce;  
-    margin-left: calc(100% + -76%);  
+    margin-left: calc(100% + -75%);  
     font-size: 14px;  
     line-height: 15px;
     position: relative;
@@ -450,12 +450,13 @@ body {
     margin-top: 1px;   
     margin-bottom: 0%; 
 }
+
 #project__wrapper {
   display: flex;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-40%, -52.5%);
 }
 
 #project {
@@ -486,6 +487,126 @@ body {
 }
 
 #bar__button--project {
+  display: flex;  
+  align-items: center;
+}
+
+#calender__wrapper {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-82%, -78%);
+}
+
+#calender {
+  display: none;
+  position: relative;
+  width: 60vw;
+  height: 62vh;
+  box-shadow: 2px 4px 10px rgb(0 0 0 / 50%);
+  transition: 10ms ease-in-out;
+}
+
+#calender__bar {
+  display: flex;  
+  width: 100%;  
+  height: 30px;  
+  align-items: center;  
+  padding: 0 8px;  
+  box-sizing: border-box;  
+  border-top-left-radius: 5px;  
+  border-top-right-radius: 5px;  
+  background: linear-gradient(#504b45 0%,#3c3b37 100%);
+}
+
+#calender__body {
+  background: rgba(30, 25, 30, 1);  
+  font-family: 'Ubuntu Mono';  
+  height: calc(100% - 30px);  
+}
+
+#bar__button--calender {
+  display: flex;  
+  align-items: center;
+}
+
+#minesweeper__wrapper {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-10%, -53%);
+}
+
+#minesweeper {
+  display: none;
+  position: relative;
+  width: 44.26vw;
+  height: 91vh;
+  box-shadow: 2px 4px 10px rgb(0 0 0 / 50%);
+  transition: 10ms ease-in-out;
+}
+
+#minesweeper__bar {
+  display: flex;  
+  width: 100%;  
+  height: 30px;  
+  align-items: center;  
+  padding: 0 8px;  
+  box-sizing: border-box;  
+  border-top-left-radius: 5px;  
+  border-top-right-radius: 5px;  
+  background: linear-gradient(#504b45 0%,#3c3b37 100%);
+}
+
+#minesweeper__body {
+  background: rgb(121, 121, 121);  
+  font-family: 'Ubuntu Mono';  
+  height: calc(100% - 30px);  
+}
+
+#bar__button--minesweeper {
+  display: flex;  
+  align-items: center;
+}
+
+#contact__wrapper {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -53%);
+}
+
+#contact {
+  /* display: none; */
+  position: relative;
+  width: 44.26vw;
+  height: 91vh;
+  box-shadow: 2px 4px 10px rgb(0 0 0 / 50%);
+  transition: 10ms ease-in-out;
+}
+
+#contact__bar {
+  display: flex;  
+  width: 100%;  
+  height: 30px;  
+  align-items: center;  
+  padding: 0 8px;  
+  box-sizing: border-box;  
+  border-top-left-radius: 5px;  
+  border-top-right-radius: 5px;  
+  background: linear-gradient(#504b45 0%,#3c3b37 100%);
+}
+
+#contact__body {
+  background: rgba(30, 25, 30, 1);  
+  font-family: 'Ubuntu Mono';  
+  height: calc(100% - 30px);  
+}
+
+#bar__button--contact {
   display: flex;  
   align-items: center;
 }
