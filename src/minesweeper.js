@@ -1,5 +1,5 @@
-var width = 20;
-var height = 20;
+var width = 18;
+var height = 18;
 var maxMines = 50;
 var map = [];
 var gameStarted = 0;

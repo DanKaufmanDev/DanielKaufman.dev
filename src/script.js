@@ -61,7 +61,7 @@ function buttonClickCalender(){
 }
 
 function buttonClickContacts(){
-    contact.style.display = 'block'
+    contact.style.display = 'block';
 }
 
 function buttonClickMinesweeper(){

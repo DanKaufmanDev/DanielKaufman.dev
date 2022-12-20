@@ -576,14 +576,14 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -53%);
+  transform: translate(-50%, -55%);
 }
 
 #contact {
   /* display: none; */
   position: relative;
-  width: 44.26vw;
-  height: 91vh;
+  width: 40vw;
+  height: 85vh;
   box-shadow: 2px 4px 10px rgb(0 0 0 / 50%);
   transition: 10ms ease-in-out;
 }
@@ -601,7 +601,7 @@ body {
 }
 
 #contact__body {
-  background: rgba(30, 25, 30, 1);  
+  background: linear-gradient(rgb(18, 11, 21) 0%,rgb(53, 35, 65) 50%, rgb(20, 14, 23) 100%);  
   font-family: 'Ubuntu Mono';  
   height: calc(100% - 30px);  
 }
@@ -609,6 +609,152 @@ body {
 #bar__button--contact {
   display: flex;  
   align-items: center;
+}
+
+#contact__header {
+  display: block;
+  position: relative;
+  height: 15%;
+  width: 100%;
+  background-color: linear-gradient(rgb(18, 11, 21) 0%,rgb(53, 35, 65) 50%, rgb(20, 14, 23) 100%);
+  box-shadow: 0px 3px 3px rgba(255,255,255,0.2);
+}
+
+#contact__body > form {
+  height: 75%;
+}
+
+form > label {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Ubuntu';
+  font-size: 16px;
+  color: #fff;
+  margin: auto;
+}
+
+form > input::placeholder {
+  color: #ffffff95;
+}
+
+form > textarea::placeholder {
+  color: #ffffff95;
+}
+
+#contact__header > h1 {
+  display: block;
+  position: relative;
+  text-align: center;
+  color: #ffffffee;
+  font-size: xxx-large;
+  font-family: 'Ubuntu Mono';
+  padding: 2.5%;
+  width: 50%;
+  margin: auto;
+}
+
+#name {
+  display: flex;
+  position: relative;
+  text-align: center;
+  width: 50%;
+  background-color: rgba(115 105 115 / 25%);
+  border-color: rgba(103, 103, 103, 0.5);
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  font-size: 16px;
+  font-family: 'Ubuntu';
+  scale: 100%;
+  transform: translateX(35%);
+  margin: auto;
+}
+
+#email {
+  display: flex;
+  position: relative;
+  text-align: center;
+  width: 50%;
+  background-color: rgba(115 105 115 / 25%);
+  border-color: rgba(115 115 115 / 50%);
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  font-size: 16px;
+  font-family: 'Ubuntu';
+  scale: 100%;
+  transform: translateX(35%);
+  margin: auto;
+}
+
+#message {
+  display: flex;
+  position: relative;
+  text-align: center;
+  width: 50%;
+  background-color: rgba(115 105 115 / 25%);
+  border-color: rgba(115 115 115 / 50%);
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  font-size: 16px;
+  font-family: 'Ubuntu';
+  scale: 100%;
+  transform: translateX(35%);
+  margin: auto;
+}
+
+#button__submit {
+  display: block;
+  position: relative;
+  text-align: center;
+  width: 50%;
+  background-color: rgba(115 105 115 / 25%);
+  border-color: rgba(115 115 115 / 50%);
+  color: #ffffff95;
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  font-size: 16px;
+  font-family: 'Ubuntu';
+  scale: 100%;
+  transform: translateX(35%);
+  margin: auto;
+}
+
+#bar {
+  display: block;
+  position: relative;
+  width: 50%;
+  height: 1.5px;
+  background-color: #ffffff35;
+  margin: auto;
+  transform: translate(35%, 20px);
+}
+
+.fa-github:only-child {
+  display: block;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  scale: -20%;
+  rotate: 180deg;
+  transform: translateY(-185%);
+  filter: invert(100%);
+  opacity: 55.5%;
+}
+
+#contact__footer {
+  display: block;
+  height: 15%;
+  width: 100%;
+  background-color: linear-gradient(rgb(18, 11, 21) 0%,rgb(53, 35, 65) 50%, rgb(20, 14, 23) 100%);
+  box-shadow: 0px -2px 1px rgba(255,255,255,0.2);
 }
 
 @keyframes blink {  

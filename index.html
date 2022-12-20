@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="minesweeper.css">
         <script defer src="./src/script.js"></script>
         <script  defer type="text/javascript" src="./src/minesweeper.js"></script>
-        <!--<script src="https://kit.fontawesome.com/6e529305db.js" crossorigin="anonymous"></script>-->
+        <script src="https://kit.fontawesome.com/6e529305db.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -38,6 +38,7 @@
            <!-- <div id="taskbar--spotify"></div>-->
           </div>
         </div>
+
         <!--Terminal Container for the Terminal Window-->
         <div id="terminal__wrapper">
           <div id="terminal">
@@ -71,25 +72,7 @@
               </div>   
           </div> 
         </div>
-        <!--Project Container for the Project Window-->
-        <div id="project__wrapper">
-          <div id="project">
-            <div class="bar__hover" id="project__bar">
-              <div id="bar__button--project">
-                <button type="button" class="bar__button" id="bar__button--exit" onclick="buttonClickExitProject()">&#10005;</button>            
-                <button type="button" class="bar__button" id="bar__button--minimize" onclick="buttonClickMinProject()">&#9472;</button>                
-                <button type="button" class="bar__button" id="bar__button--maximize" onclick="buttonClickMaxProject()">&#9723;</button>  
-              </div>
-              <p id="bar__user">DanKaufman.Dev: ~</p>
-              <p id="bar__name">Projects</p>
-            </div>
-              <div id="project__body">
-                <div></div>
-                <div></div>
-                <div></div>
-              </div>       
-          </div>
-        </div>
+
         <!--Calender Container for the Calender Window-->
         <div id="calender__wrapper">
           <div id="calender">
@@ -106,6 +89,7 @@
             </div>       
           </div>
         </div>
+
         <!--Contact Container for the Contact Window-->
         <div id="contact__wrapper">
           <div id="contact">
@@ -119,9 +103,22 @@
               <p id="bar__name">Contact</p>
             </div>
               <div id="contact__body">
+                <div id="contact__header"><h1>Contact</h1></div>
+                <form action="/contact" method="post" data-netlify="true"><br>
+                  <label for="name">Name:</label><br><br><br>
+                  <input type="text" placeholder="Name" id="name" name="name"><br>
+                  <label for="email">Email:</label>
+                  <input type="email" placeholder="Email" id="email" name="email"><br><br>
+                  <label for="message">Message:</label><br>
+                  <textarea id="message" placeholder="Message" name="message" rows="5" cols="20"></textarea><br><br>
+                  <input id="button__submit" type="submit" value="Send">
+                  <div id="bar"><a href="https://github.com/DanKaufmanDev"><img class="fa-github" src="icons/github.svg"></img></a></div>
+                </form> 
+                <div id="contact__footer"></div>
             </div>       
           </div>
         </div>
+
         <!--Minesweeper Container for the Minesweeper Window-->
         <div id="minesweeper__wrapper">
           <div id="minesweeper">
@@ -135,6 +132,24 @@
               <p id="bar__name">Minesweeper</p>
             </div>
               <div id="minesweeper__body"> <table id='board'></table> </div>       
+          </div>
+        </div>
+
+        <!--Project Container for the Project Window-->
+        <div id="project__wrapper">
+          <div id="project">
+            <div class="bar__hover" id="project__bar">
+              <div id="bar__button--project">
+                <button type="button" class="bar__button" id="bar__button--exit" onclick="buttonClickExitProject()">&#10005;</button>            
+                <button type="button" class="bar__button" id="bar__button--minimize" onclick="buttonClickMinProject()">&#9472;</button>                
+                <button type="button" class="bar__button" id="bar__button--maximize" onclick="buttonClickMaxProject()">&#9723;</button>  
+              </div>
+              <p id="bar__user">DanKaufman.Dev: ~</p>
+              <p id="bar__name">Projects</p>
+            </div>
+              <div id="project__body">
+
+              </div>       
           </div>
         </div>
         <!--Spotify Container for the Spotify Window-->
