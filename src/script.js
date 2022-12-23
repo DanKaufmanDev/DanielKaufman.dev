@@ -1,6 +1,4 @@
-const zIndexCon = 5
 const terminal = document.querySelector('#terminal')
-const calender = document.querySelector('#calender')
 const minesweeper = document.querySelector('#minesweeper')
 const project = document.querySelector('#project')
 const contact = document.querySelector('#contact')
@@ -24,15 +22,6 @@ function buttonClickMinProject(){
 function buttonClickMaxProject(){
 }
 
-//Calender Window
-function buttonClickExitCalender(){
-    calender.style.display = 'none';
-}
-function buttonClickMinCalender(){
-}
-function buttonClickMaxCalender(){
-}
-
 //Minesweeper Window
 function buttonClickExitMinesweeper(){
     minesweeper.style.display = 'none';
@@ -53,11 +42,7 @@ function buttonClickMaxContact(){
 
 //Desktop Icons
 function buttonClickAbout(){
-    terminal.style.display = '';
-}
-
-function buttonClickCalender(){
-    calender.style.display = 'block';
+    terminal.style.display = 'block';
 }
 
 function buttonClickContacts(){
@@ -72,9 +57,6 @@ function buttonClickProjects(){
     project.style.display = 'block';
 }
 
-// function buttonClickSpotify(){
-//     console.log('clicked spotify')
-// }
 
 // Window Movement 
 //Terminal Window
@@ -111,24 +93,6 @@ projectHeader.addEventListener("mousedown", () => {
 });
 document.addEventListener('mouseup', () =>{
     projectHeader.removeEventListener('mousemove', onDragProject);
-});
-
-//Calender Window
-const calenderWrapper = document.querySelector('#calender__wrapper'),
-    calenderHeader = calenderWrapper.querySelector('#calender__bar');
-
-function onDragCalender({movementX, movementY}){
-    let getStyle = window.getComputedStyle(calenderWrapper);
-    let left = parseInt(getStyle.left);
-    let top = parseInt(getStyle.top);
-    calenderWrapper.style.left = `${left + movementX}px`;
-    calenderWrapper.style.top = `${top + movementY}px`;
-}
-calenderHeader.addEventListener("mousedown", () => {
-    calenderHeader.addEventListener('mousemove', onDragCalender);
-});
-document.addEventListener('mouseup', () => {
-    calenderHeader.removeEventListener('mousemove', onDragCalender);
 });
 
 //Minesweeper Window

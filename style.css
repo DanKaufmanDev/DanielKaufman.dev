@@ -2,8 +2,11 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono'); 
 
 body {  
-  background: linear-gradient(35deg,#9f3d3d 1%, #b51b1d 25%,#660708 50%, #490305 75%, #3d0101 100%); 
+  --red: linear-gradient(35deg,#9f3d3d 1%, #b51b1d 25%,#660708 50%, #490305 75%, #3d0101 100%); 
+  --purple: linear-gradient(90deg,#2c0142 1%, #3f0c52 25%,#550a60 50%, #360342 75%, #28013c 100%);
+  background: var(--red );
   font-family: 'Ubuntu';
+  overflow: hidden;
 } 
 
 #container {  
@@ -46,12 +49,12 @@ body {
 #about--img {
   display: grid;
   justify-items: center;
-  width: 64px;
-  height: 64px;
+  width: 55px;
+  height: 55px;
   transform: scale(130%, 125%);
   border-radius: 10px;
   margin-bottom: 1px;
-  margin-top: 10%;
+  margin-top: 20%;
   filter: opacity(90%);
   user-select: none;
 }
@@ -66,7 +69,7 @@ body {
   bottom: 25%;
   user-select: none;
 }
-#desktop__background--calender {
+#desktop__background--resume {
   display: grid;  
   justify-content: center;  
   align-items: center;  
@@ -80,11 +83,11 @@ body {
   user-select: none;
 }
 
-#calender--img {
+#resume--img {
   display: grid;
   justify-items: center;
-  width: 64px;
-  height: 64px;
+  width: 55px;
+  height: 55px;
   transform: scale(124%, 120%);
   border-radius: 10px;
   margin-bottom: 1px;
@@ -93,7 +96,7 @@ body {
   user-select: none;
 }
 
-#desktop__background--calender > p{
+#desktop__background--resume > p{
   display: grid;
   justify-items: center;
   font-family: 'Ubuntu';
@@ -120,8 +123,8 @@ body {
 #contact--img {
   display: grid;
   justify-items: center;
-  width: 64px;
-  height: 64px;
+  width: 55px;
+  height: 55px;
   transform: scale(125%, 110%);
   border-radius: 10px;
   margin-bottom: 1px;
@@ -172,8 +175,8 @@ body {
 #projects--img {
   display: grid;
   justify-items: center;
-  width: 64px;
-  height: 64px;
+  width: 55px;
+  height: 55px;
   transform: scale(130%, 125%);
   border-radius: 10px;
   margin-bottom: 1px;
@@ -270,6 +273,7 @@ body {
 }
 
 #terminal { 
+  display: none;
   position: relative;
   width: 70vw;  
   height: 65vh;  
@@ -349,11 +353,20 @@ body {
 
 #bar__name {
     color: #d5d0ce;  
-    margin-left: calc(100% + -75%);  
+    margin-left: calc((100% / 2) - 75px);  
     font-size: 14px;  
     line-height: 15px;
     position: relative;
     user-select: none;
+}
+
+#bar__name--terminal {
+  color: #d5d0ce;
+  margin-left: calc(100% - 72%);
+  font-size: 14px;
+  line-height: 15px;
+  position: relative;
+  user-select: none;
 }
 
 #terminal__body {  
@@ -460,7 +473,7 @@ body {
 }
 
 #project {
-  display: none;
+  /* display: none; */
   position: relative;
   width: 60vw;
   height: 85vh;
@@ -486,12 +499,63 @@ body {
   height: calc(100% - 30px);  
 }
 
+#project__body--side--bar {
+  height: 100%;
+  width: calc(100% - 80%);
+  box-shadow: 1.5px -0.1px rgb(255, 255, 255, 0.2);
+  background-color: rgba(116, 116, 116, 0.125);
+}
+
+#project__body--side--bar--p {
+  text-align: center;
+  font-size: xx-large;
+  font-family: 'Ubuntu';
+  font-variant-caps: all-petite-caps;
+  font-weight: 600;
+  transform: translateY(-25px);
+  color: #ffffffe3;
+  user-select: none;
+}
+
+#skills__frontend {
+  margin: 0;
+  padding: 0;
+  color: #ffffffe3;
+  font-family: 'Ubuntu';
+  font-weight: 500;
+  font-size: 16px;
+  transform: translate(calc(100% / 3.5), -45px);
+  list-style: none;
+}
+
+#skills__frontend  > li{
+  transform: translateX(20px);
+}
+
+ #skills__frontend--html {
+  font-family: 'Ubuntu Mono';
+  font-weight: 200;
+  font-size: 14px;
+}   
+
+#skills__frontend--css {
+  font-family: 'Ubuntu Mono';
+  font-weight: 200;
+  font-size: 14px;
+}
+
+#skills__frontend--js {
+  font-family: 'Ubuntu Mono';
+  font-weight: 200;
+  font-size: 14px;
+}
+
 #bar__button--project {
   display: flex;  
   align-items: center;
 }
 
-#calender__wrapper {
+#resume__wrapper {
   display: flex;
   position: absolute;
   top: 50%;
@@ -499,7 +563,7 @@ body {
   transform: translate(-82%, -78%);
 }
 
-#calender {
+#resume {
   display: none;
   position: relative;
   width: 60vw;
@@ -508,7 +572,7 @@ body {
   transition: 10ms ease-in-out;
 }
 
-#calender__bar {
+#resume__bar {
   display: flex;  
   width: 100%;  
   height: 30px;  
@@ -520,13 +584,13 @@ body {
   background: linear-gradient(#504b45 0%,#3c3b37 100%);
 }
 
-#calender__body {
+#resume__body {
   background: rgba(30, 25, 30, 1);  
   font-family: 'Ubuntu Mono';  
   height: calc(100% - 30px);  
 }
 
-#bar__button--calender {
+#bar__button--resume {
   display: flex;  
   align-items: center;
 }
@@ -580,9 +644,9 @@ body {
 }
 
 #contact {
-  /* display: none; */
+  display: none;
   position: relative;
-  width: 40vw;
+  width: 30vw;
   height: 85vh;
   box-shadow: 2px 4px 10px rgb(0 0 0 / 50%);
   transition: 10ms ease-in-out;
@@ -614,6 +678,7 @@ body {
 #contact__header {
   display: block;
   position: relative;
+  text-align: center;
   height: 15%;
   width: 100%;
   background-color: linear-gradient(rgb(18, 11, 21) 0%,rgb(53, 35, 65) 50%, rgb(20, 14, 23) 100%);
@@ -658,9 +723,10 @@ form > textarea::placeholder {
   display: flex;
   position: relative;
   text-align: center;
-  width: 50%;
+  width: 90%;
   background-color: rgba(115 105 115 / 25%);
   border-color: rgba(103, 103, 103, 0.5);
+  color: #fff;
   border-bottom-right-radius: 15px;
   border-top-left-radius: 15px;
   border-top-right-radius: 5px;
@@ -668,7 +734,6 @@ form > textarea::placeholder {
   font-size: 16px;
   font-family: 'Ubuntu';
   scale: 100%;
-  transform: translateX(35%);
   margin: auto;
 }
 
@@ -676,9 +741,10 @@ form > textarea::placeholder {
   display: flex;
   position: relative;
   text-align: center;
-  width: 50%;
+  width: 90%;
   background-color: rgba(115 105 115 / 25%);
   border-color: rgba(115 115 115 / 50%);
+  color: #fff;
   border-bottom-right-radius: 15px;
   border-top-left-radius: 15px;
   border-top-right-radius: 5px;
@@ -686,7 +752,6 @@ form > textarea::placeholder {
   font-size: 16px;
   font-family: 'Ubuntu';
   scale: 100%;
-  transform: translateX(35%);
   margin: auto;
 }
 
@@ -694,9 +759,10 @@ form > textarea::placeholder {
   display: flex;
   position: relative;
   text-align: center;
-  width: 50%;
+  width: 90%;
   background-color: rgba(115 105 115 / 25%);
   border-color: rgba(115 115 115 / 50%);
+  color: #fff;
   border-bottom-right-radius: 15px;
   border-top-left-radius: 15px;
   border-top-right-radius: 5px;
@@ -704,7 +770,6 @@ form > textarea::placeholder {
   font-size: 16px;
   font-family: 'Ubuntu';
   scale: 100%;
-  transform: translateX(35%);
   margin: auto;
 }
 
@@ -712,7 +777,7 @@ form > textarea::placeholder {
   display: block;
   position: relative;
   text-align: center;
-  width: 50%;
+  width: 90%;
   background-color: rgba(115 105 115 / 25%);
   border-color: rgba(115 115 115 / 50%);
   color: #ffffff95;
@@ -723,18 +788,17 @@ form > textarea::placeholder {
   font-size: 16px;
   font-family: 'Ubuntu';
   scale: 100%;
-  transform: translateX(35%);
   margin: auto;
 }
 
 #bar {
   display: block;
   position: relative;
-  width: 50%;
+  width: 90%;
   height: 1.5px;
   background-color: #ffffff35;
   margin: auto;
-  transform: translate(35%, 20px);
+  transform: translateY(20px);
 }
 
 .fa-github:only-child {
@@ -742,11 +806,15 @@ form > textarea::placeholder {
   position: relative;
   justify-content: center;
   align-items: center;
-  scale: -20%;
+  scale: -15%;
   rotate: 180deg;
-  transform: translateY(-185%);
+    transform: translateY(-255%);
   filter: invert(100%);
   opacity: 55.5%;
+}
+
+.fa-github:hover {
+  opacity: 100%;
 }
 
 #contact__footer {
@@ -754,7 +822,7 @@ form > textarea::placeholder {
   height: 15%;
   width: 100%;
   background-color: linear-gradient(rgb(18, 11, 21) 0%,rgb(53, 35, 65) 50%, rgb(20, 14, 23) 100%);
-  box-shadow: 0px -2px 1px rgba(255,255,255,0.2);
+  box-shadow: -0.1px -2px 0px rgba(255,255,255,0.2);
 }
 
 @keyframes blink {  
@@ -781,4 +849,3 @@ form > textarea::placeholder {
     display: none;
   }
 }
-

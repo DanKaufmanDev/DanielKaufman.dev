@@ -18,24 +18,24 @@
       <!--Desktop Container that Contains the Background & Icons-->
         <div id="desktop__container">
           <div id="desktop__background">
-            <button type="button" class="desktop__button" id="desktop__background--about" onclick="buttonClickAbout()"><img id="about--img" src="icons/terminal-svgrepo-com.svg"><p>Terminal</p></button>
-            <button type="button" class="desktop__button" id="desktop__background--calender" onclick="buttonClickCalender()"><img id="calender--img" src="icons/monday-calendar-page-svgrepo-com.svg"><p>Calender</p></button>
+            <button type="button" class="desktop__button" id="desktop__background--about" onclick="buttonClickAbout()"><img id="about--img" src="icons/terminal-svgrepo-com.svg"><p>About</p></button>
             <button type="button" class="desktop__button" id="desktop__background--contact" onclick="buttonClickContacts()"><img id="contact--img" src="icons/email-svgrepo-com.svg"><p>Contact</p></button>
-            <button type="button" class="desktop__button" id="desktop__background--minesweeper" onclick="buttonClickMinesweeper()"></button>
+            <button type="button" class="desktop__button" id="desktop__background--minesweeper" onclick="buttonClickMinesweeper()"><img id="minesweeper--img" src=""><p>Minesweeper</p></button>
             <button type="button" class="desktop__button" id="desktop__background--projects" onclick="buttonClickProjects()"><img id="projects--img" src="icons/folder-svgrepo-com.svg"><p>Projects</p></button>
-           <!-- <button type="button" class="desktop__button" id="desktop__background--spotify" onclick="buttonClickSpotify()"><img id="spotify--img" src="icons/spotify-svgrepo-com.svg"><p>Spotify</p></button> -->
+            <button type="button" class="desktop__button" id="desktop__background--resume" onclick="buttonClickResume()"><img id="resume--img" src="icons/pdf-svgrepo-com.svg"><p>Resume</p></button>
           </div>
         </div>
+
         <!--Taskbar Container with Taskbar & Active Window Icons-->
         <div id="taskbar__container">
           <div id="taskbar">
             <div id="taskbar--start"></div>
             <div id="taskbar--about"></div>
-            <div id="taskbar--calander"></div>
             <div id="taskbar--contact"></div>
+            <div id="taskbar--google"></div>
             <div id="taskbar--minesweeper"></div>
             <div id="taskbar--project"></div>
-           <!-- <div id="taskbar--spotify"></div>-->
+            <div id="settigs"></div>
           </div>
         </div>
 
@@ -48,8 +48,8 @@
                 <button type="button" class="bar__button" id="bar__button--minimize" onclick="buttonClickMinTerminal()">&#9472;</button>                
                 <button type="button" class="bar__button" id="bar__button--maximize" onclick="buttonClickMaxTerminal()">&#9723;</button>          
               </div>          
-              <p id="bar__user">DanKaufman.Dev: ~</p>     
-              <p id="bar__name">Terminal</p>   
+              <p id="bar__user">DanKaufman@Dev: ~</p>     
+              <p id="bar__name--terminal">Terminal</p>   
             </div>        
               <div id="terminal__body">          
                 <div id="terminal__prompt">            
@@ -73,38 +73,21 @@
           </div> 
         </div>
 
-        <!--Calender Container for the Calender Window-->
-        <div id="calender__wrapper">
-          <div id="calender">
-            <div class="bar__hover" id="calender__bar">
-              <div id="bar__button--calender">
-                <button type="button" class="bar__button" id="bar__button--exit" onclick="buttonClickExitCalender()">&#10005;</button>            
-                <button type="button" class="bar__button" id="bar__button--minimize" onclick="buttonClickMinCalender()">&#9472;</button>                
-                <button type="button" class="bar__button" id="bar__button--maximize" onclick="buttonClickMaxCalender()">&#9723;</button>  
-              </div>
-              <p id="bar__user">DanKaufman.Dev: ~</p>
-              <p id="bar__name">Calender</p>
-            </div>
-              <div id="calender__body">
-            </div>       
-          </div>
-        </div>
-
         <!--Contact Container for the Contact Window-->
         <div id="contact__wrapper">
           <div id="contact">
             <div class="bar__hover" id="contact__bar">
-              <div id="bar__button--calender">
+              <div id="bar__button--contact">
                 <button type="button" class="bar__button" id="bar__button--exit" onclick="buttonClickExitContact()">&#10005;</button>            
                 <button type="button" class="bar__button" id="bar__button--minimize" onclick="buttonClickMinContact()">&#9472;</button>                
                 <button type="button" class="bar__button" id="bar__button--maximize" onclick="buttonClickMaxContact()">&#9723;</button>  
               </div>
-              <p id="bar__user">DanKaufman.Dev: ~</p>
+              <!--<p id="bar__user">DanKaufman.Dev: ~</p>-->
               <p id="bar__name">Contact</p>
             </div>
               <div id="contact__body">
                 <div id="contact__header"><h1>Contact</h1></div>
-                <form action="/contact" method="post" data-netlify="true"><br>
+                <form action="/contact" method="post" data-netlify="true">
                   <label for="name">Name:</label><br><br><br>
                   <input type="text" placeholder="Name" id="name" name="name"><br>
                   <label for="email">Email:</label>
@@ -128,7 +111,7 @@
                 <button type="button" class="bar__button" id="bar__button--minimize" onclick="buttonClickMinMinesweeper()">&#9472;</button>                
                 <button type="button" class="bar__button" id="bar__button--maximize" onclick="buttonClickMaxMinesweeper()">&#9723;</button>  
               </div>
-              <p id="bar__user">DanKaufman.Dev: ~</p>
+              <!--<p id="bar__user">DanKaufman.Dev: ~</p>-->
               <p id="bar__name">Minesweeper</p>
             </div>
               <div id="minesweeper__body"> <table id='board'></table> </div>       
@@ -144,15 +127,26 @@
                 <button type="button" class="bar__button" id="bar__button--minimize" onclick="buttonClickMinProject()">&#9472;</button>                
                 <button type="button" class="bar__button" id="bar__button--maximize" onclick="buttonClickMaxProject()">&#9723;</button>  
               </div>
-              <p id="bar__user">DanKaufman.Dev: ~</p>
+              <!--<p id="bar__user">DanKaufman.Dev: ~</p>-->
               <p id="bar__name">Projects</p>
             </div>
               <div id="project__body">
-
+                <div id="project__body--side--bar"><br>
+                  <p id="project__body--side--bar--p">Skills</p>
+                  <ul id="skills__frontend">Frontend
+                    <li id="skills__frontend--html">HTML5</li>
+                    <li id="skills__frontend--css">CSS3</li>
+                    <li id="skills__frontend--js">Javascript</li>
+                  </ul>
+                 <ul id="skills__backend">Backend
+                  <li id="skills__backend--">placeholder</li>
+                  <li id="skills__backend--">placeholder</li>
+                  <li id="skills__backend--">placeholder</li>
+                 </ul>
+                </div>
               </div>       
           </div>
         </div>
-        <!--Spotify Container for the Spotify Window-->
       </main>
     </body>
 </html>
