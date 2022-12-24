@@ -2,9 +2,9 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono'); 
 
 body {  
-  --red: linear-gradient(35deg,#9f3d3d 1%, #b51b1d 25%,#660708 50%, #490305 75%, #3d0101 100%); 
-  --purple: linear-gradient(90deg,#2c0142 1%, #3f0c52 25%,#550a60 50%, #360342 75%, #28013c 100%);
-  background: var(--red );
+  background: url(background/triangles.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
   font-family: 'Ubuntu';
   overflow: hidden;
 } 
@@ -44,6 +44,155 @@ body {
   border: none;
   border-radius: 10px;
   margin: 0.25%;
+}
+#desktop__settings {
+  background-color: rgba(0, 0, 0, 0.750);
+  width: 25%;
+  height: 94vh;
+  transform: translateX(100vw);
+  transition: 150ms ease-in-out;
+  z-index: 100;
+}
+
+#desktop__settings--header{
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+#desktop__settings--header > p{
+  margin: 0px;
+  text-align: center;
+  font-size: xx-large;
+  font-family: 'Ubuntu';
+  font-variant-caps: all-petite-caps;
+  font-weight: 600;
+  color: #ffffffe3;
+  user-select: none;
+}
+
+#desktop__settings--bar {
+  display: flex; 
+  position: absolute;  
+  width: 100%;  
+  height: 2px;
+  margin-top: -10px;
+  background-color: rgba(255, 255, 255, 0.300);
+  transition: 300ms ease-in-out;
+  overflow: hidden;
+}
+
+#desktop__settings--bg--triangle {
+  display: flex;
+  position: absolute;
+  background-image: url(background/triangles.svg);
+  background-size: cover;
+  border: none;
+  border-radius: 2px;
+  scale: 200%;
+  translate: 60%;
+  transform: translateY(12.5px);
+}
+
+#desktop__settings--bg--triangle:hover {
+  cursor: pointer;
+  opacity: 75%;
+}
+
+#settings__bg--triangle--p {
+  display: flex;
+  position: relative;
+  font-size: 14px;
+  font-family: 'Ubuntu Mono';
+  color: #fff;
+  scale: 50%;
+  transform: translateY(55px);
+}
+
+#desktop__settings--bg--swirl {
+  display: flex;
+  position: absolute;
+  width: 75px;
+  background-image: url(background/swirl.jpg);
+  background-size: cover;
+  border: none;
+  border-radius: 2px;
+  scale: 200%;
+  translate: 25%;
+  transform: translate(100px, 12.5px);
+}
+
+#desktop__settings--bg--swirl:hover {
+  cursor: pointer;
+  opacity: 75%;
+}
+
+#settings__bg--swirl--p {
+  display: flex;
+  position: relative;
+  font-size: 14px;
+  font-family: 'Ubuntu Mono';
+  color: #fff;
+  scale: 50%;
+  translate: calc(100% / 2 - 4px);
+  transform: translateY(55px);
+}
+
+#desktop__settings--bg--cube {
+  display: flex;
+  position: absolute;
+  width: 75px;
+  background-image: url(background/cube.jpg);
+  background-size: cover;
+  border: none;
+  border-radius: 2px;
+  scale: 200%;
+  translate: 60%;
+  transform: translateY(75px);
+}
+
+#desktop__settings--bg--cube:hover {
+  cursor: pointer;
+  opacity: 75%;
+}
+#settings__bg--cube--p {
+  display: flex;
+  position: relative;
+  font-size: 14px;
+  font-family: 'Ubuntu Mono';
+  color: #fff;
+  scale: 50%;
+  translate: calc(100% / 2 - -3.5px);
+  transform: translateY(55px);
+}
+
+#desktop__settings--bg--wave {
+  display: flex;
+  position: absolute;
+  width: 75px;
+  background-image: url(background/wave.jpg);
+  background-size: cover;
+  border: none;
+  border-radius: 2px;
+  scale: 200%;
+  translate: 25%;
+  transform: translate(100px, 75px);
+}
+
+#desktop__settings--bg--wave:hover {
+  cursor: pointer;
+  opacity: 75%;
+}
+
+#settings__bg--wave--p {
+  display: flex;
+  position: relative;
+  font-size: 14px;
+  font-family: 'Ubuntu Mono';
+  color: #fff;
+  scale: 50%;
+  translate: calc(100% / 2 - -3.5px);
+  transform: translateY(55px);
 }
 
 #about--img {
@@ -239,37 +388,47 @@ body {
   position: fixed;
   width: 100vw;
   height: 6vh;
-  background: radial-gradient(#560000 20%,#290202 100%);
+  background: rgba(67, 67, 67, 0.5);
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 2);
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
   bottom: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 100;
 }
 
-#dragon {
-  position: fixed;
-  opacity: 100%;
-  font-size: 4vh;
+#taskbar--settings--button {
+  display: flex;
+  position: absolute;  
+  padding: 0;
+  width: 3.745%;
+  height: 100%;
+  background-color: #00000000;
+  border: none;
+  transform: translateX(96.5vw);
+  z-index: 2;
+}
+
+.fa-gear {
+  display: flex;
+  position: absolute;
+  font-size: x-large;
   color: #fff;
-  text-shadow: #000;
-  text-decoration: none;
-  stroke: #000;
-  bottom: 0.65%;
-  left: 1%;
+  margin: 10px;
+  transform: translateX(96.8vw);
+  z-index: 1;
 }
-
-#dragon:hover {
-  opacity: 75%;
-  transform: scale(1.1);
-  transition: 500ms ease-in-out;
+#taskbar--settings--button:hover {
+  cursor: pointer;
+  color: #ffffff7d;
 }
-
 #terminal__wrapper {
   display: flex;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 0;
 }
 
 #terminal { 
@@ -470,10 +629,11 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-40%, -52.5%);
+  z-index: 0;
 }
 
 #project {
-  /* display: none; */
+  display: none;
   position: relative;
   width: 60vw;
   height: 85vh;
@@ -601,6 +761,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-10%, -53%);
+  z-index: 0;
 }
 
 #minesweeper {
@@ -641,6 +802,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -55%);
+  z-index: 0;
 }
 
 #contact {

@@ -7,7 +7,7 @@
         <title>Dan Kaufman</title>
         <link rel="icon" href="sprites/mine.png">
         <link rel="stylesheet" type="text/css" href="./style.css">
-        <link rel="stylesheet" href="minesweeper.css">
+        <link rel="stylesheet" type="text/css" href="minesweeper.css">
         <script defer src="./src/script.js"></script>
         <script  defer type="text/javascript" src="./src/minesweeper.js"></script>
         <script src="https://kit.fontawesome.com/6e529305db.js" crossorigin="anonymous"></script>
@@ -24,18 +24,27 @@
             <button type="button" class="desktop__button" id="desktop__background--projects" onclick="buttonClickProjects()"><img id="projects--img" src="icons/folder-svgrepo-com.svg"><p>Projects</p></button>
             <button type="button" class="desktop__button" id="desktop__background--resume" onclick="buttonClickResume()"><img id="resume--img" src="icons/pdf-svgrepo-com.svg"><p>Resume</p></button>
           </div>
+          <div id="desktop__settings">
+            <ul id="desktop__settings--header"><p>Settings</p><br>
+              <div id="desktop__settings--bar"></div><br>
+              <button type="button" id="desktop__settings--bg--triangle" onclick="buttonClickTriangle()"><p id="settings__bg--triangle--p">Triangles</p></button>
+              <button type="button" id="desktop__settings--bg--swirl" onclick="buttonClickSwirl()"><p id="settings__bg--swirl--p">Swirl</p></button>
+              <button type="button" id="desktop__settings--bg--cube" onclick="buttonClickCube()"><p id="settings__bg--cube--p">Cube</p></button>
+              <button type="button" id="desktop__settings--bg--wave" onclick="buttonClickWave()"><p id="settings__bg--wave--p">Wave</p></button>
+            </ul>
+          </div>
         </div>
 
         <!--Taskbar Container with Taskbar & Active Window Icons-->
         <div id="taskbar__container">
           <div id="taskbar">
-            <div id="taskbar--start"></div>
+            <div id="taskbar--start"><!--<i class="fa-solid fa-grip"></i>--></div>
             <div id="taskbar--about"></div>
             <div id="taskbar--contact"></div>
             <div id="taskbar--google"></div>
             <div id="taskbar--minesweeper"></div>
             <div id="taskbar--project"></div>
-            <div id="settigs"></div>
+            <div id="taskbar--settings"><button type="button" id="taskbar--settings--button" onclick="buttonClickSettings()"></button><i class="fa-sharp fa-solid fa-gear"></i></div>
           </div>
         </div>
 
@@ -94,7 +103,7 @@
                   <input type="email" placeholder="Email" id="email" name="email"><br><br>
                   <label for="message">Message:</label><br>
                   <textarea id="message" placeholder="Message" name="message" rows="5" cols="20"></textarea><br><br>
-                  <input id="button__submit" type="submit" value="Send">
+                  <input id="button__submit" type="submit" value="Send" target="">
                   <div id="bar"><a href="https://github.com/DanKaufmanDev"><img class="fa-github" src="icons/github.svg"></img></a></div>
                 </form> 
                 <div id="contact__footer"></div>
