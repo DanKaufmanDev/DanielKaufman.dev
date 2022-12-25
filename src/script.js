@@ -3,6 +3,11 @@ const minesweeper = document.querySelector('#minesweeper')
 const project = document.querySelector('#project')
 const contact = document.querySelector('#contact')
 const settings = document.querySelector('#desktop__settings')
+const rgbSelector = document.querySelector('#settings__taskbar--rgb--selector')
+
+document.body.style.background = window.localStorage.getItem('bg');
+document.body.style.backgroundSize = window.localStorage.getItem('bgSize');
+document.body.style.backgroundRepeat = window.localStorage.getItem('bgRepeat');
 
 // Buttons Min/Max/exit
 //Terminal Window
@@ -65,14 +70,12 @@ function buttonClickSettings(){
     settings.style.transform = 'translateX(75vw)';
     document.querySelector('#terminal__wrapper').style.zIndex = '-1';
     document.querySelector('#contact__wrapper').style.zIndex = '-1'
-    document.querySelector('#minesweeper__wrapper').style.zIndex = '-1';
     document.querySelector('#project__wrapper').style.zIndex = '-1';
     } else {
     bool = false;
     settings.style.transform = 'translateX(100vw)';
     document.querySelector('#terminal__wrapper').style.zIndex = 'auto';
     document.querySelector('#contact__wrapper').style.zIndex = 'auto';
-    document.querySelector('#minesweeper__wrapper').style.zIndex = 'auto';
     document.querySelector('#project__wrapper').style.zIndex = 'auto';
     } 
 }
@@ -81,27 +84,52 @@ function buttonClickSettings(){
 //Triangles
 function buttonClickTriangle(){
     document.body.style.background = 'url(background/triangles.svg)';
+    window.localStorage.setItem('bg', 'url(background/triangles.svg)');
     document.body.style.backgroundSize = 'cover';
+    window.localStorage.setItem('bgSize', 'cover');
     document.body.style.backgroundRepeat = 'no-repeat';
+    window.localStorage.setItem('bgRepeat', 'no-repeat');
 }
 //Swirl
 function buttonClickSwirl(){
     document.body.style.background = 'url(background/swirl.jpg)';
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundRepeat = 'no-repeat';
+    window.localStorage.setItem('bg', 'url(background/swirl.jpg)');
 }
 //Cube
 function buttonClickCube(){
     document.body.style.background = 'url(background/cube.jpg)';
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundRepeat = 'no-repeat';
+    window.localStorage.setItem('bg', 'url(background/cube.jpg)');
 }
 //wave
 function buttonClickWave(){
     document.body.style.background = 'url(background/wave.jpg)';
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundRepeat = 'no-repeat';
+    window.localStorage.setItem('bg', 'url(background/wave.jpg)');
 }
+
+
+//Color Picker
+function colorPicker({movementX, movementY, clientX, clientY}){
+    let getStyle = window.getComputedStyle(document.querySelector('#settings__taskbar--rgb--selector'))
+    let left = parseInt(getStyle.left);
+    let top = parseInt(getStyle.top);
+    rgbSelector.style.left = `${movementX + left}px`;
+    rgbSelector.style.top = `${movementY + top}px`;
+    let getX = clientX;
+    let getY = clientY;
+    console.log(getX,getY);
+}
+rgbSelector.addEventListener('mousedown',  () => {
+    rgbSelector.addEventListener('mousemove', colorPicker);
+});
+document.addEventListener('mouseup', () => {
+    rgbSelector.removeEventListener('mousemove', colorPicker);
+});
 
 // Window Movement 
 //Terminal Window

@@ -20,7 +20,7 @@
           <div id="desktop__background">
             <button type="button" class="desktop__button" id="desktop__background--about" onclick="buttonClickAbout()"><img id="about--img" src="icons/terminal-svgrepo-com.svg"><p>About</p></button>
             <button type="button" class="desktop__button" id="desktop__background--contact" onclick="buttonClickContacts()"><img id="contact--img" src="icons/email-svgrepo-com.svg"><p>Contact</p></button>
-            <button type="button" class="desktop__button" id="desktop__background--minesweeper" onclick="buttonClickMinesweeper()"><img id="minesweeper--img" src=""><p>Minesweeper</p></button>
+            <!--<button type="button" class="desktop__button" id="desktop__background--minesweeper" onclick="buttonClickMinesweeper()"><img id="minesweeper--img" src=""><p>Minesweeper</p></button>-->
             <button type="button" class="desktop__button" id="desktop__background--projects" onclick="buttonClickProjects()"><img id="projects--img" src="icons/folder-svgrepo-com.svg"><p>Projects</p></button>
             <button type="button" class="desktop__button" id="desktop__background--resume" onclick="buttonClickResume()"><img id="resume--img" src="icons/pdf-svgrepo-com.svg"><p>Resume</p></button>
           </div>
@@ -32,6 +32,10 @@
               <button type="button" id="desktop__settings--bg--cube" onclick="buttonClickCube()"><p id="settings__bg--cube--p">Cube</p></button>
               <button type="button" id="desktop__settings--bg--wave" onclick="buttonClickWave()"><p id="settings__bg--wave--p">Wave</p></button>
             </ul>
+            <div id="settings__taskbar--rgb--wrapper">
+              <div id="settings__taskbar--rgb--selector"></div>
+              <img id="settings__taskbar--rgb" src="background/NicePng_wheel-png_1128188.png"/>
+            </div>
           </div>
         </div>
 
@@ -136,12 +140,11 @@
                 <button type="button" class="bar__button" id="bar__button--minimize" onclick="buttonClickMinProject()">&#9472;</button>                
                 <button type="button" class="bar__button" id="bar__button--maximize" onclick="buttonClickMaxProject()">&#9723;</button>  
               </div>
-              <!--<p id="bar__user">DanKaufman.Dev: ~</p>-->
               <p id="bar__name">Projects</p>
             </div>
               <div id="project__body">
-                <div id="project__body--side--bar"><br>
-                  <p id="project__body--side--bar--p">Skills</p>
+                <div id="project__body--side--bar">
+                 <p id="project__body--side--bar--p">Skills</p>
                   <ul id="skills__frontend">Frontend
                     <li id="skills__frontend--html">HTML5</li>
                     <li id="skills__frontend--css">CSS3</li>
