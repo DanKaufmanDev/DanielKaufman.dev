@@ -4,6 +4,7 @@ const project = document.querySelector('#project')
 const contact = document.querySelector('#contact')
 const settings = document.querySelector('#desktop__settings')
 const rgbSelector = document.querySelector('#settings__taskbar--rgb--selector')
+const taskbar = document.querySelector('#taskbar')
 
 document.body.style.background = window.localStorage.getItem('bg');
 document.body.style.backgroundSize = window.localStorage.getItem('bgSize');
@@ -139,51 +140,55 @@ function colorPicker({movementX, movementY}){
 
     let x = parseInt(getStyle.left);
     let y = parseInt(getStyle.top);
-    var rgb = [];
+    let rgba = [];
 
     switch(true){
         case (y <= 0):
-            rgb =  [255,255,255]
+            rgba =  [255,255,255]
             break;
         case (y >= 170):
-            rgb = [0,0,0]
+            rgba = [0,0,0]
             break;
         case (y > 0 && x <= 10):
-            rgb = [255,0,0]
+            rgba = [255,0,0]
             break;
         case (x >= 10 && x <= 70):
-            rgb[0] = 255;
-            rgb[1] = x * 3.6429;
-            rgb[2] = 0;
+            rgba[0] = 255;
+            rgba[1] = x * 3.6429;
+            rgba[2] = 0;
             break;
         case (x >= 70 && x <= 110):
-            rgb[0] = 255 - (x * 2.318);
-            rgb[1] = 255;
-            rgb[2] = 0;
+            rgba[0] = 255 - (x * 2.318);
+            rgba[1] = 255;
+            rgba[2] = 0;
             break;
         case (x >= 110 && x <= 170):
-            rgb[0] = 0;
-            rgb[1] = 255;
-            rgb[2] = x * 1.501;
+            rgba[0] = 0;
+            rgba[1] = 255;
+            rgba[2] = x * 1.501;
             break;
         case (x >= 170 && x <= 230):
-            rgb[0] = 0;
-            rgb[1] = 255 - (x * 1.11);
-            rgb[2] = 255;
+            rgba[0] = 0;
+            rgba[1] = 255 - (x * 1.11);
+            rgba[2] = 255;
             break;
         case (x >= 230 && x <= 250):
-            rgb[0] = x * 1.02;
-            rgb[1] = 0;
-            rgb[2] = 255;
+            rgba[0] = x * 1.02;
+            rgba[1] = 0;
+            rgba[2] = 255;
             break;
         case (x >= 250 && x <= 265):
-            rgb[0] = 255;
-            rgb[1] = 0;
-            rgb[2] = 255 - (x * 0.965);
+            rgba[0] = 255;
+            rgba[1] = 0;
+            rgba[2] = 255 - (x * 0.965);
             break;
     }
-    // convert and round each number and plug it into an rgb value and apply it to the color.
-}
+        let red = Math.round(rgba[0]);
+        let green = Math.round(rgba[1]);
+        let blue = Math.round(rgba[2]);
+
+        taskbar.style.background = 'rgba(' + red + ',' + green + ',' + blue + ',' +  '0.5' + ')';
+    }
 rgbSelector.addEventListener('mousedown',  () => {
     rgbSelector.style.cursor = 'grabbing';
     rgbSelector.addEventListener('mousemove', colorPicker);
