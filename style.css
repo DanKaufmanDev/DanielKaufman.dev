@@ -199,32 +199,34 @@ body {
 
 #settings__taskbar--rgb--wrapper {
   position: relative;
-  background-color: red;
-  border-radius: 50%;
   width: 81%;
-  height: 43%;
-  transform: translateY(280px);
+  height: 28%;
+  transform: translateY(365px);
   margin: auto;
-  /* z-index: 5; */
+  overflow: hidden;
 }
-#settings__taskbar--rgb--wrapper > img{
-  border: 1px solid #fff;
-  border-radius: 50%;
+
+#settings__taskbar--rgb--wrapper  img{
+  display: block;
+  margin: 0 auto;
+  height: 0 auto;
+  user-select: none;
 }
+
 #settings__taskbar--rgb--selector {
   position: absolute;
-  background-color: #12de34;
-  border: 2px solid #000;
-  width: 8px;
-  height: 8px;
-  top: 46%;
-  left: 48%;
+  border: 1.5px solid rgb(0, 0, 0);
+  width: 10px;
+  height: 10px;
+  top: 0%;
+  left: 0%;
   border-radius: 50%;
 }
 
 #settings__taskbar--rgb--selector:hover{
-  cursor: pointer;
+  cursor: grab;
 }
+
 
 #settings__taskbar--rgb {
   width: 100%;

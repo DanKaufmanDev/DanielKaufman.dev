@@ -114,20 +114,82 @@ function buttonClickWave(){
 
 
 //Color Picker
-function colorPicker({movementX, movementY, clientX, clientY}){
+function colorPicker({movementX, movementY}){
     let getStyle = window.getComputedStyle(document.querySelector('#settings__taskbar--rgb--selector'))
     let left = parseInt(getStyle.left);
     let top = parseInt(getStyle.top);
+
     rgbSelector.style.left = `${movementX + left}px`;
     rgbSelector.style.top = `${movementY + top}px`;
-    let getX = clientX;
-    let getY = clientY;
-    console.log(getX,getY);
+
+    if(top <= -1){
+        rgbSelector.style.top = '0px'
+        rgbSelector.style.border = '1.5px solid black';
+    }
+    if(top >= 171){
+        rgbSelector.style.top = '170px';
+        rgbSelector.style.border = '1.5px solid white';
+    }
+    if(left <= -1){
+        rgbSelector.style.left = '0px';
+    }
+    if(left >= 265){
+        rgbSelector.style.left = '264px';
+    }
+
+    let x = parseInt(getStyle.left);
+    let y = parseInt(getStyle.top);
+    var rgb = [];
+
+    switch(true){
+        case (y <= 0):
+            rgb =  [255,255,255]
+            break;
+        case (y >= 170):
+            rgb = [0,0,0]
+            break;
+        case (y > 0 && x <= 10):
+            rgb = [255,0,0]
+            break;
+        case (x >= 10 && x <= 70):
+            rgb[0] = 255;
+            rgb[1] = x * 3.6429;
+            rgb[2] = 0;
+            break;
+        case (x >= 70 && x <= 110):
+            rgb[0] = 255 - (x * 2.318);
+            rgb[1] = 255;
+            rgb[2] = 0;
+            break;
+        case (x >= 110 && x <= 170):
+            rgb[0] = 0;
+            rgb[1] = 255;
+            rgb[2] = x * 1.501;
+            break;
+        case (x >= 170 && x <= 230):
+            rgb[0] = 0;
+            rgb[1] = 255 - (x * 1.11);
+            rgb[2] = 255;
+            break;
+        case (x >= 230 && x <= 250):
+            rgb[0] = x * 1.02;
+            rgb[1] = 0;
+            rgb[2] = 255;
+            break;
+        case (x >= 250 && x <= 265):
+            rgb[0] = 255;
+            rgb[1] = 0;
+            rgb[2] = 255 - (x * 0.965);
+            break;
+    }
+    // convert and round each number and plug it into an rgb value and apply it to the color.
 }
 rgbSelector.addEventListener('mousedown',  () => {
+    rgbSelector.style.cursor = 'grabbing';
     rgbSelector.addEventListener('mousemove', colorPicker);
 });
 document.addEventListener('mouseup', () => {
+    rgbSelector.style.cursor = 'grab';
     rgbSelector.removeEventListener('mousemove', colorPicker);
 });
 
