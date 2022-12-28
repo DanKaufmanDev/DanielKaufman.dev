@@ -1,5 +1,4 @@
 const terminal = document.querySelector('#terminal')
-const minesweeper = document.querySelector('#minesweeper')
 const project = document.querySelector('#project')
 const contact = document.querySelector('#contact')
 const settings = document.querySelector('#desktop__settings')
@@ -9,72 +8,189 @@ const taskbar = document.querySelector('#taskbar')
 document.body.style.background = window.localStorage.getItem('bg');
 document.body.style.backgroundSize = window.localStorage.getItem('bgSize');
 document.body.style.backgroundRepeat = window.localStorage.getItem('bgRepeat');
+taskbar.style.background = window.localStorage.getItem('taskbar');
 
-// Buttons Min/Max/exit
+// Buttons Min/Max/Exit
+
 //Terminal Window
 function buttonClickExitTerminal(){
     terminal.style.display = 'none';
+    document.querySelector('#taskbar--about').style.display = 'none';
 }
 function buttonClickMinTerminal(){
+    terminal.style.display = 'none';
+    document.querySelector('#taskbar--about').style.display = 'flex'
+    document.querySelector('#taskbar--about').style.height = '100%';
+    boolAbout = false;
 }
-function buttonClickMaxTerminal(){
-}
-//Project Window
-function buttonClickExitProject(){
-    project.style.display = 'none';
-}
-function buttonClickMinProject(){
-}
-function buttonClickMaxProject(){
-}
-//Minesweeper Window
-function buttonClickExitMinesweeper(){
-    minesweeper.style.display = 'none';
-}
-function buttonClickMinMinesweeper(){
-}
-function buttonClickMaxMinesweeper(){
-}
+
 //Contact Window
 function buttonClickExitContact(){
     contact.style.display = 'none';
+    document.querySelector('#taskbar--contact').style.display = 'none';
 }
 function buttonClickMinContact(){
+    contact.style.display = 'none';
+    document.querySelector('#taskbar--contact').style.display = 'flex'
+    document.querySelector('#taskbar--contact').style.height = '100%';
+    boolContact = false;
 }
-function buttonClickMaxContact(){
+
+//Project Window
+function buttonClickExitProject(){
+    project.style.display = 'none';
+    document.querySelector('#taskbar--project').style.display = 'none';
+
+}
+function buttonClickMinProject(){
+    project.style.display = 'none';
+    document.querySelector('#taskbar--project').style.display = 'flex'
+    document.querySelector('#taskbar--project').style.height = '100%';
+    boolProject = false;
 }
 
 //Desktop Icons
+
 //Desktop About Icon
 function buttonClickAbout(){
     terminal.style.display = 'block';
-}
+    document.querySelector('#taskbar--about').style.display = 'flex';
+    document.querySelector('#taskbar--about').style.borderBottom = '2px solid snow';
+    document.querySelector('#taskbar--about').style.height = '92%';
+} 
+
 //Desktop Contact Icon
 function buttonClickContacts(){
     contact.style.display = 'block';
+    document.querySelector('#taskbar--contact').style.display = 'flex';
+    document.querySelector('#taskbar--contact').style.borderBottom = '2px solid snow';
+    document.querySelector('#taskbar--contact').style.height = '92%';
 }
-//Desktop Minesweeper Icon
-function buttonClickMinesweeper(){
-    minesweeper.style.display = 'block';
-}
+
 //Desktop Project Icon
 function buttonClickProjects(){
     project.style.display = 'block';
+    document.querySelector('#taskbar--project').style.display = 'flex';
+    document.querySelector('#taskbar--project').style.borderBottom = '2px solid snow';
+    document.querySelector('#taskbar--project').style.height = '92%';
+}
+
+//Desktop Resume Icon
+function buttonClickResume(){
+    // window.open("url", "_blank"); add resume
 }
 
 //Taskbar
+
+//Taskbar Start
+let boolStart = true;
+function buttonClickStart(){
+    if(boolStart === false){
+        boolStart = true;
+        document.querySelector('#taskbar--search').style.display = 'flex';
+        document.querySelector('#taskbar--start').style.borderRight = '2px solid snow';
+
+    } else {
+        boolStart = false;
+        document.querySelector('#taskbar--search').style.display = 'none';
+        document.querySelector('#taskbar--start').style.borderRight = '0px solid snow';
+    }
+}
+
+//Taskbar About
+let boolAbout = true;
+function buttonClickAbouts(){
+    if(boolAbout === false){
+    boolAbout = true;
+    terminal.style.display = 'block';
+    document.querySelector('#taskbar--about').style.display = 'flex';
+    document.querySelector('#taskbar--about').style.borderBottom = '2px solid snow';
+    document.querySelector('#taskbar--about').style.height = '92%';
+    } else {
+    boolAbout = false;
+    terminal.style.display = 'none';
+    document.querySelector('#taskbar--about').style.height = '100%';
+    }
+}
+
+//Taskbar Contact
+let boolContact = true;
+function buttonClickContact(){
+    if(boolContact === false){
+        boolContact = true;
+        contact.style.display = 'block';
+        document.querySelector('#taskbar--contact').style.display = 'flex'
+        document.querySelector('#taskbar--contact').style.borderBottom = '2px solid snow';
+        document.querySelector('#taskbar--contact').style.height = '92%';
+    } else {
+        boolContact = false;
+        contact.style.display = 'none';
+        document.querySelector('#taskbar--contact').style.height = '100%';
+    }
+}
+
+//Taskbar Github
+let boolGithub = true;
+function buttonClickGithub(){
+    if(boolGithub === false){
+        boolGithub = true;
+        document.querySelector('#taskbar--github').style.opacity = '75%';
+        document.querySelector('#taskbar--github').style.height = '100%';
+    } else {
+        boolGithub = false;
+        document.querySelector('#taskbar--github').style.opacity = '100%';
+        document.querySelector('#taskbar--github').style.borderBottom = '2px solid snow';
+        document.querySelector('#taskbar--github').style.height = '92%';
+        window.open("https://www.github.com/DanKaufmanDev", "_blank");
+    }
+}
+
+//Taskbar Linkedin
+let boolLinkedin = true;
+function buttonClickLinkedin(){
+    if(boolLinkedin === false){
+        boolLinkedin = true;
+        document.querySelector('#taskbar--linkedin').style.opacity = '75%';
+        document.querySelector('#taskbar--linkedin').style.height = '100%';
+    } else {
+        boolLinkedin = false;
+        document.querySelector('#taskbar--linkedin').style.opacity = '100%';
+        document.querySelector('#taskbar--linkedin').style.borderBottom = '2px solid snow';
+        document.querySelector('#taskbar--linkedin').style.height = '92%';
+        window.open("https://www.linkedin.com", "_blank");
+    }
+}
+
+//Taskbar Project
+let boolProject = true;
+function buttonClickProject(){
+    if(boolProject === false){
+        boolProject = true;
+        project.style.display = 'block';
+        document.querySelector('#taskbar--project').style.display = 'flex'
+        document.querySelector('#taskbar--project').style.borderBottom = '2px solid snow';
+        document.querySelector('#taskbar--project').style.height = '92%';    
+    } else {
+        boolProject = false;
+        project.style.display = 'none';
+        document.querySelector('#taskbar--project').style.height = '100%';
+    }
+}
+
 //Taskbar Settings
 let bool = false;
 function buttonClickSettings(){
     if (bool === false) {
     bool = true;
     settings.style.transform = 'translateX(75vw)';
+    document.querySelector('#taskbar--settings').style.borderLeft = '2px solid snow';
     document.querySelector('#terminal__wrapper').style.zIndex = '-1';
     document.querySelector('#contact__wrapper').style.zIndex = '-1'
     document.querySelector('#project__wrapper').style.zIndex = '-1';
     } else {
     bool = false;
     settings.style.transform = 'translateX(100vw)';
+    document.querySelector('#taskbar--settings').style.borderLeft = 'none';
     document.querySelector('#terminal__wrapper').style.zIndex = 'auto';
     document.querySelector('#contact__wrapper').style.zIndex = 'auto';
     document.querySelector('#project__wrapper').style.zIndex = 'auto';
@@ -82,6 +198,7 @@ function buttonClickSettings(){
 }
 
 //Themes
+
 //Triangles
 function buttonClickTriangle(){
     document.body.style.background = 'url(background/triangles.svg)';
@@ -91,6 +208,7 @@ function buttonClickTriangle(){
     document.body.style.backgroundRepeat = 'no-repeat';
     window.localStorage.setItem('bgRepeat', 'no-repeat');
 }
+
 //Swirl
 function buttonClickSwirl(){
     document.body.style.background = 'url(background/swirl.jpg)';
@@ -98,6 +216,7 @@ function buttonClickSwirl(){
     document.body.style.backgroundRepeat = 'no-repeat';
     window.localStorage.setItem('bg', 'url(background/swirl.jpg)');
 }
+
 //Cube
 function buttonClickCube(){
     document.body.style.background = 'url(background/cube.jpg)';
@@ -105,6 +224,7 @@ function buttonClickCube(){
     document.body.style.backgroundRepeat = 'no-repeat';
     window.localStorage.setItem('bg', 'url(background/cube.jpg)');
 }
+
 //wave
 function buttonClickWave(){
     document.body.style.background = 'url(background/wave.jpg)';
@@ -113,13 +233,11 @@ function buttonClickWave(){
     window.localStorage.setItem('bg', 'url(background/wave.jpg)');
 }
 
-
 //Color Picker
 function colorPicker({movementX, movementY}){
     let getStyle = window.getComputedStyle(document.querySelector('#settings__taskbar--rgb--selector'))
     let left = parseInt(getStyle.left);
     let top = parseInt(getStyle.top);
-
     rgbSelector.style.left = `${movementX + left}px`;
     rgbSelector.style.top = `${movementY + top}px`;
 
@@ -188,7 +306,9 @@ function colorPicker({movementX, movementY}){
         let blue = Math.round(rgba[2]);
 
         taskbar.style.background = 'rgba(' + red + ',' + green + ',' + blue + ',' +  '0.5' + ')';
-    }
+        window.localStorage.setItem('taskbar', 'rgba(' + red + ',' + green + ',' + blue + ',' +  '0.85' + ')');
+}
+
 rgbSelector.addEventListener('mousedown',  () => {
     rgbSelector.style.cursor = 'grabbing';
     rgbSelector.addEventListener('mousemove', colorPicker);
@@ -199,6 +319,7 @@ document.addEventListener('mouseup', () => {
 });
 
 // Window Movement 
+
 //Terminal Window
 const terminalWrapper = document.querySelector('#terminal__wrapper'),
     terminalHeader = terminalWrapper.querySelector('#terminal__bar');
@@ -216,6 +337,7 @@ terminalHeader.addEventListener("mousedown", () => {
 document.addEventListener('mouseup', () =>{
     terminalHeader.removeEventListener('mousemove', onDragTerminal);
 });
+
 //Project Window
 const projectWrapper = document.querySelector('#project__wrapper'),
 projectHeader = projectWrapper.querySelector('#project__bar');
@@ -233,23 +355,7 @@ projectHeader.addEventListener("mousedown", () => {
 document.addEventListener('mouseup', () =>{
     projectHeader.removeEventListener('mousemove', onDragProject);
 });
-//Minesweeper Window
-const minesweeperWrapper = document.querySelector('#minesweeper__wrapper'),
-    minesweeperHeader = minesweeperWrapper.querySelector('#minesweeper__bar');
 
-function onDragMinesweeper({movementX, movementY}){
-    let getStyle = window.getComputedStyle(minesweeperWrapper);
-    let left = parseInt(getStyle.left);
-    let top = parseInt(getStyle.top);
-    minesweeperWrapper.style.left = `${left + movementX}px`;
-    minesweeperWrapper.style.top = `${top + movementY}px`;
-}
-minesweeperHeader.addEventListener("mousedown", () => {
-    minesweeperHeader.addEventListener('mousemove', onDragMinesweeper);
-});
-document.addEventListener('mouseup', () => {
-    minesweeperHeader.removeEventListener('mousemove', onDragMinesweeper);
-});
 //Contact Window
 const contactWrapper = document.querySelector('#contact__wrapper'),
     contactHeader = contactWrapper.querySelector('#contact__bar');

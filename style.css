@@ -50,7 +50,7 @@ body {
 #desktop__settings {
   background-color: rgba(0, 0, 0, 0.750);
   width: 25%;
-  height: 94vh;
+  height: 100vh;
   transform: translateX(100vw);
   transition: 300ms ease-in-out;
   z-index: 100;
@@ -209,7 +209,8 @@ body {
 #settings__taskbar--rgb--wrapper  img{
   display: block;
   margin: 0 auto;
-  height: 0 auto;
+  height: 185px;
+  width: 270px;
   user-select: none;
 }
 
@@ -332,19 +333,6 @@ body {
   user-select: none;
 }
 
-#desktop__background--minesweeper {
-  display: grid;  
-  justify-content: center;  
-  align-items: center;  
-  padding: 0;  
-  width: 95px;
-  height: 95px;
-  background-color: #00000080;
-  border: none;
-  border-radius: 10px;
-  margin: 0.25%;
-}
-
 #desktop__background--projects {
   display: grid;
   justify-content: center;
@@ -383,83 +371,183 @@ body {
   bottom: 25%;
   user-select: none;
 }
-#desktop__background--spotify {
-  display: grid;  
-  justify-content: center;  
-  align-items: center;  
-  padding: 0;  
-  width: 95px;
-  height: 95px;
-  background-color: #00000000;
-  border: none;
-  border-radius: 10px;
-  margin: 0.25%;
-}
 
-#spotify--img {
-  display: grid;
-  justify-items: center;
-  width: 64px;
-  height: 64px;
-  transform: scale(125%, 115%);
-  border-radius: 10px;
-  margin-bottom: 1px;
-  margin-top: 15%;
-  filter: opacity(90%);
-  user-select: none;
-}
-
-#desktop__background--spotify > p {
-  display: grid;
-  justify-items: center;
-  font-family: 'Ubuntu';
-  font-size: 14px;
-  font-weight: 400;
-  color: #ffffffd3;
-  position: relative;
-  bottom: 12.5%;
-  user-select: none;
-}
-
-#taskbar {
+#taskbar{
   display: flex;
   position: fixed;
-  width: 100vw;
+  width: 50%;
   height: 6vh;
   background: rgba(67, 67, 67, 0.5);
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 2);
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   bottom: 0;
   left: 0;
+  transform: translateX(calc(100% / 2));
   z-index: 100;
 }
 
-#taskbar--settings--button {
+#taskbar--start{
   display: flex;
-  position: absolute;  
-  padding: 0;
-  width: 3.745%;
+  position: relative;
+  background: rgba(0, 0, 0, 0.85);
+  height: 100%;
+  width: 45.81px;
+  border-right: 2.5px solid snow;
+  border-radius: 5px;
+  border-bottom-left-radius: 0px;
+  margin-right: 1px;
+  margin-left: 2px;
+}
+.fa-grip {
+  display: block;
+  position: absolute;
+  font-size: xx-large;
+  color: #fff;
+  transform: translate(calc(100% / 3), calc(100% / 6));
+  z-index: 1;
+}
+
+#taskbar--search input{
+  display: block;
+  position: relative;
+  height: 90%;
+  margin: 1px;
+  background-color: #000;
+  color:#ffffff;
+  border-radius: 5px;
+  transform: translateY(calc(100% / 20));
+}
+
+#taskbar--about{
+  display: flex;
+  position: relative;
+  background: rgba(0, 0, 0, 0.85);
+  height: 92%;
+  width: 45.81px;
+  margin: 1px;
+  border-bottom: 2px solid snow;
+  border-radius: 5px;
+}
+.fa-terminal{
+  display: block;
+  position: absolute;
+  font-size: medium;
+  color: #fff;
+  transform: translate(calc(100% / 6), calc(100% / 5));
+  z-index: 1;
+}
+
+#taskbar--contact{
+  display: none;
+  position: relative;
+  background: rgba(0, 0, 0, 0.85);
+  height: 100%;
+  width: 45.81px;
+  margin: 1px;
+  border-radius: 5px;
+}
+.fa-envelope{
+  display: block;
+  position: absolute;
+  font-size: xx-large;
+  color: rgb(223, 223, 223);
+  transform: translate(calc(100% / 5), calc(100% / 8));
+  z-index: 1;
+}
+
+#taskbar--github{
+  display: flex;
+  position: relative;
+  background: rgba(23, 21, 21, 0.85);
+  opacity: 75%;
+  height: 100%;
+  width: 45.81px;
+  margin: 1px;
+  border-radius: 5px;
+}
+.fa-github{
+  display: block;
+  position: absolute;
+  font-size: xx-large;
+  color: rgb(255, 255, 255);
+  transform: translate(calc(100% / 4), calc(100% / 6));
+  z-index: 1;
+}
+
+#taskbar--linkedin{
+  display: flex;
+  position: relative;
+  background: rgba(0, 114, 177, 0.85);
+  opacity: 75%;
+  height: 100%;
+  width: 45.81px;
+  margin: 1px;
+  border-radius: 5px;
+}
+.fa-linkedin-in{
+  display: block;
+  position: absolute;
+  font-size: xx-large;
+  color: rgb(255, 255, 255);
+  transform: translate(calc(100% / 3), calc(100% / 5.5));
+  z-index: 1;
+}
+
+#taskbar--project{
+  display: none;
+  position: relative;
+  background: rgba(0, 0, 0, 0.85);
+  height: 100%;
+  width: 45.81px;
+  margin: 1px;
+  border-radius: 5px;
+}
+.fa-folder{
+  display: block;
+  position: absolute;
+  font-size: xx-large;
+  color: rgb(255, 235, 146);
+  transform: translate(calc(100% / 4.5), calc(100% / 11));
+  z-index: 1;
+}
+
+#taskbar--settings{
+  display: flex;
+  position: relative;
+  background: rgba(0, 0, 0, 0.85);
+  height: 100%;
+  width: 45.81px;
+  border-radius: 5px;
+  border-bottom-right-radius: 0px;
+  margin-left: auto;
+  margin-right: 2px;
+}
+.fa-gear {
+  display: block;
+  position: absolute;
+  font-size: xx-large;
+  color: rgb(255, 255, 255);
+  transform: translate(calc(100% / 4), calc(100% / 6));
+  z-index: 1;
+}
+
+.taskbar--button {
+  display: block;
+  position: relative;  
+  padding: 0;  
+  width: 100%;
   height: 100%;
   background-color: #00000000;
   border: none;
-  transform: translateX(96.5vw);
+  margin: 0.25%;
   z-index: 2;
 }
-
-.fa-gear {
-  display: flex;
-  position: absolute;
-  font-size: x-large;
-  color: #fff;
-  margin: 10px;
-  transform: translateX(96.8vw);
-  z-index: 1;
-}
-#taskbar--settings--button:hover {
+.taskbar--button:hover {
   cursor: pointer;
   color: #ffffff7d;
 }
+
 #terminal__wrapper {
   display: flex;
   position: absolute;
@@ -470,7 +558,7 @@ body {
 }
 
 #terminal { 
-  display: none;
+  display: block;
   position: relative;
   width: 70vw;  
   height: 65vh;  
@@ -487,7 +575,7 @@ body {
   box-sizing: border-box;  
   border-top-left-radius: 5px;  
   border-top-right-radius: 5px;  
-  background: linear-gradient(#504b45 0%,#3c3b37 100%);
+  background: linear-gradient(#35333a 0%,#21211f 100%);
 }
 
 .bar__hover:hover {
@@ -506,12 +594,12 @@ body {
   padding: 0;  
   margin-right: 5px;  
   font-size: 8px;  
-  height: 12px;  
-  width: 12px;  
+  height: 10.5px;  
+  width: 10.5px;  
   box-sizing: border-box;  
   border: none;  
   border-radius: 100%;  
-  background: linear-gradient(#7d7871 0%, #595953 100%);  
+  background: linear-gradient(#ffffff 0%, #dddddd 100%);  
   text-shadow: 0px 1px 0px rgba(255,255,255,0.2);  
   box-shadow: 0px 0px 1px 0px #41403A, 0px 1px 1px 0px #474642;
   user-select: none;
@@ -525,23 +613,23 @@ body {
   outline: none;
 }
 
-#bar__button--exit {  
-  background: linear-gradient(#f37458 0%, #de4c12 100%);    
+#bar__button--exit:hover {  
+  background: linear-gradient(#ff3d3d 0%, #ff0101 100%);    
   background-clip: padding-box;
 }
 
-#bar__button--minimize {
-  background: linear-gradient(#f3e958 0%, #d0de12 100%);    
+#bar__button--minimize:hover {
+  background: linear-gradient(#fff34d 0%, #fff200 100%);    
   background-clip: padding-box;
 }
 
-#bar__button--maximize {
-  background: linear-gradient(#58f358 0%, #12de34 100%);    
+#bar__button--maximize:hover {
+  background: linear-gradient(#50ff50 0%, #00ff2a 100%);    
   background-clip: padding-box;
 }
 
 #bar__user {   
-  color: #d5d0ce;  
+  color: #ffffff;  
   margin-left: 6px;  
   font-size: 14px;  
   line-height: 15px;
@@ -549,7 +637,7 @@ body {
 }
 
 #bar__name {
-    color: #d5d0ce;  
+    color: #ffffff;  
     margin-left: calc((100% / 2) - 75px);  
     font-size: 14px;  
     line-height: 15px;
@@ -558,7 +646,7 @@ body {
 }
 
 #bar__name--terminal {
-  color: #d5d0ce;
+  color: #ffffff;
   margin-left: calc(100% - 72%);
   font-size: 14px;
   line-height: 15px;
@@ -567,7 +655,7 @@ body {
 }
 
 #terminal__body {  
-  background: rgba(30, 25, 30, 1);  
+  background: rgb(10, 1, 17);  
   font-family: 'Ubuntu Mono';  
   height: calc(100% - 30px);  
   padding-top: 2px;  
@@ -579,7 +667,7 @@ body {
 } 
 
 #terminal__prompt--user {  
-  color: #7eda28;
+  color: #00ff2a;
   margin-top: 2px;
   margin-left: 1%;
   user-select: none;
@@ -612,7 +700,7 @@ body {
     background: rgba(56, 4, 40, 0.0);
     font-family: 'Ubuntu mono';
     font-size: 14px;
-    color: #7eda28;
+    color: #00ff2a;
     width: auto;
     margin-top: 2px;
     margin-left: -1px;
@@ -671,7 +759,7 @@ body {
 }
 
 #project {
-  display: '';
+  display: none;
   position: relative;
   width: 60vw;
   height: 85vh;
@@ -688,7 +776,7 @@ body {
   box-sizing: border-box;  
   border-top-left-radius: 5px;  
   border-top-right-radius: 5px;  
-  background: linear-gradient(#504b45 0%,#3c3b37 100%);
+  background: linear-gradient(#35333a 0%,#21211f 100%);
 }
 
 #project__body {
@@ -794,47 +882,6 @@ body {
   align-items: center;
 }
 
-#minesweeper__wrapper {
-  display: flex;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-10%, -53%);
-  z-index: 0;
-}
-
-#minesweeper {
-  display: none;
-  position: relative;
-  width: 44.26vw;
-  height: 91vh;
-  box-shadow: 2px 4px 10px rgb(0 0 0 / 50%);
-  transition: 10ms ease-in-out;
-}
-
-#minesweeper__bar {
-  display: flex;  
-  width: 100%;  
-  height: 30px;  
-  align-items: center;  
-  padding: 0 8px;  
-  box-sizing: border-box;  
-  border-top-left-radius: 5px;  
-  border-top-right-radius: 5px;  
-  background: linear-gradient(#504b45 0%,#3c3b37 100%);
-}
-
-#minesweeper__body {
-  background: rgb(121, 121, 121);  
-  font-family: 'Ubuntu Mono';  
-  height: calc(100% - 30px);  
-}
-
-#bar__button--minesweeper {
-  display: flex;  
-  align-items: center;
-}
-
 #contact__wrapper {
   display: flex;
   position: absolute;
@@ -862,7 +909,7 @@ body {
   box-sizing: border-box;  
   border-top-left-radius: 5px;  
   border-top-right-radius: 5px;  
-  background: linear-gradient(#504b45 0%,#3c3b37 100%);
+  background: linear-gradient(#35333a 0%,#21211f 100%);
 }
 
 #contact__body {
