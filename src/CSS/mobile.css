@@ -1,0 +1,109 @@
+@media(max-width: 600px){
+    body {  
+        background: url(../background/vertical.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-family: 'Ubuntu';
+        overflow: hidden;
+      } 
+    #desktop__settings{
+        display: none;
+        position: relative;
+        width: 100%;
+        top: 0;
+        left: 0;
+        transform: translate(0,0);
+    }
+    #bar__user{
+        display: none;
+    }
+    .bar__button{
+        opacity: 0;
+    }
+    #taskbar{
+        display: flex;
+        position: fixed;
+        background: rgb(1, 1, 25);
+        width: 100%;
+        height: calc(100% - 95%);
+        transform: translateX(0%);
+    }
+    #taskbar--start{
+        margin-right: 2px;
+        border-right: none;
+    }
+    .fa-grip{
+        display: none;
+        opacity: 0;
+    }
+    .fa-house{
+        display: block;
+        opacity: 1;
+    }
+    #taskbar--search{
+        display: none;
+        width: 0%;
+        height: 0%;
+    }
+    #taskbar--about{
+        margin-right: 2px;
+        display: none;
+    }
+    #taskbar--contact{
+        margin-right: 2px;
+    }
+    #taskbar--github{
+        margin-right: 2px;
+        opacity: 1;
+    }
+    #taskbar--linkedin{
+        margin-right: 2px;
+        opacity: 1;
+    }
+    #taskbar--settings{
+        display: none;
+    }
+    #terminal__wrapper{
+        display: block;
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+    }
+    #terminal{
+        display: none;
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+    }
+    #contact__wrapper{
+        display: block;
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+    }
+    #contact{
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+    }
+    #project__wrapper{
+        display: block;
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+    }
+    #project{
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+    }
+    #project__body--side--bar{
+        width: 30%;
+    }
+    #skills__frontend{
+        transform: translate(0,0);
+    }
+    #skills__backend{
+        transform: translate(-34.5%,0);
+    }
+}

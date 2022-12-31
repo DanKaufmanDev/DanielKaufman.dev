@@ -5,13 +5,270 @@ const settings = document.querySelector('#desktop__settings')
 const rgbSelector = document.querySelector('#settings__taskbar--rgb--selector')
 const taskbar = document.querySelector('#taskbar')
 
+// Local Storage Load
 document.body.style.background = window.localStorage.getItem('bg');
 document.body.style.backgroundSize = window.localStorage.getItem('bgSize');
 document.body.style.backgroundRepeat = window.localStorage.getItem('bgRepeat');
 taskbar.style.background = window.localStorage.getItem('taskbar');
 
-// Buttons Min/Max/Exit
+//Preloader & onload
+window.onload = function preloader(){
+    document.querySelector('.wrapper').style.display = 'none';
+    L1();
+}
 
+//Terminal Animation
+let i = 0;
+let txt = "Hi There, My name is Dan Im a Software Engineer & Fullstack Developer Try Clicking Some of the Apps for More info";
+let speed = 50;
+let txtL1 = "Hi There,";
+function L1(){
+    if(i <= txtL1.length){
+        document.querySelector('#l-1').innerHTML += txt.charAt(i)
+        i++;
+        setTimeout(L1, speed);
+        return;
+    }
+    if(i >= txtL1.length){
+        document.querySelector('#l-1').style.borderRight = 'none';
+        setTimeout(() => {L2();}, 50);
+    }
+}
+let txtL2 = "My name is Dan ";
+function L2(){
+    if(i <= txtL1.length + txtL2.length){
+        document.querySelector('#l-2').innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(L2, speed);
+        return;
+    }
+    if(i >= txtL1.length + txtL2.length){
+        document.querySelector('#l-2').style.borderRight = 'none';
+        setTimeout(() => {L3();}, 50);
+    }
+}
+let txtL3 = "Im a Software Engineer & Fullstack Developer ";
+function L3(){
+    if(i <= txtL1.length + txtL2.length + txtL3.length){
+        document.querySelector('#l-3').innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(L3, speed);
+        return;
+    }
+    if(i >= txtL1.length + txtL2.length + txtL3.length){
+        document.querySelector('#l-3').style.borderRight = 'none';
+        setTimeout(() => {L4();}, 50);
+    }
+}
+let txtL4 = "Try Clicking Some of the Apps for More info";
+function L4(){
+    if(i <= txtL1.length + txtL2.length + txtL3.length + txtL4.length){
+        document.querySelector('#l-4'). innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(L4, speed);
+        return;
+    }
+    if(i >= txtL1.length + txtL2.length + txtL3.length + txtL4.length){
+        document.querySelector('#l-4').style.borderRight = 'none';
+        setTimeout(() => {dragonL1();}, 50)
+    }
+}
+let j = 0;
+let dragontxt = "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠤⣲⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠖⠋⢀⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠜⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡰⠊⠀⠀⡠⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠊⡰⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⡼⠁⠀⠀⡜⠁⠀⠀⠀⠀⠀⠀⠀⠀⣀⠤⠚⠁⡜⠁ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⢸⠀⠀⠀⠀⢀⣀⣀⠤⠖⠈⠀⠀⢀⡜⠀⡀⠀⠀⠀⠀⠀⠀⠀⢀⠔⠓⠲⢤⣸⠒⣊⣭⠛⠉⠀⠀⠀⠀⠀⢀⣠⢿⡶⠛⠁⠀⠀⠀⠀⠀⠀⢠⠇⠀⠀⠀⠀⣹⠎⠀⠀⠑⡄⠀⢀⡠⠔⢊⡥⢺⠋⠀⠀⠀⠀⠀⣠⠎⠀⠀⠀⣠⠞⠁⠀⠀⠀⢀⣾⠋⠁⣠⠞⠁⠀⢸⡀⠀⠀⠀⠀⢰⠃⠀⡠⠊⡜⠁⠀⠀⠀⢀⡊⠁⠁⠀⢊⡀⠀⠀⠀⣀⣉⣓⣦⡤⠤⠀⠀⠀⠀⠘⡤⠊⠁⠸⠀⠀⠀⡠⡖⡝⠀⠀⠀⠀⠀⠈⢉⡩⠭⠒⢋⡟⠁⠀⠀⠀⠀⡸⠁⠀⠀⠀⠑⠒⠛⠒⠋⠁⠀⠀⠀⠀⠀⠀⠘⠤⣀⡀⠈⣇⠀⠀⣀⠜⠁⠀⠀⠀⠀⠀⠀⢀⣀⠤⠄⠀⠀⠀⡰⠚⢧⠉⠒⠒⠮⠽⣾⣦⣀⢠⠋⠁⡠⣖⠂⠀⠀⠀⡠⠋⠉⠀⡀⠀⠀⢀⡴⠁⠀⠸⡄⠀⠀⠀⠀⡇⠙⢌⠉⢸⠀⠘⠐⠁⣀⡠⠔⠋⣀⣀⡴⠚⠓⡶⣞⣉⣀⣀⡠⢤⠇⠀⠀⠀⢰⣃⡀⠈⢳⡀⠈⢧⣀⣠⡊⠁⡀⣠⠞⠁⠀⠀⠀⡜⠁⠀⠀⠀⠀⠀⡜⠀⠀⠀⠀⣿⠀⠈⠑⢄⢳⠀⠀⠀⠰⣽⢻⡏⠁⠀⠀⠀⢀⠞⠑⠦⠤⠤⠤⠄⡸⠁⠀⠀⠀⢸⠉⣆⠀⠀⠘⡾";
+function dragonL1(){
+    if(j < 30){
+        document.querySelector('#l-5').innerHTML += dragontxt.charAt(j);
+        j++;
+        setTimeout(dragonL1, speed);
+        return;
+        }
+        if(j >= 30){
+            document.querySelector('#l-5').style.borderRight = 'none';
+            setTimeout(() => {dragonL2();}, 50);
+        }
+}
+function dragonL2(){
+    if(j < 60){
+        document.querySelector('#l-6').innerHTML += dragontxt.charAt(j);
+        j++;
+        setTimeout(dragonL2, speed);
+        return;
+        }
+        if(j >= 60){
+            document.querySelector('#l-6').style.borderRight = 'none';
+            setTimeout(() => {dragonL3();}, 50);
+        }
+}
+function dragonL3(){
+    if(j < 90){
+        document.querySelector('#l-7').innerHTML += dragontxt.charAt(j);
+        j++;
+        setTimeout(dragonL3, speed);
+        return;
+        }
+        if(j >= 90){
+            document.querySelector('#l-7').style.borderRight = 'none';
+            setTimeout(() => {dragonL4();}, 50);
+        }
+}
+function dragonL4(){
+    if(j <= 119){
+        document.querySelector('#l-8').innerHTML += dragontxt.charAt(j);
+        j++;
+        setTimeout(dragonL4, speed);
+        return;
+        }
+        if(j >= 119){
+            document.querySelector('#l-8').style.borderRight = 'none';
+            setTimeout(() => {dragonL5();}, 50);
+        }
+}
+function dragonL5(){
+    if(j <= 148){
+        document.querySelector('#l-9').innerHTML += dragontxt.charAt(j);
+        j++;
+        setTimeout(dragonL5, speed);
+        return;
+    }
+    if(j >= 148){
+        document.querySelector('#l-9').style.borderRight = 'none';
+                setTimeout(() => {dragonL6();}, 50);
+    }
+}
+function dragonL6(){
+    if(j <= 177){
+        document.querySelector('#l-10').innerHTML += dragontxt.charAt(j);
+        j++;
+        setTimeout(dragonL6, speed);
+        return;
+    }
+    if(j >= 177){
+        document.querySelector('#l-10').style.borderRight = 'none';
+                setTimeout(() => {dragonL7();}, 50);
+    }
+}
+function dragonL7(){
+    if(j <= 203){
+        document.querySelector('#l-11').innerHTML += dragontxt.charAt(j);
+        j++;
+        setTimeout(dragonL7, speed);
+        return;
+    }
+    if(j >= 203){
+        document.querySelector('#l-11').style.borderRight = 'none';
+                setTimeout(() => {dragonL8();}, 50);
+    }
+}
+function dragonL8(){
+    if(j <= 229){
+        document.querySelector('#l-12').innerHTML += dragontxt.charAt(j);
+        j++;
+        setTimeout(dragonL8, speed);
+        return;
+    }
+    if(j >= 229){
+        document.querySelector('#l-12').style.borderRight = 'none';
+                setTimeout(() => {dragonL9();}, 50);
+    }
+}
+function dragonL9(){
+    if(j <= 259){
+        document.querySelector('#l-13').innerHTML += dragontxt.charAt(j);
+        j++;
+        setTimeout(dragonL9, speed);
+        return;
+    }
+    if(j >= 259){
+        document.querySelector('#l-13').style.borderRight = 'none';
+                setTimeout(() => {dragonL10();}, 50);
+    }
+}
+function dragonL10(){
+    if(j <= 287){
+        document.querySelector('#l-14').innerHTML += dragontxt.charAt(j);
+        j++;
+        setTimeout(dragonL10, speed);
+        return;
+    }
+    if(j >= 287){
+        document.querySelector('#l-14').style.borderRight = 'none';
+                setTimeout(() => {dragonL11();}, 50);
+    }
+}
+function dragonL11(){
+    if(j <= 314){
+        document.querySelector('#l-15').innerHTML += dragontxt.charAt(j);
+        j++;
+        setTimeout(dragonL11, speed);
+        return;
+    }
+    if(j >= 314){
+        document.querySelector('#l-15').style.borderRight = 'none';
+                setTimeout(() => {dragonL12();}, 50);
+    }
+}
+function dragonL12(){
+    if(j <= 343){
+        document.querySelector('#l-16').innerHTML += dragontxt.charAt(j);
+        j++;
+        setTimeout(dragonL12, speed);
+        return;
+    }
+    if(j >= 343){
+        document.querySelector('#l-16').style.borderRight = 'none';
+                setTimeout(() => {dragonL13();}, 50);
+    }
+}
+function dragonL13(){
+    if(j <= 373){
+        document.querySelector('#l-17').innerHTML += dragontxt.charAt(j);
+        j++;
+        setTimeout(dragonL13, speed);
+        return;
+    }
+    if(j >= 373){
+        document.querySelector('#l-17').style.borderRight = 'none';
+                setTimeout(() => {dragonL14();}, 50);
+    }
+}
+function dragonL14(){
+    if(j <= 404){
+        document.querySelector('#l-18').innerHTML += dragontxt.charAt(j);
+        j++;
+        setTimeout(dragonL14, speed);
+        return;
+    }
+    if(j >= 404){
+        document.querySelector('#l-18').style.borderRight = 'none';
+                setTimeout(() => {dragonL15();}, 50);
+    }
+}
+function dragonL15(){
+    if(j <= 435){
+        document.querySelector('#l-19').innerHTML += dragontxt.charAt(j);
+        j++;
+        setTimeout(dragonL15, speed);
+        return;
+    }
+    if(j >= 435){
+        document.querySelector('#l-19').style.borderRight = 'none';
+                setTimeout(() => {dragonL16();}, 50);
+    }
+}
+function dragonL16(){
+    if(j <= 466){
+        document.querySelector('#l-20').innerHTML += dragontxt.charAt(j);
+        j++;
+        setTimeout(dragonL16, speed);
+        return;
+    }
+    if(j >= 466){
+        document.querySelector('#l-20').style.borderRight = 'none';
+        document.querySelector('#terminal__prompt--cursor').style.display = 'block';
+        document.querySelector('#terminal__prompt--cursor').style.animation = 'blink 1200ms linear infinite';
+    }
+}
+// Buttons Min/Max/Exit
 //Terminal Window
 function buttonClickExitTerminal(){
     terminal.style.display = 'none';
@@ -23,7 +280,6 @@ function buttonClickMinTerminal(){
     document.querySelector('#taskbar--about').style.height = '100%';
     boolAbout = false;
 }
-
 //Contact Window
 function buttonClickExitContact(){
     contact.style.display = 'none';
@@ -35,7 +291,6 @@ function buttonClickMinContact(){
     document.querySelector('#taskbar--contact').style.height = '100%';
     boolContact = false;
 }
-
 //Project Window
 function buttonClickExitProject(){
     project.style.display = 'none';
@@ -50,7 +305,6 @@ function buttonClickMinProject(){
 }
 
 //Desktop Icons
-
 //Desktop About Icon
 function buttonClickAbout(){
     terminal.style.display = 'block';
@@ -58,7 +312,6 @@ function buttonClickAbout(){
     document.querySelector('#taskbar--about').style.borderBottom = '2px solid snow';
     document.querySelector('#taskbar--about').style.height = '92%';
 } 
-
 //Desktop Contact Icon
 function buttonClickContacts(){
     contact.style.display = 'block';
@@ -66,7 +319,6 @@ function buttonClickContacts(){
     document.querySelector('#taskbar--contact').style.borderBottom = '2px solid snow';
     document.querySelector('#taskbar--contact').style.height = '92%';
 }
-
 //Desktop Project Icon
 function buttonClickProjects(){
     project.style.display = 'block';
@@ -74,17 +326,23 @@ function buttonClickProjects(){
     document.querySelector('#taskbar--project').style.borderBottom = '2px solid snow';
     document.querySelector('#taskbar--project').style.height = '92%';
 }
-
 //Desktop Resume Icon
 function buttonClickResume(){
     // window.open("url", "_blank"); add resume
 }
 
 //Taskbar
-
 //Taskbar Start
 let boolStart = true;
 function buttonClickStart(){
+    if(window.innerWidth <= 600){
+        terminal.style.display = 'none';
+        document.querySelector('#taskbar--about').style.display = 'none';
+        contact.style.display = 'none';
+        document.querySelector('#taskbar--contact').style.display = 'none';
+        project.style.display = 'none';
+        document.querySelector('#taskbar--project').style.display = 'none';
+    } else {
     if(boolStart === false){
         boolStart = true;
         document.querySelector('#taskbar--search').style.display = 'flex';
@@ -95,8 +353,8 @@ function buttonClickStart(){
         document.querySelector('#taskbar--search').style.display = 'none';
         document.querySelector('#taskbar--start').style.borderRight = '0px solid snow';
     }
+    }
 }
-
 //Taskbar Search
 const mySearch = document.querySelector('#taskbar--search--input');
 function taskbarSearch(){
@@ -140,8 +398,21 @@ function taskbarSearch(){
             case "resume":
               //window.open("url", "_blank"); add resume
                 break;
-            default:
-                console.log('no match');
+            case "close":
+                boolAbout = false;
+                terminal.style.display = 'none';
+                document.querySelector('#taskbar--about').style.height = '100%';
+                document.querySelector('#taskbar--about').style.display = 'none';
+
+                boolContact = false;
+                contact.style.display = 'none';
+                document.querySelector('#taskbar--contact').style.height = '100%';
+                document.querySelector('#taskbar--contact').style.display = 'none';
+
+                boolProject = false;
+                project.style.display = 'none';
+                document.querySelector('#taskbar--project').style.height = '100%';
+                document.querySelector('#taskbar--project').style.display = 'none';
                 break;
         }
         mySearch.value="";
@@ -151,7 +422,6 @@ document.querySelector('#taskbar--search').addEventListener('keydown', (event) =
         taskbarSearch();
     }
 });
-
 //Taskbar About
 let boolAbout = true;
 function buttonClickAbouts(){
@@ -167,7 +437,6 @@ function buttonClickAbouts(){
     document.querySelector('#taskbar--about').style.height = '100%';
     }
 }
-
 //Taskbar Contact
 let boolContact = true;
 function buttonClickContact(){
@@ -183,7 +452,6 @@ function buttonClickContact(){
         document.querySelector('#taskbar--contact').style.height = '100%';
     }
 }
-
 //Taskbar Github
 let boolGithub = true;
 function buttonClickGithub(){
@@ -199,7 +467,6 @@ function buttonClickGithub(){
         window.open("https://www.github.com/DanKaufmanDev", "_blank");
     }
 }
-
 //Taskbar Linkedin
 let boolLinkedin = true;
 function buttonClickLinkedin(){
@@ -215,7 +482,6 @@ function buttonClickLinkedin(){
         window.open("https://www.linkedin.com", "_blank");
     }
 }
-
 //Taskbar Project
 let boolProject = true;
 function buttonClickProject(){
@@ -231,7 +497,6 @@ function buttonClickProject(){
         document.querySelector('#taskbar--project').style.height = '100%';
     }
 }
-
 //Taskbar Settings
 let bool = false;
 function buttonClickSettings(){
@@ -253,39 +518,35 @@ function buttonClickSettings(){
 }
 
 //Themes
-
 //Triangles
 function buttonClickTriangle(){
-    document.body.style.background = 'url(background/triangles.svg)';
-    window.localStorage.setItem('bg', 'url(background/triangles.svg)');
+    document.body.style.background = 'url(../src/background/triangles.svg)';
+    window.localStorage.setItem('bg', 'url(../src/background/triangles.svg)');
     document.body.style.backgroundSize = 'cover';
     window.localStorage.setItem('bgSize', 'cover');
     document.body.style.backgroundRepeat = 'no-repeat';
     window.localStorage.setItem('bgRepeat', 'no-repeat');
 }
-
 //Swirl
 function buttonClickSwirl(){
-    document.body.style.background = 'url(background/swirl.jpg)';
+    document.body.style.background = 'url(../src/background/swirl.jpg)';
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundRepeat = 'no-repeat';
-    window.localStorage.setItem('bg', 'url(background/swirl.jpg)');
+    window.localStorage.setItem('bg', 'url(../src/background/swirl.jpg)');
 }
-
 //Cube
 function buttonClickCube(){
-    document.body.style.background = 'url(background/cube.jpg)';
+    document.body.style.background = 'url(../src/background/cube.jpg)';
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundRepeat = 'no-repeat';
-    window.localStorage.setItem('bg', 'url(background/cube.jpg)');
+    window.localStorage.setItem('bg', 'url(../src/background/cube.jpg)');
 }
-
 //wave
 function buttonClickWave(){
-    document.body.style.background = 'url(background/wave.jpg)';
+    document.body.style.background = 'url(../src/background/wave.jpg)';
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundRepeat = 'no-repeat';
-    window.localStorage.setItem('bg', 'url(background/wave.jpg)');
+    window.localStorage.setItem('bg', 'url(../src/background/wave.jpg)');
 }
 
 //Color Picker
@@ -363,7 +624,6 @@ function colorPicker({movementX, movementY}){
         taskbar.style.background = 'rgba(' + red + ',' + green + ',' + blue + ',' +  '0.5' + ')';
         window.localStorage.setItem('taskbar', 'rgba(' + red + ',' + green + ',' + blue + ',' +  '0.85' + ')');
 }
-
 rgbSelector.addEventListener('mousedown',  () => {
     rgbSelector.style.cursor = 'grabbing';
     rgbSelector.addEventListener('mousemove', colorPicker);
@@ -374,7 +634,6 @@ document.addEventListener('mouseup', () => {
 });
 
 // Window Movement 
-
 //Terminal Window
 const terminalWrapper = document.querySelector('#terminal__wrapper'),
     terminalHeader = terminalWrapper.querySelector('#terminal__bar');
@@ -392,7 +651,6 @@ terminalHeader.addEventListener("mousedown", () => {
 document.addEventListener('mouseup', () =>{
     terminalHeader.removeEventListener('mousemove', onDragTerminal);
 });
-
 //Project Window
 const projectWrapper = document.querySelector('#project__wrapper'),
 projectHeader = projectWrapper.querySelector('#project__bar');
@@ -410,7 +668,6 @@ projectHeader.addEventListener("mousedown", () => {
 document.addEventListener('mouseup', () =>{
     projectHeader.removeEventListener('mousemove', onDragProject);
 });
-
 //Contact Window
 const contactWrapper = document.querySelector('#contact__wrapper'),
     contactHeader = contactWrapper.querySelector('#contact__bar');

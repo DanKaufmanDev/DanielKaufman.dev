@@ -4,13 +4,31 @@ html {
   user-select: none;
 }
 body {  
-  background: url(background/triangles.svg);
+  background: url(../background/marble.jpg);
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: round;
   font-family: 'Ubuntu';
   overflow: hidden;
 } 
-
+/* Preloader */
+.wrapper{
+  display: block;
+  position: fixed;
+  z-index: 1000;
+}
+#preloader{
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  width: 100vw;
+  height: 105vh;
+}
+#preloader__img{
+  display: block;
+  margin: auto;
+  scale: 150%;
+}
+/* Desktop */
 #container {  
   display: flex;  
   justify-content: center;  
@@ -18,12 +36,10 @@ body {
   height: 97.5vh;
   width: 100%;
 }
-
 #desktop__container {
   width: 100%;
   height: 100%;
 }
-
 #desktop__background {
   width: inherit;
   height: inherit;
@@ -34,7 +50,6 @@ body {
 .desktop__button:hover {
   cursor: pointer;
 }
-
 #desktop__background--about {
   display: grid;  
   justify-content: center;  
@@ -50,18 +65,18 @@ body {
 #desktop__settings {
   background-color: rgba(0, 0, 0, 0.750);
   width: 25%;
-  height: 100vh;
+  height: 100%;
   transform: translateX(100vw);
-  transition: 300ms ease-in-out;
+  transition: 250ms ease-in-out;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
   z-index: 100;
 }
-
 #desktop__settings--header{
   margin: 0px;
   padding: 0px;
   list-style: none;
 }
-
 #desktop__settings--header > p{
   margin: 0px;
   text-align: center;
@@ -83,11 +98,10 @@ body {
   transition: 300ms ease-in-out;
   overflow: hidden;
 }
-
 #desktop__settings--bg--triangle {
   display: flex;
   position: absolute;
-  background-image: url(background/triangles.svg);
+  background-image: url(../background/triangles.svg);
   background-size: cover;
   border: none;
   border-radius: 2px;
@@ -95,12 +109,10 @@ body {
   translate: 60%;
   transform: translateY(12.5px);
 }
-
 #desktop__settings--bg--triangle:hover {
   cursor: pointer;
   opacity: 75%;
 }
-
 #settings__bg--triangle--p {
   display: flex;
   position: relative;
@@ -110,12 +122,11 @@ body {
   scale: 50%;
   transform: translateY(55px);
 }
-
 #desktop__settings--bg--swirl {
   display: flex;
   position: absolute;
   width: 75px;
-  background-image: url(background/swirl.jpg);
+  background-image: url(../background/swirl.jpg);
   background-size: cover;
   border: none;
   border-radius: 2px;
@@ -123,12 +134,10 @@ body {
   translate: 25%;
   transform: translate(100px, 12.5px);
 }
-
 #desktop__settings--bg--swirl:hover {
   cursor: pointer;
   opacity: 75%;
 }
-
 #settings__bg--swirl--p {
   display: flex;
   position: relative;
@@ -139,12 +148,11 @@ body {
   translate: calc(100% / 2 - 4px);
   transform: translateY(55px);
 }
-
 #desktop__settings--bg--cube {
   display: flex;
   position: absolute;
   width: 75px;
-  background-image: url(background/cube.jpg);
+  background-image: url(../background/cube.jpg);
   background-size: cover;
   border: none;
   border-radius: 2px;
@@ -152,7 +160,6 @@ body {
   translate: 60%;
   transform: translateY(75px);
 }
-
 #desktop__settings--bg--cube:hover {
   cursor: pointer;
   opacity: 75%;
@@ -167,12 +174,11 @@ body {
   translate: calc(100% / 2 - -3.5px);
   transform: translateY(55px);
 }
-
 #desktop__settings--bg--wave {
   display: flex;
   position: absolute;
   width: 75px;
-  background-image: url(background/wave.jpg);
+  background-image: url(../background/wave.jpg);
   background-size: cover;
   border: none;
   border-radius: 2px;
@@ -180,12 +186,10 @@ body {
   translate: 25%;
   transform: translate(100px, 75px);
 }
-
 #desktop__settings--bg--wave:hover {
   cursor: pointer;
   opacity: 75%;
 }
-
 #settings__bg--wave--p {
   display: flex;
   position: relative;
@@ -196,7 +200,6 @@ body {
   translate: calc(100% / 2 - -3.5px);
   transform: translateY(55px);
 }
-
 #settings__taskbar--rgb--wrapper {
   position: relative;
   width: 81%;
@@ -205,7 +208,6 @@ body {
   margin: auto;
   overflow: hidden;
 }
-
 #settings__taskbar--rgb--wrapper  img{
   display: block;
   margin: 0 auto;
@@ -213,7 +215,6 @@ body {
   width: 270px;
   user-select: none;
 }
-
 #settings__taskbar--rgb--selector {
   position: absolute;
   border: 1.5px solid rgb(0, 0, 0);
@@ -223,12 +224,9 @@ body {
   left: 0%;
   border-radius: 50%;
 }
-
 #settings__taskbar--rgb--selector:hover{
   cursor: grab;
 }
-
-
 #settings__taskbar--rgb {
   width: 100%;
   height: 100%;
@@ -407,7 +405,15 @@ body {
   transform: translate(calc(100% / 3), calc(100% / 6));
   z-index: 1;
 }
-
+.fa-house{
+  display: none;
+  opacity: 0;
+  position: absolute;
+  font-size: x-large;
+  color: #fff;
+  transform: translate(calc(100% / 3), calc(100% / 2.6));
+  z-index: 1;
+}
 #taskbar--search input{
   display: block;
   position: relative;
@@ -416,6 +422,7 @@ body {
   background-color: #000;
   color:#ffffff;
   border-radius: 5px;
+  transition: 250ms ease-in-out;
   transform: translateY(calc(100% / 20));
 }
 
@@ -564,6 +571,7 @@ body {
   height: 65vh;  
   box-shadow: 2px 4px 10px rgba(0,0,0,0.5);
   transition: 10ms ease-in-out;
+  overflow: hidden;
 }
 
 #terminal__bar {  
@@ -684,17 +692,21 @@ body {
   margin-top: 2px;
   user-select: none;
 }
-
-#terminal__prompt--cursor {  
-  display: block;  
+#terminal__prompt--cursor{
+  display: none;  
   height: 17px;  
   width: 8px;  
   margin-top: 2px;
   margin-left: 6px;  
-  animation: blink 1200ms linear infinite;
   user-select: none;
 }
-
+#terminal__prompt--t > span {  
+  display: block;  
+  height: 17px;  
+  width: 8px;  
+  margin-top: 2px;
+  user-select: none;
+}
 #terminal__prompt--text input {
     display: flex;
     background: rgba(56, 4, 40, 0.0);
@@ -712,42 +724,35 @@ body {
     caret-color: transparent;
     user-select: none;
 }
-
 #terminal__prompt--text input::placeholder {
     opacity: 70%;
-    color: #7eda28;
+    color: #00ff2a;
     cursor: pointer;
     user-select: none;
 }
-
 #terminal__textarea {
     margin-top: 2%;
     margin-left: 1px;
     height: auto;
 }
-
-/* remove opacity */
-#terminal__prompt--t h1 { 
-    opacity: 0;
+#terminal__prompt--t > span > p {
     display: flex;
-    font-family: 'Ubuntu';
-    font-size: 32px;
-    color: #7eda28;
-    margin-top: -1%;
-    margin-left: 1.5%;
-    margin-bottom: 0%;    
-}
-
-#terminal__prompt--t p {
-    opacity: 0;
-    display: flex;
-    font-family: 'Ubuntu';
+    position: absolute;
+    width: fit-content;
+    font-family: 'Ubuntu Mono';
     font-size: 16px;
-    color: #7eda28;
+    width: max-content;
+    color: #00ff2a;
+    margin: auto;
     margin-left: 1.5%;
-    margin-top: 1px;   
-    margin-bottom: 0%; 
-}
+    line-height: 15px;
+    border-right: 8px solid #fff;
+  }
+  
+#terminal__prompt--t > span > .terminal__lines{
+    color: red;
+    opacity: 100%;
+  }
 
 #project__wrapper {
   display: flex;
@@ -814,29 +819,49 @@ body {
   transform: translate(calc(100% / 3.5), -22.5px);
   list-style: none;
 }
-
-#skills__frontend  > li{
-  transform: translateX(20px);
-}
-
- #skills__frontend--html {
+ #skills__frontend--{
   font-family: 'Ubuntu Mono';
   font-weight: 200;
   font-size: 14px;
 }   
-
-#skills__frontend--css {
+#skills__frontend-- > i{
+  margin-right: 5px;
+}
+.fa-html5{
+  color: orange;
+  font-size: 15px;
+}
+.fa-css3-alt{
+  color: #2965f1;
+  font-size: 15px;
+}
+.fa-js{
+  color: #f0db4f;
+  font-size: 15px;
+}
+#skills__backend{
+  color: #ffffffe3;
+  font-family: 'Ubuntu';
+  font-weight: 500;
+  font-size: 16px;
+  list-style: none;
+}
+#skills__backend--{
   font-family: 'Ubuntu Mono';
   font-weight: 200;
   font-size: 14px;
 }
-
-#skills__frontend--js {
-  font-family: 'Ubuntu Mono';
-  font-weight: 200;
-  font-size: 14px;
+#skills__backend-- > i{
+  margin-right: 5px;
 }
-
+.fa-python{
+  color: #4584B6;
+  font-size: 15px;
+}
+.fa-react{
+  color: #61DBFB;
+  font-size: 15px;
+}
 #bar__button--project {
   display: flex;  
   align-items: center;
@@ -1087,13 +1112,5 @@ form > textarea::placeholder {
     background: transparent;  
   }  100% {    
     background: #ffffff;  
-  }
-}
-
-@media (max-width: 600px) {  
-  #terminal {    
-    max-height: 90%;    
-    width: 90%;  
-    display: none;
   }
 }

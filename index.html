@@ -7,12 +7,18 @@
         <title>Dan Kaufman</title>
         <link rel="icon" href="assets/favicon/icons8-programming-flag-96.png">
         <link rel="stylesheet" type="text/css" href="./src/CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="./src/CSS/mobile.css">
         <script defer src="./src/JS/script.js"></script>
         <script src="https://kit.fontawesome.com/6e529305db.js" crossorigin="anonymous"></script>
     </head>
-
     <body>
       <main id="container">
+        <!--Preloader-->
+        <div class="wrapper">
+          <div id="preloader">
+            <img id="preloader__img" src="https://media1.giphy.com/media/ycfHiJV6WZnQDFjSWH/giphy.gif?cid=ecf05e471yhv43operiy2ip7d56b2b0b2en1hqwxtz2twti2&rid=giphy.gif&ct=g" alt="">
+          </div>
+        </div>
       <!--Desktop Container that Contains the Background & Icons-->
         <div id="desktop__container">
           <div id="desktop__background">
@@ -38,7 +44,7 @@
         <!--Taskbar Container with Taskbar & Active Window Icons-->
         <div id="taskbar__container">
           <div id="taskbar">
-            <div id="taskbar--start"><button type="button" class="taskbar--button" id="taskbar--start--button" onclick="buttonClickStart()"></button><i class="fa-solid fa-grip"></i></div>
+            <div id="taskbar--start"><button type="button" class="taskbar--button" id="taskbar--start--button" onclick="buttonClickStart()"></button><i class="fa-solid fa-grip"></i><i class="fa-solid fa-house"></i></div>
             <div id="taskbar--search"><input id="taskbar--search--input" type="search" placeholder="    &#x1F50E; Type here to search" spellcheck="true"></div>
             <div id="taskbar--about"><button type="button" class="taskbar--button" id="taskbar--about--button" onclick="buttonClickAbouts()"></button><i class="fa-solid fa-terminal"></i></div>
             <div id="taskbar--contact"><button type="button" class="taskbar--button" id="taskbar--contact--button" onclick="buttonClickContact()"></button><i class="fa-solid fa-envelope"></i></div>
@@ -55,14 +61,14 @@
               <div id="bar__buttons">            
                 <button type="button" class="bar__button" id="bar__button--exit" onclick="buttonClickExitTerminal()"><!--&#10005;--></button>            
                 <button type="button" class="bar__button" id="bar__button--minimize" onclick="buttonClickMinTerminal()"><!--&#9472;--></button>                
-                <button type="button" class="bar__button" id="bar__button--maximize" onclick="buttonClickMaxTerminal()"><!--&#9723;--></button>          
+                <button type="button" class="bar__button" id="bar__button--maximize" onclick="L1()"><!--&#9723;--></button>          
               </div>          
               <p id="bar__user">DanKaufman@Dev: ~</p>     
               <p id="bar__name--terminal">Terminal</p>   
             </div>        
               <div id="terminal__body">          
                 <div id="terminal__prompt">            
-                  <span id="terminal__prompt--user">User:</span>            
+                  <span id="terminal__prompt--user">Visitor:</span>            
                   <span id="terminal__prompt--location">~</span>            
                   <span id="terminal__prompt--bling">$</span>            
                   <span id="terminal__prompt--cursor"></span>
@@ -71,10 +77,26 @@
                 <div id="terminal__textarea">
                   <div id="terminal__textarea--region">
                     <span id="terminal__prompt--t">
-                      <p>Hi There,</p>
-                      <p>My name is Dan</p>
-                      <p>i'm a Software Engineer & Fullstack Developer.</p>
-                      <p></p>
+                      <span><p id="l-1"></p></span>
+                      <span><p id="l-2"></p></span>
+                      <span><p id="l-3"></p></span>
+                      <span><p id="l-4"></p></span>
+                      <span><p class="terminal__lines" id="l-5"></p></span>
+                      <span><p class="terminal__lines" id="l-6"></p></span>
+                      <span><p class="terminal__lines" id="l-7"></p></span>
+                      <span><p class="terminal__lines" id="l-8"></p></span>
+                      <span><p class="terminal__lines" id="l-9"></p></span>
+                      <span><p class="terminal__lines" id="l-10"></p></span>
+                      <span><p class="terminal__lines" id="l-11"></p></span>
+                      <span><p class="terminal__lines" id="l-12"></p></span>
+                      <span><p class="terminal__lines" id="l-13"></p></span>
+                      <span><p class="terminal__lines" id="l-14"></p></span>
+                      <span><p class="terminal__lines" id="l-15"></p></span>
+                      <span><p class="terminal__lines" id="l-16"></p></span>
+                      <span><p class="terminal__lines" id="l-17"></p></span>
+                      <span><p class="terminal__lines" id="l-18"></p></span>
+                      <span><p class="terminal__lines" id="l-19"></p></span>
+                      <span><p class="terminal__lines" id="l-20"></p></span>
                     </span>
                   </div>
                 </div>         
@@ -123,14 +145,13 @@
                 <div id="project__body--side--bar">
                  <p id="project__body--side--bar--p">Skills</p>
                   <ul id="skills__frontend">Frontend
-                    <li id="skills__frontend--html">HTML5</li>
-                    <li id="skills__frontend--css">CSS3</li>
-                    <li id="skills__frontend--js">Javascript</li>
+                    <li id="skills__frontend--"><i class="fa-brands fa-html5"></i>HTML5</li>
+                    <li id="skills__frontend--"><i class="fa-brands fa-css3-alt"></i>CSS3</li>
+                    <li id="skills__frontend--"><i class="fa-brands fa-js"></i>Javascript</li>
                   </ul>
                  <ul id="skills__backend">Backend
-                  <li id="skills__backend--">placeholder</li>
-                  <li id="skills__backend--">placeholder</li>
-                  <li id="skills__backend--">placeholder</li>
+                  <li id="skills__backend--"><i class="fa-brands fa-python"></i>Python</li>
+                  <li id="skills__backend--"><i class="fa-brands fa-react"></i>React</li>
                  </ul>
                 </div>
               </div>       
