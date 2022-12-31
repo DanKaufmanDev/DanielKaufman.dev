@@ -6,10 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Dan Kaufman</title>
         <link rel="icon" href="assets/favicon/icons8-programming-flag-96.png">
-        <link rel="stylesheet" type="text/css" href="./style.css">
-        <link rel="stylesheet" type="text/css" href="minesweeper.css">
-        <script defer src="./src/script.js"></script>
-        <script  defer type="text/javascript" src="./src/minesweeper.js"></script>
+        <link rel="stylesheet" type="text/css" href="./src/CSS/style.css">
+        <script defer src="./src/JS/script.js"></script>
         <script src="https://kit.fontawesome.com/6e529305db.js" crossorigin="anonymous"></script>
     </head>
 
@@ -41,7 +39,7 @@
         <div id="taskbar__container">
           <div id="taskbar">
             <div id="taskbar--start"><button type="button" class="taskbar--button" id="taskbar--start--button" onclick="buttonClickStart()"></button><i class="fa-solid fa-grip"></i></div>
-            <div id="taskbar--search"><input type="search" placeholder="    &#x1F50E; Type here to search"></div>
+            <div id="taskbar--search"><input id="taskbar--search--input" type="search" placeholder="    &#x1F50E; Type here to search" spellcheck="true"></div>
             <div id="taskbar--about"><button type="button" class="taskbar--button" id="taskbar--about--button" onclick="buttonClickAbouts()"></button><i class="fa-solid fa-terminal"></i></div>
             <div id="taskbar--contact"><button type="button" class="taskbar--button" id="taskbar--contact--button" onclick="buttonClickContact()"></button><i class="fa-solid fa-envelope"></i></div>
             <div id="taskbar--project"><button type="button" class="taskbar--button" id="taskbar--project--button" onclick="buttonClickProject()"></button><i class="fa-solid fa-folder"></i></div>

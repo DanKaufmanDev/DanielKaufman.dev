@@ -97,6 +97,61 @@ function buttonClickStart(){
     }
 }
 
+//Taskbar Search
+const mySearch = document.querySelector('#taskbar--search--input');
+function taskbarSearch(){
+    let searchTerm = mySearch.value;
+        switch(searchTerm){
+            case "about":
+                boolAbout = true;
+                terminal.style.display = 'block';
+                document.querySelector('#taskbar--about').style.display = 'flex';
+                document.querySelector('#taskbar--about').style.borderBottom = '2px solid snow';
+                document.querySelector('#taskbar--about').style.height = '92%';
+                break;
+            case "contact":
+                boolContact = true;
+                contact.style.display = 'block';
+                document.querySelector('#taskbar--contact').style.display = 'flex'
+                document.querySelector('#taskbar--contact').style.borderBottom = '2px solid snow';
+                document.querySelector('#taskbar--contact').style.height = '92%';                
+                break;
+            case "projects":
+                boolProject = true;
+                project.style.display = 'block';
+                document.querySelector('#taskbar--project').style.display = 'flex'
+                document.querySelector('#taskbar--project').style.borderBottom = '2px solid snow';
+                document.querySelector('#taskbar--project').style.height = '92%';                    
+                break;
+            case "github":
+                boolGithub = false;
+                document.querySelector('#taskbar--github').style.opacity = '100%';
+                document.querySelector('#taskbar--github').style.borderBottom = '2px solid snow';
+                document.querySelector('#taskbar--github').style.height = '92%';
+                window.open("https://www.github.com/DanKaufmanDev", "_blank");                
+                break;
+            case "linkedin":
+                boolLinkedin = false;
+                document.querySelector('#taskbar--linkedin').style.opacity = '100%';
+                document.querySelector('#taskbar--linkedin').style.borderBottom = '2px solid snow';
+                document.querySelector('#taskbar--linkedin').style.height = '92%';
+                window.open("https://www.linkedin.com", "_blank");                
+                break;
+            case "resume":
+              //window.open("url", "_blank"); add resume
+                break;
+            default:
+                console.log('no match');
+                break;
+        }
+        mySearch.value="";
+}
+document.querySelector('#taskbar--search').addEventListener('keydown', (event) =>{
+    if(event.keyCode === 13){
+        taskbarSearch();
+    }
+});
+
 //Taskbar About
 let boolAbout = true;
 function buttonClickAbouts(){
