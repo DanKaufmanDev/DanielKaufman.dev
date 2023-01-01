@@ -4,94 +4,115 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Software Engineer Personal Portfolio by Daniel Kaufman">
         <title>Dan Kaufman</title>
-        <link rel="icon" href="sprites/mine.png">
-        <link rel="stylesheet" type="text/css" href="./style.css">
-        <link rel="stylesheet" type="text/css" href="minesweeper.css">
-        <script defer src="./src/script.js"></script>
-        <script  defer type="text/javascript" src="./src/minesweeper.js"></script>
+        <link rel="icon" href="assets/favicon/favicon.png">
+        <link rel="stylesheet" type="text/css" href="./src/CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="./src/CSS/mobile.css">
+        <script defer src="./src/JS/script.js"></script>
         <script src="https://kit.fontawesome.com/6e529305db.js" crossorigin="anonymous"></script>
     </head>
-
     <body>
       <main id="container">
+        <!--Preloader-->
+        <div class="wrapper">
+          <div id="preloader">
+            <img id="preloader__img" src="https://media1.giphy.com/media/ycfHiJV6WZnQDFjSWH/giphy.gif?cid=ecf05e471yhv43operiy2ip7d56b2b0b2en1hqwxtz2twti2&rid=giphy.gif&ct=g" alt="loading">
+          </div>
+        </div>
       <!--Desktop Container that Contains the Background & Icons-->
         <div id="desktop__container">
           <div id="desktop__background">
-            <button type="button" class="desktop__button" id="desktop__background--about" onclick="buttonClickAbout()"><img id="about--img" src="icons/terminal-svgrepo-com.svg"><p>About</p></button>
-            <button type="button" class="desktop__button" id="desktop__background--contact" onclick="buttonClickContacts()"><img id="contact--img" src="icons/email-svgrepo-com.svg"><p>Contact</p></button>
-            <button type="button" class="desktop__button" id="desktop__background--minesweeper" onclick="buttonClickMinesweeper()"><img id="minesweeper--img" src=""><p>Minesweeper</p></button>
-            <button type="button" class="desktop__button" id="desktop__background--projects" onclick="buttonClickProjects()"><img id="projects--img" src="icons/folder-svgrepo-com.svg"><p>Projects</p></button>
-            <button type="button" class="desktop__button" id="desktop__background--resume" onclick="buttonClickResume()"><img id="resume--img" src="icons/pdf-svgrepo-com.svg"><p>Resume</p></button>
+            <button type="button" aria-label="desktop about icon" class="desktop__button" id="desktop__background--about" onclick="buttonClickAbout()"><img id="about--img" src="icons/terminal-svgrepo-com.svg" alt="terminal image"><p>About</p></button>
+            <button type="button" aria-label="desktop contact icon" class="desktop__button" id="desktop__background--contact" onclick="buttonClickContacts()"><img id="contact--img" src="icons/email-svgrepo-com.svg" alt="email image"><p>Contact</p></button>
+            <button type="button" aria-label="desktop project icon" class="desktop__button" id="desktop__background--projects" onclick="buttonClickProjects()"><img id="projects--img" src="icons/folder-svgrepo-com.svg" alt="folder image"><p>Projects</p></button>
+            <button type="button" aria-label="desktop resume icon" class="desktop__button" id="desktop__background--resume" onclick="buttonClickResume()"><img id="resume--img" src="icons/pdf-svgrepo-com.svg" alt="pdf image"><p>Resume</p></button>
           </div>
           <div id="desktop__settings">
             <ul id="desktop__settings--header"><p>Settings</p><br>
               <div id="desktop__settings--bar"></div><br>
-              <button type="button" id="desktop__settings--bg--triangle" onclick="buttonClickTriangle()"><p id="settings__bg--triangle--p">Triangles</p></button>
-              <button type="button" id="desktop__settings--bg--swirl" onclick="buttonClickSwirl()"><p id="settings__bg--swirl--p">Swirl</p></button>
-              <button type="button" id="desktop__settings--bg--cube" onclick="buttonClickCube()"><p id="settings__bg--cube--p">Cube</p></button>
-              <button type="button" id="desktop__settings--bg--wave" onclick="buttonClickWave()"><p id="settings__bg--wave--p">Wave</p></button>
+              <button type="button" aria-label="rainbow triangle wallpaper" id="desktop__settings--bg--triangle" onclick="buttonClickTriangle()"><p id="settings__bg--triangle--p">Triangle</p></button>
+              <button type="button" aria-label="orange swirl wallpaper" id="desktop__settings--bg--swirl" onclick="buttonClickSwirl()"><p id="settings__bg--swirl--p">Swirl</p></button>
+              <button type="button" aria-label="neon cube wallpaper" id="desktop__settings--bg--cube" onclick="buttonClickCube()"><p id="settings__bg--cube--p">Cube</p></button>
+              <button type="button" aria-label="rainbow wave wallpaper" id="desktop__settings--bg--wave" onclick="buttonClickWave()"><p id="settings__bg--wave--p">Wave</p></button>
             </ul>
+            <div id="settings__taskbar--rgb--wrapper">
+              <div id="settings__taskbar--rgb--selector"></div>
+              <img id="settings__taskbar--rgb" src="assets/img/spectrum_chart.jpg" alt="rainbow color selector"/>
+            </div>
           </div>
         </div>
-
         <!--Taskbar Container with Taskbar & Active Window Icons-->
         <div id="taskbar__container">
           <div id="taskbar">
-            <div id="taskbar--start"><!--<i class="fa-solid fa-grip"></i>--></div>
-            <div id="taskbar--about"></div>
-            <div id="taskbar--contact"></div>
-            <div id="taskbar--google"></div>
-            <div id="taskbar--minesweeper"></div>
-            <div id="taskbar--project"></div>
-            <div id="taskbar--settings"><button type="button" id="taskbar--settings--button" onclick="buttonClickSettings()"></button><i class="fa-sharp fa-solid fa-gear"></i></div>
+            <div id="taskbar--start"><button type="button" aria-label="taskbar home button" class="taskbar--button" id="taskbar--start--button" onclick="buttonClickStart()"></button><i class="fa-solid fa-grip"></i><i class="fa-solid fa-house"></i></div>
+            <div id="taskbar--search"><input id="taskbar--search--input" type="search" placeholder="    &#x1F50E; Type here to search" spellcheck="true"></div>
+            <div id="taskbar--about"><button type="button" aria-label="taskbar about icon" class="taskbar--button" id="taskbar--about--button" onclick="buttonClickAbouts()"></button><i class="fa-solid fa-terminal"></i></div>
+            <div id="taskbar--contact"><button type="button" aria-label="taskbar contact icon" class="taskbar--button" id="taskbar--contact--button" onclick="buttonClickContact()"></button><i class="fa-solid fa-envelope"></i></div>
+            <div id="taskbar--project"><button type="button" aria-label="taskbar project icon" class="taskbar--button" id="taskbar--project--button" onclick="buttonClickProject()"></button><i class="fa-solid fa-folder"></i></div>
+            <div id="taskbar--github"><button type="button" aria-label="taskbar github icon" class="taskbar--button" id="taskbar--github--button" onclick="buttonClickGithub()"></button><i class="fa-brands fa-github"></i></div>
+            <div id="taskbar--linkedin"><button type="button" aria-label="taskbar linked in icon" class="taskbar--button" id="taskbar--linkedin--button" onclick="buttonClickLinkedin()"></button><i class="fa-brands fa-linkedin-in"></i></div>
+            <div id="taskbar--settings"><button type="button" aria-label="taskbar settings button" class="taskbar--button" id="taskbar--settings--button" onclick="buttonClickSettings()"></button><i class="fa-sharp fa-solid fa-gear"></i></div>
           </div>
         </div>
-
         <!--Terminal Container for the Terminal Window-->
         <div id="terminal__wrapper">
           <div id="terminal">
             <div class="bar__hover" id="terminal__bar">          
               <div id="bar__buttons">            
-                <button type="button" class="bar__button" id="bar__button--exit" onclick="buttonClickExitTerminal()">&#10005;</button>            
-                <button type="button" class="bar__button" id="bar__button--minimize" onclick="buttonClickMinTerminal()">&#9472;</button>                
-                <button type="button" class="bar__button" id="bar__button--maximize" onclick="buttonClickMaxTerminal()">&#9723;</button>          
+                <button type="button" aria-label="terminal exit window button" class="bar__button" id="bar__button--exit" onclick="buttonClickExitTerminal()"><!--&#10005;--></button>            
+                <button type="button" aria-label="terminal minimize window button" class="bar__button" id="bar__button--minimize" onclick="buttonClickMinTerminal()"><!--&#9472;--></button>                
+                <button type="button" aria-label="terminal maximize window button" class="bar__button" id="bar__button--maximize" onclick="L1()"><!--&#9723;--></button>          
               </div>          
               <p id="bar__user">DanKaufman@Dev: ~</p>     
               <p id="bar__name--terminal">Terminal</p>   
             </div>        
               <div id="terminal__body">          
                 <div id="terminal__prompt">            
-                  <span id="terminal__prompt--user">User:</span>            
+                  <span id="terminal__prompt--user">Visitor:</span>            
                   <span id="terminal__prompt--location">~</span>            
                   <span id="terminal__prompt--bling">$</span>            
                   <span id="terminal__prompt--cursor"></span>
-                  <span id="terminal__prompt--text"><input id="txtInput" type="text" placeholder="-h for help"></span>       
+                  <span id="terminal__prompt--text"><input id="txtInput" type="text"></span>       
                 </div>  
                 <div id="terminal__textarea">
                   <div id="terminal__textarea--region">
                     <span id="terminal__prompt--t">
-                      <h1>Hi There,</h1>
-                      <p>My name is Dan</p>
-                      <p>i'm a Software Engineer & Fullstack Developer.</p>
-                      <p></p>
+                      <span><p id="l-1"></p></span>
+                      <span><p id="l-2"></p></span>
+                      <span><p id="l-3"></p></span>
+                      <span><p id="l-4"></p></span>
+                      <span><p class="terminal__lines" id="l-5"></p></span>
+                      <span><p class="terminal__lines" id="l-6"></p></span>
+                      <span><p class="terminal__lines" id="l-7"></p></span>
+                      <span><p class="terminal__lines" id="l-8"></p></span>
+                      <span><p class="terminal__lines" id="l-9"></p></span>
+                      <span><p class="terminal__lines" id="l-10"></p></span>
+                      <span><p class="terminal__lines" id="l-11"></p></span>
+                      <span><p class="terminal__lines" id="l-12"></p></span>
+                      <span><p class="terminal__lines" id="l-13"></p></span>
+                      <span><p class="terminal__lines" id="l-14"></p></span>
+                      <span><p class="terminal__lines" id="l-15"></p></span>
+                      <span><p class="terminal__lines" id="l-16"></p></span>
+                      <span><p class="terminal__lines" id="l-17"></p></span>
+                      <span><p class="terminal__lines" id="l-18"></p></span>
+                      <span><p class="terminal__lines" id="l-19"></p></span>
+                      <span><p class="terminal__lines" id="l-20"></p></span>
                     </span>
                   </div>
                 </div>         
               </div>   
           </div> 
         </div>
-
         <!--Contact Container for the Contact Window-->
         <div id="contact__wrapper">
           <div id="contact">
             <div class="bar__hover" id="contact__bar">
               <div id="bar__button--contact">
-                <button type="button" class="bar__button" id="bar__button--exit" onclick="buttonClickExitContact()">&#10005;</button>            
-                <button type="button" class="bar__button" id="bar__button--minimize" onclick="buttonClickMinContact()">&#9472;</button>                
-                <button type="button" class="bar__button" id="bar__button--maximize" onclick="buttonClickMaxContact()">&#9723;</button>  
+                <button type="button" aria-label="contact exit window button" class="bar__button" id="bar__button--exit" onclick="buttonClickExitContact()"><!--&#10005;--></button>            
+                <button type="button" aria-label="contact minimize window button" class="bar__button" id="bar__button--minimize" onclick="buttonClickMinContact()"><!--&#9472;--></button>                
+                <button type="button" aria-label="contact maximize window button" class="bar__button" id="bar__button--maximize" onclick="buttonClickMaxContact()"><!--&#9723;--></button>  
               </div>
-              <!--<p id="bar__user">DanKaufman.Dev: ~</p>-->
               <p id="bar__name">Contact</p>
             </div>
               <div id="contact__body">
@@ -103,54 +124,35 @@
                   <input type="email" placeholder="Email" id="email" name="email"><br><br>
                   <label for="message">Message:</label><br>
                   <textarea id="message" placeholder="Message" name="message" rows="5" cols="20"></textarea><br><br>
-                  <input id="button__submit" type="submit" value="Send" target="">
-                  <div id="bar"><a href="https://github.com/DanKaufmanDev"><img class="fa-github" src="icons/github.svg"></img></a></div>
+                  <input id="button__submit" type="submit" value="Send" target="_blank">
+                  <div id="bar"><a href="https://github.com/DanKaufmanDev" target="_blank"><img class="fa-github" src="icons/github.svg" alt="github logo"></img></a></div>
                 </form> 
                 <div id="contact__footer"></div>
             </div>       
           </div>
         </div>
-
-        <!--Minesweeper Container for the Minesweeper Window-->
-        <div id="minesweeper__wrapper">
-          <div id="minesweeper">
-            <div class="bar__hover" id="minesweeper__bar">
-              <div id="bar__button--minesweeper">
-                <button type="button" class="bar__button" id="bar__button--exit" onclick="buttonClickExitMinesweeper()">&#10005;</button>            
-                <button type="button" class="bar__button" id="bar__button--minimize" onclick="buttonClickMinMinesweeper()">&#9472;</button>                
-                <button type="button" class="bar__button" id="bar__button--maximize" onclick="buttonClickMaxMinesweeper()">&#9723;</button>  
-              </div>
-              <!--<p id="bar__user">DanKaufman.Dev: ~</p>-->
-              <p id="bar__name">Minesweeper</p>
-            </div>
-              <div id="minesweeper__body"> <table id='board'></table> </div>       
-          </div>
-        </div>
-
         <!--Project Container for the Project Window-->
         <div id="project__wrapper">
           <div id="project">
             <div class="bar__hover" id="project__bar">
               <div id="bar__button--project">
-                <button type="button" class="bar__button" id="bar__button--exit" onclick="buttonClickExitProject()">&#10005;</button>            
-                <button type="button" class="bar__button" id="bar__button--minimize" onclick="buttonClickMinProject()">&#9472;</button>                
-                <button type="button" class="bar__button" id="bar__button--maximize" onclick="buttonClickMaxProject()">&#9723;</button>  
+                <button type="button" aria-label="project exit window button" class="bar__button" id="bar__button--exit" onclick="buttonClickExitProject()"><!--&#10005;--></button>            
+                <button type="button" aria-label="project minimize window button" class="bar__button" id="bar__button--minimize" onclick="buttonClickMinProject()"><!--&#9472;--></button>                
+                <button type="button" aria-label="project maximize window button" class="bar__button" id="bar__button--maximize" onclick="buttonClickMaxProject()"><!--&#9723;--></button>  
               </div>
-              <!--<p id="bar__user">DanKaufman.Dev: ~</p>-->
               <p id="bar__name">Projects</p>
             </div>
               <div id="project__body">
-                <div id="project__body--side--bar"><br>
-                  <p id="project__body--side--bar--p">Skills</p>
+                <div id="project__body--side--bar">
+                 <p id="project__body--side--bar--p">Skills</p>
                   <ul id="skills__frontend">Frontend
-                    <li id="skills__frontend--html">HTML5</li>
-                    <li id="skills__frontend--css">CSS3</li>
-                    <li id="skills__frontend--js">Javascript</li>
+                    <li id="skills__frontend--"><i class="fa-brands fa-html5"></i>HTML5</li>
+                    <li id="skills__frontend--"><i class="fa-brands fa-css3-alt"></i>CSS3</li>
+                    <li id="skills__frontend--"><i class="fa-brands fa-js"></i>Javascript</li>
                   </ul>
                  <ul id="skills__backend">Backend
-                  <li id="skills__backend--">placeholder</li>
-                  <li id="skills__backend--">placeholder</li>
-                  <li id="skills__backend--">placeholder</li>
+                  <li id="skills__backend--"><i class="fa-brands fa-python"></i>Python</li>
+                  <li id="skills__backend--"><i class="fa-brands fa-react"></i>React</li>
                  </ul>
                 </div>
               </div>       

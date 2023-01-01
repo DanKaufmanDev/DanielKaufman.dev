@@ -1,14 +1,35 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono'); 
-
+html {
+  user-select: none;
+}
 body {  
-  background: url(background/triangles.svg);
+  background: url(../background/triangles.svg);
   background-size: cover;
   background-repeat: no-repeat;
   font-family: 'Ubuntu';
   overflow: hidden;
+  font-size: 16px;
 } 
-
+/* Preloader */
+.wrapper{
+  display: block;
+  position: fixed;
+  z-index: 1000;
+}
+#preloader{
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  width: 100vw;
+  height: 105vh;
+}
+#preloader__img{
+  display: block;
+  margin: auto;
+  scale: 150%;
+}
+/* Desktop */
 #container {  
   display: flex;  
   justify-content: center;  
@@ -16,12 +37,10 @@ body {
   height: 97.5vh;
   width: 100%;
 }
-
 #desktop__container {
   width: 100%;
   height: 100%;
 }
-
 #desktop__background {
   width: inherit;
   height: inherit;
@@ -32,7 +51,6 @@ body {
 .desktop__button:hover {
   cursor: pointer;
 }
-
 #desktop__background--about {
   display: grid;  
   justify-content: center;  
@@ -48,22 +66,23 @@ body {
 #desktop__settings {
   background-color: rgba(0, 0, 0, 0.750);
   width: 25%;
-  height: 94vh;
+  height: 100%;
   transform: translateX(100vw);
-  transition: 150ms ease-in-out;
+  transition: 250ms ease-in-out;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  overflow: hidden;
   z-index: 100;
 }
-
 #desktop__settings--header{
   margin: 0px;
   padding: 0px;
   list-style: none;
 }
-
 #desktop__settings--header > p{
   margin: 0px;
   text-align: center;
-  font-size: xx-large;
+  font-size: 2.5rem;
   font-family: 'Ubuntu';
   font-variant-caps: all-petite-caps;
   font-weight: 600;
@@ -73,84 +92,84 @@ body {
 
 #desktop__settings--bar {
   display: flex; 
-  position: absolute;  
+  position: fixed;  
   width: 100%;  
-  height: 2px;
+  height: 0.3%;
   margin-top: -10px;
   background-color: rgba(255, 255, 255, 0.300);
   transition: 300ms ease-in-out;
   overflow: hidden;
 }
-
 #desktop__settings--bg--triangle {
   display: flex;
-  position: absolute;
-  background-image: url(background/triangles.svg);
+  position: fixed;
+  width: 21.5%;
+  max-width: 100%;
+  background-image: url(../background/triangles.svg);
   background-size: cover;
   border: none;
   border-radius: 2px;
   scale: 200%;
   translate: 60%;
-  transform: translateY(12.5px);
+  transform: translateY(28%);
 }
-
 #desktop__settings--bg--triangle:hover {
   cursor: pointer;
   opacity: 75%;
 }
-
 #settings__bg--triangle--p {
   display: flex;
   position: relative;
-  font-size: 14px;
+  font-size: 0.9rem;
+  margin-right: auto;
+  margin-left: auto;
   font-family: 'Ubuntu Mono';
   color: #fff;
   scale: 50%;
   transform: translateY(55px);
 }
-
 #desktop__settings--bg--swirl {
   display: flex;
-  position: absolute;
-  width: 75px;
-  background-image: url(background/swirl.jpg);
+  position: fixed;
+  width: 21.5%;
+  max-width: 100%;
+  margin-left: 1%;
+  background-image: url(../background/swirl.jpg);
   background-size: cover;
   border: none;
   border-radius: 2px;
   scale: 200%;
   translate: 25%;
-  transform: translate(100px, 12.5px);
+  transform: translate(135%, 28%);
 }
-
 #desktop__settings--bg--swirl:hover {
   cursor: pointer;
   opacity: 75%;
 }
-
 #settings__bg--swirl--p {
   display: flex;
   position: relative;
-  font-size: 14px;
+  font-size: 0.9rem;
+  margin-left: auto;
+  margin-right: auto;
   font-family: 'Ubuntu Mono';
   color: #fff;
   scale: 50%;
-  translate: calc(100% / 2 - 4px);
   transform: translateY(55px);
 }
-
 #desktop__settings--bg--cube {
   display: flex;
-  position: absolute;
-  width: 75px;
-  background-image: url(background/cube.jpg);
+  position: fixed;
+  width: 21.5%;
+  max-width: 100%;
+  background-image: url(../background/cube.jpg);
   background-size: cover;
   border: none;
   border-radius: 2px;
   scale: 200%;
   translate: 60%;
-  transform: translateY(75px);
+  transform: translateY(170%);
 }
-
 #desktop__settings--bg--cube:hover {
   cursor: pointer;
   opacity: 75%;
@@ -158,41 +177,77 @@ body {
 #settings__bg--cube--p {
   display: flex;
   position: relative;
-  font-size: 14px;
+  font-size: 0.9rem;
+  margin-left: auto;
+  margin-right: auto;
   font-family: 'Ubuntu Mono';
   color: #fff;
   scale: 50%;
-  translate: calc(100% / 2 - -3.5px);
   transform: translateY(55px);
 }
-
 #desktop__settings--bg--wave {
   display: flex;
-  position: absolute;
-  width: 75px;
-  background-image: url(background/wave.jpg);
+  position: fixed;
+  width: 21.5%;
+  max-width: 100%;
+  background-image: url(../background/wave.jpg);
   background-size: cover;
   border: none;
   border-radius: 2px;
   scale: 200%;
   translate: 25%;
-  transform: translate(100px, 75px);
+  transform: translate(136%, 170%);
 }
-
 #desktop__settings--bg--wave:hover {
   cursor: pointer;
   opacity: 75%;
 }
-
 #settings__bg--wave--p {
   display: flex;
   position: relative;
-  font-size: 14px;
+  font-size: 0.9rem;
+  margin-left: auto;
+  margin-right: auto;
   font-family: 'Ubuntu Mono';
   color: #fff;
   scale: 50%;
-  translate: calc(100% / 2 - -3.5px);
   transform: translateY(55px);
+}
+#settings__taskbar--rgb--wrapper {
+  position: relative;
+  width: 81%;
+  height: 28%;
+  transform: translateY(365px);
+  margin: auto;
+  overflow: hidden;
+}
+#settings__taskbar--rgb--wrapper  img{
+  display: block;
+  margin: 0 auto;
+  width: 98.77%;
+  max-width: 98.77%;
+  height: 97.37%;
+  min-height: 97.37%;
+  max-height: 37.37%;
+  user-select: none;
+}
+#settings__taskbar--rgb--selector {
+  position: absolute;
+  border: 1.5px solid rgb(0, 0, 0);
+  width: 5.124%;
+  height: 7.38%;
+  top: 0%;
+  left: 0%;
+  border-radius: 50%;
+}
+#settings__taskbar--rgb--selector:hover{
+  cursor: grab;
+}
+#settings__taskbar--rgb {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  margin: auto;
 }
 
 #about--img {
@@ -211,7 +266,7 @@ body {
   display: grid;
   justify-items: center;
   font-family: 'Ubuntu';
-  font-size: 14px;
+  font-size: 0.9rem;
   font-weight: 400;
   color: #ffffffd3;
   position: relative;
@@ -249,7 +304,7 @@ body {
   display: grid;
   justify-items: center;
   font-family: 'Ubuntu';
-  font-size: 14px;
+  font-size: 0.9rem;
   font-weight: 400;
   color: #ffffffd3;
   position: relative;
@@ -294,19 +349,6 @@ body {
   user-select: none;
 }
 
-#desktop__background--minesweeper {
-  display: grid;  
-  justify-content: center;  
-  align-items: center;  
-  padding: 0;  
-  width: 95px;
-  height: 95px;
-  background-color: #00000080;
-  border: none;
-  border-radius: 10px;
-  margin: 0.25%;
-}
-
 #desktop__background--projects {
   display: grid;
   justify-content: center;
@@ -338,90 +380,202 @@ body {
   display: grid;
   justify-items: center;
   font-family: 'Ubuntu';
-  font-size: 14px;
+  font-size: 0.9rem;
   font-weight: 400;
   color: #ffffffd3;
   position: relative;
   bottom: 25%;
   user-select: none;
 }
-#desktop__background--spotify {
-  display: grid;  
-  justify-content: center;  
-  align-items: center;  
-  padding: 0;  
-  width: 95px;
-  height: 95px;
-  background-color: #00000000;
-  border: none;
-  border-radius: 10px;
-  margin: 0.25%;
-}
 
-#spotify--img {
-  display: grid;
-  justify-items: center;
-  width: 64px;
-  height: 64px;
-  transform: scale(125%, 115%);
-  border-radius: 10px;
-  margin-bottom: 1px;
-  margin-top: 15%;
-  filter: opacity(90%);
-  user-select: none;
-}
-
-#desktop__background--spotify > p {
-  display: grid;
-  justify-items: center;
-  font-family: 'Ubuntu';
-  font-size: 14px;
-  font-weight: 400;
-  color: #ffffffd3;
-  position: relative;
-  bottom: 12.5%;
-  user-select: none;
-}
-
-#taskbar {
+#taskbar{
   display: flex;
   position: fixed;
-  width: 100vw;
-  height: 6vh;
+  width: 50%;
+  max-width: 100%;
+  min-height: 6%;
+  height: 6%;
   background: rgba(67, 67, 67, 0.5);
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 2);
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   bottom: 0;
   left: 0;
+  transform: translateX(calc(100% / 2));
   z-index: 100;
 }
 
-#taskbar--settings--button {
+#taskbar--start{
   display: flex;
+  position: relative;
+  background: rgba(0, 0, 0, 0.85);
+  width: 6.7%;
+  height: 100%;
+  border-right: 2.5px solid snow;
+  border-radius: 5px;
+  border-bottom-left-radius: 0px;
+  margin-right: 1px;
+  margin-left: 2px;
+}
+.fa-grip {
+  display: block;
+  position: relative;
+  margin: auto;
+  font-size: 2rem;
+  color: #fff;
+  z-index: 1;
+}
+.fa-house{
+  display: none;
+  opacity: 0;
+  position: absolute;
+  font-size: 2.5rem;
+  color: #fff;
+  transform: translate(calc(100% / 3), calc(100% / 2.6));
+  z-index: 1;
+}
+#taskbar--search input{
+  display: block;
+  position: relative;
+  min-height: 90%;
+  max-width: 100%;
+  margin: 1px;
+  background-color: #000;
+  color:#ffffff;
+  border-radius: 5px;
+  transition: 250ms ease-in-out;
+  transform: translateY(calc(100% / 20));
+}
+
+#taskbar--about{
+  display: flex;
+  position: relative;
+  background: rgba(0, 0, 0, 0.85);
+  width: 6.7%;
+  height: 92%;
+  margin: 1px;
+  border-bottom: 2px solid snow;
+  border-radius: 5px;
+}
+.fa-terminal{
+  display: block;
+  position: relative;
+  font-size: 1.4rem;
+  margin: auto;
+  color: #fff;
+  z-index: 1;
+}
+
+#taskbar--contact{
+  display: none;
+  position: relative;
+  background: rgba(0, 0, 0, 0.85);
+  height: 100%;
+  width: 6.7%;
+  margin: 1px;
+  border-radius: 5px;
+}
+.fa-envelope{
+  display: block;
+  position: relative;
+  font-size: 2rem;
+  margin: auto;
+  color: rgb(223, 223, 223);
+  z-index: 1;
+}
+
+#taskbar--github{
+  display: flex;
+  position: relative;
+  background: rgba(23, 21, 21, 0.85);
+  opacity: 75%;
+  height: 100%;
+  width: 6.7%;
+  margin: 1px;
+  border-radius: 5px;
+}
+.fa-github{
+  display: block;
+  position: relative;
+  font-size: 2rem;
+  margin: auto;
+  color: rgb(255, 255, 255);
+  z-index: 1;
+}
+
+#taskbar--linkedin{
+  display: flex;
+  position: relative;
+  background: rgba(0, 114, 177, 0.85);
+  opacity: 75%;
+  height: 100%;
+  width: 6.7%;
+  margin: 1px;
+  border-radius: 5px;
+}
+.fa-linkedin-in{
+  display: block;
+  position: relative;
+  font-size: 2rem;
+  margin: auto;
+  color: rgb(255, 255, 255);
+  z-index: 1;
+}
+
+#taskbar--project{
+  display: none;
+  position: relative;
+  background: rgba(0, 0, 0, 0.85);
+  height: 100%;
+  width: 6.7%;
+  margin: 1px;
+  border-radius: 5px;
+}
+.fa-folder{
+  display: block;
+  position: relative;
+  font-size: 2rem;
+  margin: auto;
+  color: rgb(255, 235, 146);
+  z-index: 1;
+}
+
+#taskbar--settings{
+  display: flex;
+  position: relative;
+  background: rgba(0, 0, 0, 0.85);
+  height: 100%;
+  width: 6.7%;
+  border-radius: 5px;
+  border-bottom-right-radius: 0px;
+  margin-left: auto;
+  margin-right: 2px;
+}
+.fa-gear {
+  display: block;
+  position: relative;
+  font-size: 2rem;
+  margin: auto;
+  color: rgb(255, 255, 255);
+  z-index: 1;
+}
+
+.taskbar--button {
+  display: block;
   position: absolute;  
-  padding: 0;
-  width: 3.745%;
+  padding: 0;  
+  width: 100%;
   height: 100%;
   background-color: #00000000;
   border: none;
-  transform: translateX(96.5vw);
+  margin: 0.25%;
   z-index: 2;
 }
-
-.fa-gear {
-  display: flex;
-  position: absolute;
-  font-size: x-large;
-  color: #fff;
-  margin: 10px;
-  transform: translateX(96.8vw);
-  z-index: 1;
-}
-#taskbar--settings--button:hover {
+.taskbar--button:hover {
   cursor: pointer;
   color: #ffffff7d;
 }
+
 #terminal__wrapper {
   display: flex;
   position: absolute;
@@ -432,12 +586,13 @@ body {
 }
 
 #terminal { 
-  display: none;
+  display: block;
   position: relative;
-  width: 70vw;  
+  width: 70vw;
   height: 65vh;  
   box-shadow: 2px 4px 10px rgba(0,0,0,0.5);
   transition: 10ms ease-in-out;
+  overflow: hidden;
 }
 
 #terminal__bar {  
@@ -449,7 +604,7 @@ body {
   box-sizing: border-box;  
   border-top-left-radius: 5px;  
   border-top-right-radius: 5px;  
-  background: linear-gradient(#504b45 0%,#3c3b37 100%);
+  background: linear-gradient(#35333a 0%,#21211f 100%);
 }
 
 .bar__hover:hover {
@@ -467,13 +622,13 @@ body {
   align-items: center;  
   padding: 0;  
   margin-right: 5px;  
-  font-size: 8px;  
-  height: 12px;  
-  width: 12px;  
+  font-size: 0.5rem;  
+  height: 10.5px;  
+  width: 10.5px;  
   box-sizing: border-box;  
   border: none;  
   border-radius: 100%;  
-  background: linear-gradient(#7d7871 0%, #595953 100%);  
+  background: linear-gradient(#ffffff 0%, #dddddd 100%);  
   text-shadow: 0px 1px 0px rgba(255,255,255,0.2);  
   box-shadow: 0px 0px 1px 0px #41403A, 0px 1px 1px 0px #474642;
   user-select: none;
@@ -487,49 +642,49 @@ body {
   outline: none;
 }
 
-#bar__button--exit {  
-  background: linear-gradient(#f37458 0%, #de4c12 100%);    
+#bar__button--exit:hover {  
+  background: linear-gradient(#ff3d3d 0%, #ff0101 100%);    
   background-clip: padding-box;
 }
 
-#bar__button--minimize {
-  background: linear-gradient(#f3e958 0%, #d0de12 100%);    
+#bar__button--minimize:hover {
+  background: linear-gradient(#fff34d 0%, #fff200 100%);    
   background-clip: padding-box;
 }
 
-#bar__button--maximize {
-  background: linear-gradient(#58f358 0%, #12de34 100%);    
+#bar__button--maximize:hover {
+  background: linear-gradient(#50ff50 0%, #00ff2a 100%);    
   background-clip: padding-box;
 }
 
 #bar__user {   
-  color: #d5d0ce;  
+  color: #ffffff;  
   margin-left: 6px;  
-  font-size: 14px;  
+  font-size: 0.9rem;  
   line-height: 15px;
   user-select: none;
 }
 
 #bar__name {
-    color: #d5d0ce;  
+    color: #ffffff;  
     margin-left: calc((100% / 2) - 75px);  
-    font-size: 14px;  
+    font-size: 0.9rem;  
     line-height: 15px;
     position: relative;
     user-select: none;
 }
 
 #bar__name--terminal {
-  color: #d5d0ce;
+  color: #ffffff;
   margin-left: calc(100% - 72%);
-  font-size: 14px;
+  font-size: 0.9rem;
   line-height: 15px;
   position: relative;
   user-select: none;
 }
 
 #terminal__body {  
-  background: rgba(30, 25, 30, 1);  
+  background: rgb(10, 1, 17);  
   font-family: 'Ubuntu Mono';  
   height: calc(100% - 30px);  
   padding-top: 2px;  
@@ -541,7 +696,7 @@ body {
 } 
 
 #terminal__prompt--user {  
-  color: #7eda28;
+  color: #00ff2a;
   margin-top: 2px;
   margin-left: 1%;
   user-select: none;
@@ -558,23 +713,27 @@ body {
   margin-top: 2px;
   user-select: none;
 }
-
-#terminal__prompt--cursor {  
-  display: block;  
+#terminal__prompt--cursor{
+  display: none;  
   height: 17px;  
   width: 8px;  
   margin-top: 2px;
   margin-left: 6px;  
-  animation: blink 1200ms linear infinite;
   user-select: none;
 }
-
+#terminal__prompt--t > span {  
+  display: block;  
+  height: 17px;  
+  width: 8px;  
+  margin-top: 2px;
+  user-select: none;
+}
 #terminal__prompt--text input {
     display: flex;
     background: rgba(56, 4, 40, 0.0);
     font-family: 'Ubuntu mono';
-    font-size: 14px;
-    color: #7eda28;
+    font-size: 0.9rem;
+    color: #00ff2a;
     width: auto;
     margin-top: 2px;
     margin-left: -1px;
@@ -586,49 +745,36 @@ body {
     caret-color: transparent;
     user-select: none;
 }
-
-#terminal__prompt--text input::placeholder {
-    opacity: 70%;
-    color: #7eda28;
-    cursor: pointer;
-    user-select: none;
-}
-
 #terminal__textarea {
     margin-top: 2%;
     margin-left: 1px;
     height: auto;
 }
-
-/* remove opacity */
-#terminal__prompt--t h1 { 
-    opacity: 0;
+#terminal__prompt--t > span > p {
     display: flex;
-    font-family: 'Ubuntu';
-    font-size: 32px;
-    color: #7eda28;
-    margin-top: -1%;
+    position: absolute;
+    width: fit-content;
+    font-family: 'Ubuntu Mono';
+    font-size: 1rem;
+    width: max-content;
+    color: #00ff2a;
+    margin: auto;
     margin-left: 1.5%;
-    margin-bottom: 0%;    
-}
-
-#terminal__prompt--t p {
-    opacity: 0;
-    display: flex;
-    font-family: 'Ubuntu';
-    font-size: 16px;
-    color: #7eda28;
-    margin-left: 1.5%;
-    margin-top: 1px;   
-    margin-bottom: 0%; 
-}
+    line-height: 15px;
+    border-right: 8px solid #fff;
+  }
+  
+#terminal__prompt--t > span > .terminal__lines{
+    color: red;
+    opacity: 100%;
+  }
 
 #project__wrapper {
   display: flex;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-40%, -52.5%);
+  transform: translate(-40%, -52%);
   z-index: 0;
 }
 
@@ -650,7 +796,7 @@ body {
   box-sizing: border-box;  
   border-top-left-radius: 5px;  
   border-top-right-radius: 5px;  
-  background: linear-gradient(#504b45 0%,#3c3b37 100%);
+  background: linear-gradient(#35333a 0%,#21211f 100%);
 }
 
 #project__body {
@@ -668,11 +814,12 @@ body {
 
 #project__body--side--bar--p {
   text-align: center;
-  font-size: xx-large;
+  font-size: 2rem;
   font-family: 'Ubuntu';
   font-variant-caps: all-petite-caps;
   font-weight: 600;
-  transform: translateY(-25px);
+  margin-top: 0px;
+  transform: translateY(-1px);
   color: #ffffffe3;
   user-select: none;
 }
@@ -683,33 +830,56 @@ body {
   color: #ffffffe3;
   font-family: 'Ubuntu';
   font-weight: 500;
-  font-size: 16px;
-  transform: translate(calc(100% / 3.5), -45px);
+  font-size: 1rem;
+  transform: translate(calc(100% / 3.5), -22.5px);
   list-style: none;
 }
-
-#skills__frontend  > li{
-  transform: translateX(20px);
-}
-
- #skills__frontend--html {
+ #skills__frontend--{
   font-family: 'Ubuntu Mono';
   font-weight: 200;
-  font-size: 14px;
+  font-size: 0.9rem;
 }   
-
-#skills__frontend--css {
+#skills__frontend-- > i{
+  margin-right: 5px;
+}
+.fa-html5{
+  color: orange;
+  font-size: 0.95rem;
+}
+.fa-css3-alt{
+  color: #2965f1;
+  font-size: 0.95rem;
+}
+.fa-js{
+  color: #f0db4f;
+  font-size: 0.95rem;
+}
+#skills__backend{
+  margin: 0;
+  padding: 0;
+  color: #ffffffe3;
+  font-family: 'Ubuntu';
+  font-weight: 500;
+  font-size: 1rem;
+  transform: translate(calc(100% / 3.5), -11.5px);
+  list-style: none;
+}
+#skills__backend--{
   font-family: 'Ubuntu Mono';
   font-weight: 200;
-  font-size: 14px;
+  font-size: 0.9rem;
 }
-
-#skills__frontend--js {
-  font-family: 'Ubuntu Mono';
-  font-weight: 200;
-  font-size: 14px;
+#skills__backend-- > i{
+  margin-right: 5px;
 }
-
+.fa-python{
+  color: #4584B6;
+  font-size: 0.95rem;
+}
+.fa-react{
+  color: #61DBFB;
+  font-size: 0.95rem;
+}
 #bar__button--project {
   display: flex;  
   align-items: center;
@@ -755,47 +925,6 @@ body {
   align-items: center;
 }
 
-#minesweeper__wrapper {
-  display: flex;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-10%, -53%);
-  z-index: 0;
-}
-
-#minesweeper {
-  display: none;
-  position: relative;
-  width: 44.26vw;
-  height: 91vh;
-  box-shadow: 2px 4px 10px rgb(0 0 0 / 50%);
-  transition: 10ms ease-in-out;
-}
-
-#minesweeper__bar {
-  display: flex;  
-  width: 100%;  
-  height: 30px;  
-  align-items: center;  
-  padding: 0 8px;  
-  box-sizing: border-box;  
-  border-top-left-radius: 5px;  
-  border-top-right-radius: 5px;  
-  background: linear-gradient(#504b45 0%,#3c3b37 100%);
-}
-
-#minesweeper__body {
-  background: rgb(121, 121, 121);  
-  font-family: 'Ubuntu Mono';  
-  height: calc(100% - 30px);  
-}
-
-#bar__button--minesweeper {
-  display: flex;  
-  align-items: center;
-}
-
 #contact__wrapper {
   display: flex;
   position: absolute;
@@ -823,7 +952,7 @@ body {
   box-sizing: border-box;  
   border-top-left-radius: 5px;  
   border-top-right-radius: 5px;  
-  background: linear-gradient(#504b45 0%,#3c3b37 100%);
+  background: linear-gradient(#35333a 0%,#21211f 100%);
 }
 
 #contact__body {
@@ -856,7 +985,7 @@ form > label {
   justify-content: center;
   align-items: center;
   font-family: 'Ubuntu';
-  font-size: 16px;
+  font-size: 2rem;
   color: #fff;
   margin: auto;
 }
@@ -874,7 +1003,7 @@ form > textarea::placeholder {
   position: relative;
   text-align: center;
   color: #ffffffee;
-  font-size: xxx-large;
+  font-size: 2.5rem;
   font-family: 'Ubuntu Mono';
   padding: 2.5%;
   width: 50%;
@@ -893,7 +1022,7 @@ form > textarea::placeholder {
   border-top-left-radius: 15px;
   border-top-right-radius: 5px;
   border-bottom-left-radius: 5px;
-  font-size: 16px;
+  font-size: 1rem;
   font-family: 'Ubuntu';
   scale: 100%;
   margin: auto;
@@ -911,7 +1040,7 @@ form > textarea::placeholder {
   border-top-left-radius: 15px;
   border-top-right-radius: 5px;
   border-bottom-left-radius: 5px;
-  font-size: 16px;
+  font-size: 1rem;
   font-family: 'Ubuntu';
   scale: 100%;
   margin: auto;
@@ -929,7 +1058,7 @@ form > textarea::placeholder {
   border-top-left-radius: 15px;
   border-top-right-radius: 5px;
   border-bottom-left-radius: 5px;
-  font-size: 16px;
+  font-size: 1rem;
   font-family: 'Ubuntu';
   scale: 100%;
   margin: auto;
@@ -947,7 +1076,7 @@ form > textarea::placeholder {
   border-top-left-radius: 15px;
   border-top-right-radius: 5px;
   border-bottom-left-radius: 5px;
-  font-size: 16px;
+  font-size: 1rem;
   font-family: 'Ubuntu';
   scale: 100%;
   margin: auto;
@@ -956,7 +1085,7 @@ form > textarea::placeholder {
 #bar {
   display: block;
   position: relative;
-  width: 90%;
+  width: 100%;
   height: 1.5px;
   background-color: #ffffff35;
   margin: auto;
@@ -965,7 +1094,7 @@ form > textarea::placeholder {
 
 .fa-github:only-child {
   display: block;
-  position: relative;
+  position: absolute;
   justify-content: center;
   align-items: center;
   scale: -15%;
@@ -1001,13 +1130,5 @@ form > textarea::placeholder {
     background: transparent;  
   }  100% {    
     background: #ffffff;  
-  }
-}
-
-@media (max-width: 600px) {  
-  #terminal {    
-    max-height: 90%;    
-    width: 90%;  
-    display: none;
   }
 }
