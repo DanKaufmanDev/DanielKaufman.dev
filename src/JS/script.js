@@ -516,6 +516,13 @@ function buttonClickSettings(){
     document.querySelector('#project__wrapper').style.zIndex = 'auto';
     } 
 }
+document.querySelector('#taskbar--settings').addEventListener('keydown', (event) =>{
+    if(event.keyCode === 27){
+        bool = false;
+        settings.style.transform = 'translateX(100vw';
+        document.querySelector('#taskbar--settings').style.borderLeft = 'none';
+    }
+})
 
 //Themes
 //Triangles
