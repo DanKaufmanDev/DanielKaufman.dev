@@ -29,6 +29,7 @@
         transform: translateX(0%);
     }
     #taskbar--start{
+        width: 12%;
         margin-right: 2px;
         border-right: none;
     }
@@ -39,6 +40,11 @@
     .fa-house{
         display: block;
         opacity: 1;
+        position: absolute;
+        font-size: 1.5rem;
+        color: #fff;
+        transform: translate(calc(100% / 3), calc(100% / 2.6));
+        z-index: 1;
     }
     #taskbar--search{
         display: none;
@@ -46,19 +52,49 @@
         height: 0%;
     }
     #taskbar--about{
+        width: 12%;
         margin-right: 2px;
-        display: none;
+        display: flex;
+    }
+    .fa-terminal{
+        position: absolute;
     }
     #taskbar--contact{
+        width: 12%;
+        justify-content: center;
+        align-items: center;
         margin-right: 2px;
+    }
+    .fa-envelope{
+        position: absolute;
+    }
+    #taskbar--project{
+        justify-content: center;
+        align-items: center;
+        width: 12%;
+        margin-right: 2px;
+    }
+    .fa-folder{
+        position: absolute;
     }
     #taskbar--github{
+        justify-content: center;
+        align-items: center;
         margin-right: 2px;
         opacity: 1;
+        width: 12%;
+    }
+    .fa-github{
+        position: absolute;
     }
     #taskbar--linkedin{
+        display: ;
         margin-right: 2px;
         opacity: 1;
+        width: 12%;
+    }
+    .fa-linkedin{
+        position: absolute;
     }
     #taskbar--settings{
         display: none;
@@ -70,7 +106,7 @@
         transform: translate(0, 0);
     }
     #terminal{
-        display: none;
+        display: block;
         position: relative;
         width: 100vw;
         height: 100vh;

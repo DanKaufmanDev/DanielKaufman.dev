@@ -20,7 +20,7 @@ window.onload = function preloader(){
 //Terminal Animation
 let i = 0;
 let txt = "Hi There, My name is Dan Im a Software Engineer & Fullstack Developer Try Clicking Some of the Apps for More info";
-let speed = 50;
+let speed = 45;
 let txtL1 = "Hi There,";
 function L1(){
     if(i <= txtL1.length){

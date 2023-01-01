@@ -4,11 +4,12 @@ html {
   user-select: none;
 }
 body {  
-  background: url(../background/marble.jpg);
+  background: url(../background/triangles.svg);
   background-size: cover;
-  background-repeat: round;
+  background-repeat: no-repeat;
   font-family: 'Ubuntu';
   overflow: hidden;
+  font-size: 16px;
 } 
 /* Preloader */
 .wrapper{
@@ -70,6 +71,7 @@ body {
   transition: 250ms ease-in-out;
   border-bottom-left-radius: 5px;
   border-top-left-radius: 5px;
+  overflow: hidden;
   z-index: 100;
 }
 #desktop__settings--header{
@@ -80,7 +82,7 @@ body {
 #desktop__settings--header > p{
   margin: 0px;
   text-align: center;
-  font-size: xx-large;
+  font-size: 2.5rem;
   font-family: 'Ubuntu';
   font-variant-caps: all-petite-caps;
   font-weight: 600;
@@ -90,9 +92,9 @@ body {
 
 #desktop__settings--bar {
   display: flex; 
-  position: absolute;  
+  position: fixed;  
   width: 100%;  
-  height: 2px;
+  height: 0.3%;
   margin-top: -10px;
   background-color: rgba(255, 255, 255, 0.300);
   transition: 300ms ease-in-out;
@@ -100,14 +102,16 @@ body {
 }
 #desktop__settings--bg--triangle {
   display: flex;
-  position: absolute;
+  position: fixed;
+  width: 21.5%;
+  max-width: 100%;
   background-image: url(../background/triangles.svg);
   background-size: cover;
   border: none;
   border-radius: 2px;
   scale: 200%;
   translate: 60%;
-  transform: translateY(12.5px);
+  transform: translateY(28%);
 }
 #desktop__settings--bg--triangle:hover {
   cursor: pointer;
@@ -116,7 +120,9 @@ body {
 #settings__bg--triangle--p {
   display: flex;
   position: relative;
-  font-size: 14px;
+  font-size: 0.9rem;
+  margin-right: auto;
+  margin-left: auto;
   font-family: 'Ubuntu Mono';
   color: #fff;
   scale: 50%;
@@ -124,15 +130,17 @@ body {
 }
 #desktop__settings--bg--swirl {
   display: flex;
-  position: absolute;
-  width: 75px;
+  position: fixed;
+  width: 21.5%;
+  max-width: 100%;
+  margin-left: 1%;
   background-image: url(../background/swirl.jpg);
   background-size: cover;
   border: none;
   border-radius: 2px;
   scale: 200%;
   translate: 25%;
-  transform: translate(100px, 12.5px);
+  transform: translate(135%, 28%);
 }
 #desktop__settings--bg--swirl:hover {
   cursor: pointer;
@@ -141,24 +149,26 @@ body {
 #settings__bg--swirl--p {
   display: flex;
   position: relative;
-  font-size: 14px;
+  font-size: 0.9rem;
+  margin-left: auto;
+  margin-right: auto;
   font-family: 'Ubuntu Mono';
   color: #fff;
   scale: 50%;
-  translate: calc(100% / 2 - 4px);
   transform: translateY(55px);
 }
 #desktop__settings--bg--cube {
   display: flex;
-  position: absolute;
-  width: 75px;
+  position: fixed;
+  width: 21.5%;
+  max-width: 100%;
   background-image: url(../background/cube.jpg);
   background-size: cover;
   border: none;
   border-radius: 2px;
   scale: 200%;
   translate: 60%;
-  transform: translateY(75px);
+  transform: translateY(170%);
 }
 #desktop__settings--bg--cube:hover {
   cursor: pointer;
@@ -167,24 +177,26 @@ body {
 #settings__bg--cube--p {
   display: flex;
   position: relative;
-  font-size: 14px;
+  font-size: 0.9rem;
+  margin-left: auto;
+  margin-right: auto;
   font-family: 'Ubuntu Mono';
   color: #fff;
   scale: 50%;
-  translate: calc(100% / 2 - -3.5px);
   transform: translateY(55px);
 }
 #desktop__settings--bg--wave {
   display: flex;
-  position: absolute;
-  width: 75px;
+  position: fixed;
+  width: 21.5%;
+  max-width: 100%;
   background-image: url(../background/wave.jpg);
   background-size: cover;
   border: none;
   border-radius: 2px;
   scale: 200%;
   translate: 25%;
-  transform: translate(100px, 75px);
+  transform: translate(136%, 170%);
 }
 #desktop__settings--bg--wave:hover {
   cursor: pointer;
@@ -193,11 +205,12 @@ body {
 #settings__bg--wave--p {
   display: flex;
   position: relative;
-  font-size: 14px;
+  font-size: 0.9rem;
+  margin-left: auto;
+  margin-right: auto;
   font-family: 'Ubuntu Mono';
   color: #fff;
   scale: 50%;
-  translate: calc(100% / 2 - -3.5px);
   transform: translateY(55px);
 }
 #settings__taskbar--rgb--wrapper {
@@ -211,15 +224,18 @@ body {
 #settings__taskbar--rgb--wrapper  img{
   display: block;
   margin: 0 auto;
-  height: 185px;
-  width: 270px;
+  width: 98.77%;
+  max-width: 98.77%;
+  height: 97.37%;
+  min-height: 97.37%;
+  max-height: 37.37%;
   user-select: none;
 }
 #settings__taskbar--rgb--selector {
   position: absolute;
   border: 1.5px solid rgb(0, 0, 0);
-  width: 10px;
-  height: 10px;
+  width: 5.124%;
+  height: 7.38%;
   top: 0%;
   left: 0%;
   border-radius: 50%;
@@ -229,7 +245,9 @@ body {
 }
 #settings__taskbar--rgb {
   width: 100%;
+  max-width: 100%;
   height: 100%;
+  margin: auto;
 }
 
 #about--img {
@@ -248,7 +266,7 @@ body {
   display: grid;
   justify-items: center;
   font-family: 'Ubuntu';
-  font-size: 14px;
+  font-size: 0.9rem;
   font-weight: 400;
   color: #ffffffd3;
   position: relative;
@@ -286,7 +304,7 @@ body {
   display: grid;
   justify-items: center;
   font-family: 'Ubuntu';
-  font-size: 14px;
+  font-size: 0.9rem;
   font-weight: 400;
   color: #ffffffd3;
   position: relative;
@@ -362,7 +380,7 @@ body {
   display: grid;
   justify-items: center;
   font-family: 'Ubuntu';
-  font-size: 14px;
+  font-size: 0.9rem;
   font-weight: 400;
   color: #ffffffd3;
   position: relative;
@@ -374,7 +392,9 @@ body {
   display: flex;
   position: fixed;
   width: 50%;
-  height: 6vh;
+  max-width: 100%;
+  min-height: 6%;
+  height: 6%;
   background: rgba(67, 67, 67, 0.5);
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 2);
   border-top-left-radius: 5px;
@@ -389,8 +409,8 @@ body {
   display: flex;
   position: relative;
   background: rgba(0, 0, 0, 0.85);
+  width: 6.7%;
   height: 100%;
-  width: 45.81px;
   border-right: 2.5px solid snow;
   border-radius: 5px;
   border-bottom-left-radius: 0px;
@@ -399,17 +419,17 @@ body {
 }
 .fa-grip {
   display: block;
-  position: absolute;
-  font-size: xx-large;
+  position: relative;
+  margin: auto;
+  font-size: 2rem;
   color: #fff;
-  transform: translate(calc(100% / 3), calc(100% / 6));
   z-index: 1;
 }
 .fa-house{
   display: none;
   opacity: 0;
   position: absolute;
-  font-size: x-large;
+  font-size: 2.5rem;
   color: #fff;
   transform: translate(calc(100% / 3), calc(100% / 2.6));
   z-index: 1;
@@ -417,7 +437,8 @@ body {
 #taskbar--search input{
   display: block;
   position: relative;
-  height: 90%;
+  min-height: 90%;
+  max-width: 100%;
   margin: 1px;
   background-color: #000;
   color:#ffffff;
@@ -430,18 +451,18 @@ body {
   display: flex;
   position: relative;
   background: rgba(0, 0, 0, 0.85);
+  width: 6.7%;
   height: 92%;
-  width: 45.81px;
   margin: 1px;
   border-bottom: 2px solid snow;
   border-radius: 5px;
 }
 .fa-terminal{
   display: block;
-  position: absolute;
-  font-size: medium;
+  position: relative;
+  font-size: 1.4rem;
+  margin: auto;
   color: #fff;
-  transform: translate(calc(100% / 6), calc(100% / 5));
   z-index: 1;
 }
 
@@ -450,16 +471,16 @@ body {
   position: relative;
   background: rgba(0, 0, 0, 0.85);
   height: 100%;
-  width: 45.81px;
+  width: 6.7%;
   margin: 1px;
   border-radius: 5px;
 }
 .fa-envelope{
   display: block;
-  position: absolute;
-  font-size: xx-large;
+  position: relative;
+  font-size: 2rem;
+  margin: auto;
   color: rgb(223, 223, 223);
-  transform: translate(calc(100% / 5), calc(100% / 8));
   z-index: 1;
 }
 
@@ -469,16 +490,16 @@ body {
   background: rgba(23, 21, 21, 0.85);
   opacity: 75%;
   height: 100%;
-  width: 45.81px;
+  width: 6.7%;
   margin: 1px;
   border-radius: 5px;
 }
 .fa-github{
   display: block;
-  position: absolute;
-  font-size: xx-large;
+  position: relative;
+  font-size: 2rem;
+  margin: auto;
   color: rgb(255, 255, 255);
-  transform: translate(calc(100% / 4), calc(100% / 6));
   z-index: 1;
 }
 
@@ -488,16 +509,16 @@ body {
   background: rgba(0, 114, 177, 0.85);
   opacity: 75%;
   height: 100%;
-  width: 45.81px;
+  width: 6.7%;
   margin: 1px;
   border-radius: 5px;
 }
 .fa-linkedin-in{
   display: block;
-  position: absolute;
-  font-size: xx-large;
+  position: relative;
+  font-size: 2rem;
+  margin: auto;
   color: rgb(255, 255, 255);
-  transform: translate(calc(100% / 3), calc(100% / 5.5));
   z-index: 1;
 }
 
@@ -506,16 +527,16 @@ body {
   position: relative;
   background: rgba(0, 0, 0, 0.85);
   height: 100%;
-  width: 45.81px;
+  width: 6.7%;
   margin: 1px;
   border-radius: 5px;
 }
 .fa-folder{
   display: block;
-  position: absolute;
-  font-size: xx-large;
+  position: relative;
+  font-size: 2rem;
+  margin: auto;
   color: rgb(255, 235, 146);
-  transform: translate(calc(100% / 4.5), calc(100% / 11));
   z-index: 1;
 }
 
@@ -524,7 +545,7 @@ body {
   position: relative;
   background: rgba(0, 0, 0, 0.85);
   height: 100%;
-  width: 45.81px;
+  width: 6.7%;
   border-radius: 5px;
   border-bottom-right-radius: 0px;
   margin-left: auto;
@@ -532,16 +553,16 @@ body {
 }
 .fa-gear {
   display: block;
-  position: absolute;
-  font-size: xx-large;
+  position: relative;
+  font-size: 2rem;
+  margin: auto;
   color: rgb(255, 255, 255);
-  transform: translate(calc(100% / 4), calc(100% / 6));
   z-index: 1;
 }
 
 .taskbar--button {
   display: block;
-  position: relative;  
+  position: absolute;  
   padding: 0;  
   width: 100%;
   height: 100%;
@@ -567,7 +588,7 @@ body {
 #terminal { 
   display: block;
   position: relative;
-  width: 70vw;  
+  width: 70vw;
   height: 65vh;  
   box-shadow: 2px 4px 10px rgba(0,0,0,0.5);
   transition: 10ms ease-in-out;
@@ -601,7 +622,7 @@ body {
   align-items: center;  
   padding: 0;  
   margin-right: 5px;  
-  font-size: 8px;  
+  font-size: 0.5rem;  
   height: 10.5px;  
   width: 10.5px;  
   box-sizing: border-box;  
@@ -639,7 +660,7 @@ body {
 #bar__user {   
   color: #ffffff;  
   margin-left: 6px;  
-  font-size: 14px;  
+  font-size: 0.9rem;  
   line-height: 15px;
   user-select: none;
 }
@@ -647,7 +668,7 @@ body {
 #bar__name {
     color: #ffffff;  
     margin-left: calc((100% / 2) - 75px);  
-    font-size: 14px;  
+    font-size: 0.9rem;  
     line-height: 15px;
     position: relative;
     user-select: none;
@@ -656,7 +677,7 @@ body {
 #bar__name--terminal {
   color: #ffffff;
   margin-left: calc(100% - 72%);
-  font-size: 14px;
+  font-size: 0.9rem;
   line-height: 15px;
   position: relative;
   user-select: none;
@@ -711,7 +732,7 @@ body {
     display: flex;
     background: rgba(56, 4, 40, 0.0);
     font-family: 'Ubuntu mono';
-    font-size: 14px;
+    font-size: 0.9rem;
     color: #00ff2a;
     width: auto;
     margin-top: 2px;
@@ -724,12 +745,6 @@ body {
     caret-color: transparent;
     user-select: none;
 }
-#terminal__prompt--text input::placeholder {
-    opacity: 70%;
-    color: #00ff2a;
-    cursor: pointer;
-    user-select: none;
-}
 #terminal__textarea {
     margin-top: 2%;
     margin-left: 1px;
@@ -740,7 +755,7 @@ body {
     position: absolute;
     width: fit-content;
     font-family: 'Ubuntu Mono';
-    font-size: 16px;
+    font-size: 1rem;
     width: max-content;
     color: #00ff2a;
     margin: auto;
@@ -799,7 +814,7 @@ body {
 
 #project__body--side--bar--p {
   text-align: center;
-  font-size: xx-large;
+  font-size: 2rem;
   font-family: 'Ubuntu';
   font-variant-caps: all-petite-caps;
   font-weight: 600;
@@ -815,52 +830,55 @@ body {
   color: #ffffffe3;
   font-family: 'Ubuntu';
   font-weight: 500;
-  font-size: 16px;
+  font-size: 1rem;
   transform: translate(calc(100% / 3.5), -22.5px);
   list-style: none;
 }
  #skills__frontend--{
   font-family: 'Ubuntu Mono';
   font-weight: 200;
-  font-size: 14px;
+  font-size: 0.9rem;
 }   
 #skills__frontend-- > i{
   margin-right: 5px;
 }
 .fa-html5{
   color: orange;
-  font-size: 15px;
+  font-size: 0.95rem;
 }
 .fa-css3-alt{
   color: #2965f1;
-  font-size: 15px;
+  font-size: 0.95rem;
 }
 .fa-js{
   color: #f0db4f;
-  font-size: 15px;
+  font-size: 0.95rem;
 }
 #skills__backend{
+  margin: 0;
+  padding: 0;
   color: #ffffffe3;
   font-family: 'Ubuntu';
   font-weight: 500;
-  font-size: 16px;
+  font-size: 1rem;
+  transform: translate(calc(100% / 3.5), -11.5px);
   list-style: none;
 }
 #skills__backend--{
   font-family: 'Ubuntu Mono';
   font-weight: 200;
-  font-size: 14px;
+  font-size: 0.9rem;
 }
 #skills__backend-- > i{
   margin-right: 5px;
 }
 .fa-python{
   color: #4584B6;
-  font-size: 15px;
+  font-size: 0.95rem;
 }
 .fa-react{
   color: #61DBFB;
-  font-size: 15px;
+  font-size: 0.95rem;
 }
 #bar__button--project {
   display: flex;  
@@ -967,7 +985,7 @@ form > label {
   justify-content: center;
   align-items: center;
   font-family: 'Ubuntu';
-  font-size: 16px;
+  font-size: 2rem;
   color: #fff;
   margin: auto;
 }
@@ -985,7 +1003,7 @@ form > textarea::placeholder {
   position: relative;
   text-align: center;
   color: #ffffffee;
-  font-size: xxx-large;
+  font-size: 2.5rem;
   font-family: 'Ubuntu Mono';
   padding: 2.5%;
   width: 50%;
@@ -1004,7 +1022,7 @@ form > textarea::placeholder {
   border-top-left-radius: 15px;
   border-top-right-radius: 5px;
   border-bottom-left-radius: 5px;
-  font-size: 16px;
+  font-size: 1rem;
   font-family: 'Ubuntu';
   scale: 100%;
   margin: auto;
@@ -1022,7 +1040,7 @@ form > textarea::placeholder {
   border-top-left-radius: 15px;
   border-top-right-radius: 5px;
   border-bottom-left-radius: 5px;
-  font-size: 16px;
+  font-size: 1rem;
   font-family: 'Ubuntu';
   scale: 100%;
   margin: auto;
@@ -1040,7 +1058,7 @@ form > textarea::placeholder {
   border-top-left-radius: 15px;
   border-top-right-radius: 5px;
   border-bottom-left-radius: 5px;
-  font-size: 16px;
+  font-size: 1rem;
   font-family: 'Ubuntu';
   scale: 100%;
   margin: auto;
@@ -1058,7 +1076,7 @@ form > textarea::placeholder {
   border-top-left-radius: 15px;
   border-top-right-radius: 5px;
   border-bottom-left-radius: 5px;
-  font-size: 16px;
+  font-size: 1rem;
   font-family: 'Ubuntu';
   scale: 100%;
   margin: auto;
@@ -1067,7 +1085,7 @@ form > textarea::placeholder {
 #bar {
   display: block;
   position: relative;
-  width: 90%;
+  width: 100%;
   height: 1.5px;
   background-color: #ffffff35;
   margin: auto;
@@ -1076,7 +1094,7 @@ form > textarea::placeholder {
 
 .fa-github:only-child {
   display: block;
-  position: relative;
+  position: absolute;
   justify-content: center;
   align-items: center;
   scale: -15%;
